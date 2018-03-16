@@ -1,0 +1,40 @@
+\documentclass[12pt, singleside]{report}
+
+\usepackage{amsmath, amssymb}
+\usepackage{dsfont}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage[colorlinks]{hyperref}	
+\hypersetup{
+    colorlinks = true,
+    linkcolor = black,
+    urlcolor = blue,
+}
+\usepackage{physics}	% ket, bra
+\usepackage{imakeidx}	
+\usepackage{xcolor}
+
+\newcommand{\mn}{\mu\nu}
+\newcommand{\nm}{\nu\mu}
+
+\title{Physcis}
+\author{Weibin Zhang}
+\date{March 14, 2018}
+
+\makeindex
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\include{math}
+\include{CM}
+\include{EM}
+\include{QM}
+\include{QFT}
+\include{examples}
+\include{doubts}
+\include{terminology}
+\include{constants}
+
+\end{document}

@@ -1,0 +1,15 @@
+\chapter{Math}
+
+\section{Formulas}
+
+\subsection{Fourier transform}
+\[\delta^3(\vec{x})=\int\frac{d^3k}{(2\pi)^3}e^{i\vec{k}\vec{x}}\]
+
+\subsection{Integral}
+\[I=\int_{-\infty}^{\infty}dk\frac{e^{ikr}-e^{-ikr}}{k}\]
+Note that the integrand does not blow up as $k \rightarrow 0$, so
+\[I=\displaystyle\lim_{\delta\rightarrow{0}}\left[\int_{-\infty}^{\infty}dk\frac{e^{ikr}-e^{-ikr}}{k+i\delta}\right]\]
+So we have pole at $k = -i\delta$. For $e^{ikr}$ we must close the contour
+up to get exponential decay at large $\mathit{k}$. This misses the pole, so
+this term gives zero. So
+\[I=\int_{-\infty}^{\infty}dk\frac{-e^{-ikr}}{k+i\delta}=-(2\pi{i})(-e^{-\delta{r}})=2\pi{i}e^{-i\delta{r}}\]

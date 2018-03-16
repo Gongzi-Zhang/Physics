@@ -1,0 +1,402 @@
+\newcommand{\QM}{Quamtum Mechanics}
+\newcommand{\QFT}{Quantum Field Theory}
+\newcommand{\RQFT}{Relativistic Quantum Field Theory}
+\newcommand{\FT}{Fourier Transform}
+\newcommand{\FFT}{Fast Fourier Transform}
+\newcommand{\LT}{Lorentz Transform}
+\newcommand{\LI}{Lorentz Invariant}
+\newcommand{\LG}{Lorentz Group}
+\newcommand{\KG}{Klein-Gordon}
+\newcommand{\EL}{Euler-Lagrange}
+\newcommand{\sr}{special relativity}
+
+\chapter{QFT}
+
+\section{Motivation}
+
+\emph{particle} number is not conserved. The creation and destruction of
+particls, which is possible due to the most famous eqn. of \sr{} $E =
+mc^{2}$. \emph{Lorentz invariance} guides the definition of particle.
+
+Why QFT: \fbox{quantum mechanics plus Poincare symmetry}. \\
+\fbox{Quantum field theory is just quantum mechanics with an infinite number
+of harmonic oscillators}
+
+The \QM{} can describe a system with a fixed number of particles
+in terms of a many-body wave function. The \RQFT{}
+with creation and annihilation operators was developed in order to include
+processes in which the number of particles is not conserved,
+and to describe the conversion of mass into energy and vice versa.
+A consequence of relativity is that the number of particles isn't fixed, ???
+though the converse is false: particle production can happen without relativity.
+
+Construct $\mathcal{L}$ from field $\phi$ and its derivative under the rule
+of \LI{}. How to incorporate symmetry ?
+
+QFT is the quantum mechanics of {\Large \textit{extensive degrees of freedom}}
+$\bra{x}\ket{\phi} = \phi(x)$ is a function of space, the wavefunction.
+This looks like a field. It is not what we mean by field in QFT.
+meaningless phrases like "second quantization" may conspire to try
+to confuse you.
+
+It is not a coincidence that the harmonic oscillator plays an important
+role. After all, electromagenetic waves oscillate harmonically.
+
+There are two common ways to quantize a field theory:
+\begin{itemize}
+    \item canonical quantization
+    \item Feynman path integral
+    \item Ohter alternatives: perturbation theory
+\end{itemize}
+\section{Convention}
+In relativity, the symmetry refer to invariance after the transformation of
+\emph{coordinate system}. So the rotation is:
+\begin{equation}
+    R = 
+	\begin{pmatrix}
+	    \cos\theta	& \sin\theta	\\
+	    -\sin\theta	& \cos\theta
+	\end{pmatrix}
+\end{equation}
+or in other way:
+\[ R^{T}\mathds{1}R = \mathds{1} \]
+    
+\subsection{4D time-space}   
+$dx^{\mu} \equiv (dt, d\vec{x})^{\mu}$ \\
+$ ds^{2} = dt^{2} - d\vec{x}\cdot d\vec{x} =
+\eta_{\mn}dx^{\mu}dx^{\nu}$	with 
+\begin{equation}
+    \eta^{\mn} = \eta_{\mn} = 
+    \begin{pmatrix}
+	+1  & 0	  & 0  & 0	\\
+	0   & -1  & 0  & 0	\\
+	0   & 0	  & -1 & 0	\\
+	0   & 0	  & 0  & -1
+    \end{pmatrix}_{\mn}
+    \label{Minkowski metric}
+\end{equation}
+    
+Rotation and boost in 4D time-space around x axes is:
+\begin{equation*}
+    \begin{pmatrix}
+	1   &	&   &	\\
+	    & 1 &   &	\\
+	    &	& \cos\theta_x	& \sin\theta_x	\\
+	    &	& -\sin\theta_x	& \cos\theta_x	\\
+    \end{pmatrix},
+    \begin{pmatrix}
+	\cosh\beta_x	& \sinh\beta_x	&   &	\\
+	\sinh\beta_x	& \cosh\beta_x	&   &	\\
+	    &	& 1 &  	\\
+	    &	&   & 1	\\
+    \end{pmatrix}
+\end{equation*}
+    
+\subsection{quantization}
+\[ [a_k, a_p^{\dag}] = (2\pi)^{3}\delta^{3}(\vec{p}-\vec{k}), 
+a_p^{\dag}\ket{0} = \frac{1}{\sqrt{2\omega_p}}\ket{\vec{p}} \]
+
+\begin{description}
+    \item [Function derivatives]
+	$\frac{\delta \phi(x)}{\delta \phi(y)} = \delta(x-y)$, 
+	\[ 
+	\frac{\partial(\partial_\alpha A_\alpha)^2}{\partial(\partial_{\mu}A_\nu)}
+	=2(\partial_{\alpha}A_\alpha)\frac{\partial(\partial_{\beta}A_\gamma)}{\partial(\partial_{\mu}A_\nu)}g_{\beta\gamma}
+	=2(\partial_{\alpha}A_\alpha)g_{\beta\gamma}g_{\gamma\nu}g_{\beta\gamma}
+	=2\partial_{\nu}(\partial_{\alpha}A_\alpha)
+	\]
+    \item [notation] $\phi$ and $\pi$ for scalar fields, $\psi, \xi,
+	\chi$ for fermions, $A_{\mu}, J_{\mu}, V_{\mu}$ for vectors and
+	$h_{\mu},T_{\mu}$ for tensors.
+    \item [Kinetic term] Anything with just two fields of the same or
+	different type can be called a kinetic term. Kinetic terms tell you
+	about the free (non-interacting) behavior. Though, sometimes it is useful to
+	think of a \emph{mass term} such as $m^2\phi^2$, as an interaction
+	rather than a kinetic term.
+    \item [Boundary conditions] we will always assume that our fields vanish
+	on asymptotic boundaries. so we can integrate by part:
+	\emph{\[ A\partial_\mu B = -(\partial_\mu A) B\]}
+\end{description}
+
+We define quantum fields as integrals over creation and annihilation
+operators for each momentum: (Why define it this way ???)
+\begin{equation}
+\phi_0(\vec{x}) = \int \frac{d^{3}p}{(2\pi)^3}
+\frac{1}{\sqrt{\omega_p}}(a_pe^{i\vec{p}\vec{x}} + a_p^\dag
+e^{-i\vec{p}\vec{x}})
+    \label{eqn:free_field}
+\end{equation}
+\[ \ket{x} = \phi_0(\vec{x}) \ket{0} \]
+
+There is no physical content in the above equation. It is just a definition.
+The physical content is in the algebra of $a_p$ and $a_p^{\dag}$ and in the
+Hamiltonian $H_0$. Nevertheless, we will see that collections of $a_p$ and
+$a_p^{\dag}$ in the form of Eq.\ref{eqn:free_field} are very useful in
+quantum field theory.
+
+Following this defition, we can get:
+\[ \pi(\vec{x}) \equiv \partial_t \phi(\vec{x})|_{t=0} = 
+-i \int \frac{d^{3}p}{(2\pi)^3} \sqrt{\frac{\omega_p}{2}}(a_pe^{i\vec{p}\vec{x}} - a_p^\dag e^{-i\vec{p}\vec{x}}) \]
+$\pi[\phi, \dot{\phi}]$ can also be implicityly defined as:
+\[ \frac{\partial \mathcal{H}[\phi, \pi ]}{\partial \pi } = \dot{\phi}\]
+
+\subsection{Hamiltonian \& Lagrangian}
+Why do we restrict to Lagrangians of the form $\mathcal{L}[\phi,
+\partial_\mu \phi]$? First of all, this is the form that all "classical" 
+Lagrangians had. If only first derivatives are involved, boundary 
+conditions can be specified by initial positions and velocities only, in
+accordance with Newton's laws. In the quantum theory, if kinetic terms 
+have too many derivatives, for example $\mathcal{L} = \phi\Box^2\phi$, 
+there will generally be disastrous consequences. For example, there may be
+states with negative energy or negative norm, permitting the vacuum to decay. 
+But interactions with multiple derivatives may occur. Actually, they must
+occur due to quantum effects in all but the simplest renormalizable field
+theories; for example, they are generic in all effective field theories.
+
+\emph{Hamiltonian} and \emph{Lagrangian} density: ( How to connect field
+$\phi$ with $\mathcal{L}$ or $\mathcal{H}$ ??? ).
+\[ \mathcal{L}[\phi,\dot{\phi}] = \pi[\phi, \dot{\phi}]\dot{\phi} -
+\mathcal{H}[\phi, \pi[\phi, \dot{\phi}]]  \]
+Or inversely:
+\[ \mathcal{H}[\phi,\pi] = \pi\dot{\phi}[\phi, \pi] -
+\mathcal{L}[\phi, \dot{\phi}[\phi, \pi]],   
+\frac{\partial \mathcal{L}[\phi, \dot{\phi}]}{\partial \dot{\phi} } = \pi\]
+
+The Halmiltonian corresponds to a conserved quantity - the total energy of
+the system - while the Lagrangian does not. The problem with Halmiltonian is
+that they are not Lorentz invariant. It is the 0 component of a Lorentz
+vector: $P^\mu = (H, \vec{P})$. And $\mathcal{H}$ is the 00 compnent of a
+Lorentz tensor, the energy-momentum tensor $\mathcal{T}_{\mn}$. Halmiltonians
+are great for non-relativistic systems, but for relativistic systems we will
+almost exclusively use Lagrangians.
+
+Time evolution is generated by a hamiltonian H.
+$i\hbar\partial_{t}\ket{\phi} = H\ket{\phi}$
+
+\subsection{Norther's theorem}
+If there is such a symmetry that depends on some parameter $\alpha$ that can
+be taken small (continuous), than we find:
+\[ 0 = \frac{\delta\mathcal{L}}{\delta\alpha} =
+\displaystyle\sum_n\left\{ \left[\frac{\partial\mathcal{L}}{\partial{\phi_n}} - 
+\partial_\mu\frac{\partial\mathcal{L}}{\partial(\partial_\mu\phi_n)}\right]\frac{\delta\phi_n}{\delta\alpha} 
++
+\partial_\mu\left[\frac{\partial\mathcal{L}}{\partial(\partial_\mu\phi_n)}\frac{\delta\phi_n}{\delta\alpha}\right]
+\right\} \]
+If the EOM is satisfied, then it reduces to $\partial\mu J_\mu = 0$, where 
+\begin{equation}
+    \label{Norther current}
+    J_\mu =
+    \displaystyle\sum_n\frac{\partial\mathcal{L}}{\partial(\partial_\mu\phi_n)}\frac{\delta\phi_n}{\delta\alpha}
+\end{equation}
+A vector field $J_\mu$ that satisfies $\partial_\mu J_\mu = 0$ is called
+\emph{conserved current}. The total charge Q, defined as: 
+\[ Q = \int d^3xJ_0 \],
+satisfies 
+\[ \partial_{t}Q = \int d^3x\partial_{t}J_0 = \int
+d^3x\vec{\nabla}\cdot\vec{J} = 0 \]
+\textbf{Neother's theorem}: If a Lagrangian has a continuous symmetry then
+there exists a current associate with that symmetry that is conserved when
+the equations of motion are satisfied.
+\begin{itemize}
+    \item continuous
+    \item the current is conserved \textit{on-shell}, that is, when the EOM
+	are satisfied. (The field dies out at asymptotic boundary).
+    \item It works for \textit{global symmetries}, parametrized by number
+	$\alpha$, not only for \textit{local(gauge) symmetries} parametrized
+	by functions $\alpha(x)$.
+\end{itemize}
+
+\subsection{Energy-Momentum Tensor}
+\textit{global} space-time translation $\rightarrow$ energy-momentum tensor.  \\
+\[ \phi(x) \rightarrow \phi(x+\xi) = \phi(x) + \xi^\nu\partial_\nu\phi(x) + \cdots \]
+With infinitesimal change:
+\[ \frac{\delta\phi}{\delta\xi^\nu} = \partial_\nu\phi, 
+\frac{\delta\mathcal{L}}{\delta\xi^\nu} = \partial_\nu\mathcal{L}, 
+\]
+So:
+\[ \delta S = \int d^4x\delta\mathcal{L} = \xi^\nu\int
+d^4x\partial_\nu\mathcal{L} = 0 \]
+which leads to:
+\[ \partial_\nu\mathcal{L} =
+\frac{\delta\mathcal{L}[\phi_n,\partial_\mu\phi_n]}{\delta\xi^\nu} = 
+\partial_\mu\left(
+\displaystyle\sum_n\frac{\partial\mathcal{L}}{\partial(\partial_\mu\phi_n)}\frac{\delta\phi_n}{\delta\xi^\nu}
+\right)
+    \]
+Or equivalently
+\[
+\partial_\mu\left(
+\displaystyle\sum_n\frac{\partial\mathcal{L}}{\partial(\partial_\mu\phi_n)}\partial_\nu\phi_n
+- g_{\mn}\mathcal{L}
+\right) = 0
+    \]
+The four symmetries have produced four Noether current, one for each $\nu$:
+\begin{equation}
+    \mathcal{T}_{\mn} = 
+    \displaystyle\sum_n\frac{\partial\mathcal{L}}{\partial(\partial_\mu\phi_n)}\partial_\nu\phi_n
+    - g_{\mn}\mathcal{L}
+\end{equation}
+The corresponding conserved current:
+\[
+    Q_\nu = \int d^3x\mathcal{T}_{0\nu} \]
+
+
+Electron has an inherent two-valuedness called spin, while a photon has
+an inherent two-valuedness called polarization.
+
+
+\section{Symmetry}
+\subsection{Lorentz invariance} the symmetry group associated with
+\emph{special relativity}. \\
+For scalar field, the physical content of Lorentz invariance is 
+that nature has a symmetry under which scalar fields do not transform. 
+Take, for example, the temperature of a fluid, which can vary from 
+point to point. If we change reference frames, the labels for the 
+points change, but the temperature at each point stays the same.
+
+As for vector field, the difference is that the compnents of a vector field
+at the point x transform into each other as well.
+
+The simplest Lorentz-invariant operator that we can write down involving
+derivatives is the d'Alembertian:
+\[ \Box = \partial_\mu^2 = \partial^2_t - \partial^2_x - \partial^2_y -
+\partial^2_z \]
+
+Objects such as $v^2 = V_\mu V^\mu, \phi, 1, \partial_\mu V^\mu$ are
+\emph{Lorentz invariant}, meaning they do not depend on the Lorentz frame at
+all. While objects like: $V_\mu, F_\mn, \partial_\mu, x_\mu$ are
+\emph{Lorentz covariant}, meaning they do change in different frames, but
+precisely as the Lorentz transformation dictates.
+\subsection{Unitary} the probability should add up to \emph{1}.
+
+\subsection{Poincar\acute{e} Group} 
+The group of translations and Lorentz transformation is called the \textbf{Poincar\acute{e} group}, 
+ISO(1,3) (the isometry group of Minkowski space).
+
+\section{Field}
+\subsection{Scalar Field}
+$$ \mathcal{L} = \frac{1}{2}\dot{\phi}^{2} -
+\frac{1}{2}\vec{\nabla}\phi \cdot \vec{\nabla}\phi - \frac{1}{2}m^{2}\phi^{2} 
+= \frac{1}{2}(\partial_{\mu}\phi\partial^{\mu}\phi - m^{2}\phi^{2})$$
+EOM:
+$$ -\partial_{t}^{2}\phi + \nabla^{2}\phi - m^{2}\phi =
+(\partial_{\mu}\partial^{\mu} + m^{2}) \phi = 0 $$
+$$ \pmb{\phi}(\vec{x}) = \int
+\frac{d^{d}k}{(2\pi)^{d}}\sqrt{\frac{\hbar}{2\omega_{k}}}(e^{i\vec{k}\cdot\vec{x}}a_{k}+e^{-i\vec{k}\vec{x}}a_{k}^{\dag})$$
+$$ \pmb{\pi}(\vec{x}) = \frac{\partial{\mathcal{L}}}{\partial_{\mu}\phi} =
+\frac{1}{i} \int \frac{d^{d}k}{(2\pi)^{d}}\sqrt{\frac{\hbar\omega_{k}}{2}}(e^{i\vec{k}\cdot\vec{x}}a_{k}-e^{-i\vec{k}\vec{x}}a_{k}^{\dag}) $$
+$$ [\phi(\vec{x}), \pi(\vec{x'})] = i\hbar\delta^{d}(\vec{x} - \vec{x'})$$
+$$ H =\sum_{n}(p_{n}\dot{q}_n) = \int dx(\pi(x)\dot{q}(x) -
+\mathcal{L})  $$
+
+
+\subsection{\KG{} Field}
+For a massive scalar (spin 0) and neutral (charge 0) field:
+$$\mathcal{L} = \frac{1}{2} [(\partial_{\mu}\phi)(\partial^{\mu}\phi) -
+m^{2} \phi^{2}]$$
+The Euler-Lagrange formula:
+$$ (\Box + m^{2})\phi = 0$$
+This is the \KG{} equation. It was quantized by Pauli and Weisskopf in 1934.
+The Klein-Gordon equation was historically rejected as a fundamental quantum
+equation because it predicted negative probability density.
+
+\subsection{Dirac Field}
+Dirac was looking for an equation linear in E or in $\partial_t$. For a
+massive spinor (spin $1/2$) field the Lagrangian density is:
+$$ \mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu} - m)\psi; \quad
+\bar{\psi} = \psi^{*}\gamma^{0} \quad \text{Dirac adjoint} $$
+The $4 \times 4$ Dirac matrices $\gamma^{\mu} (\mu = 0,1,2,3)$ satisfy the
+Clifford algebra:
+$$ \{\gamma^{\mu}, \gamma^{\nu}\} = \gamma^{\mu} \gamma^{\nu} +
+\gamma^{\nu} \gamma^{\mu} = 2g^{\mn}$$
+The corresponding EOM is the Dirac equation:
+$$ (i\gamma^{\mu}\partial_{\mu} - m) \psi =0;	\quad
+i(\partial_{\mu}\bar{\psi})\gamma^{\mu} + m\bar{\psi} = 0$$
+The $\gamma$ matrices:
+$$ \gamma^{0} = 
+    \begin{pmatrix}
+	I   & 0	\\
+	0   & I	
+    \end{pmatrix}, \quad
+    \gamma^{i} = 
+    \begin{pmatrix}
+	0   & \sigma^{i}    \\
+	-\sigma^{i} & 0	    
+    \end{pmatrix}
+$$
+Where \textbf{$\sigma$} is the Pauli matrices:
+\begin{equation}
+    \sigma^{1} = 
+	\begin{pmatrix}
+	    0	& 1 \\
+	    1	& 0 
+	\end{pmatrix},	\quad
+    \sigma^{2} = 
+	\begin{pmatrix}
+	    0	& -i \\
+	    i	& 0 
+	\end{pmatrix},	\quad
+    \sigma^{3} = 
+	\begin{pmatrix}
+	    1	& 0 \\
+	    0	& -1 
+	\end{pmatrix}
+    \label{Pauli Matrices}
+\end{equation}
+Quantization of the Dirac field is achieved by replacing the spinors by
+field operators and using the Jordand and Wigner quantization rules.
+Heisenberg's EOM for the field operator $\hat{\psi}(\vec{x}, t)$
+reads:
+$$ i\partial_{t}\hat{\psi}(\vec{x}, t) = [
+    \hat{\psi}(\vec{x}, t), \hat{H}]$$
+There are both positive and negative eigenvalues in the energy spectrum. The
+later are problematic in view of Einstein’s energy of a particle at rest 
+$ E = mc^2 $. Dirac’s way out of the negative energy catastrophe was to 
+postulate a Fermi sea of antiparticles. This genial assumption was not 
+taken seriously until the positron was discovered in 1932 by Anderson.
+
+
+\subsection{Maxwell Field}
+\begin{equation}
+    \label{Maxwell Eqn}
+\end{equation}
+
+\[ \mathcal{L} = -\frac{1}{4}F^2_{\mn} - j_{\mu}A^{\mu} 
+=-\frac{1}{4}(\partial_{\mu}A_\nu-\partial_{\nu}A_\mu)^2 - j_{\mu}A^{\mu} \\
+=-\frac{1}{2}(\partial_{\mu}A_\nu) + \frac{1}{2}(\partial_{\mu}A_\mu)^2 - j_{\mu}A^{\mu}
+=(E^2 - B^2)/2 - \phi V + \vec{j}\vec{A} \]
+where $J_\mu$ is the external current:
+\[ J_\mu(x) = \left\{ 
+\begin{aligned}
+    J_0(x) = \rho(x) \\
+    J_i(x) = v_i(x)
+\end{aligned}
+\right.\]
+
+Field strength tensor 
+\[ F^{\mn} = \partial^{\mu}A^{\nu} - \partial^{\nu}A^{\mu} \] 
+with components 
+\[ F^{0i} = \partial^{0}A^{i} - \partial^{i}A^{0} = -E^{i}, 
+\quad
+F^{ij} = \partial^{i}A^{j} - \partial^{j}A^{i} = -\varepsilon^{ijk}B^{k} \]
+EOM
+$\frac{\partial\mathcal{L}}{\partial{A_\nu}}-\partial_\mu\frac{\partial\mathcal{L}}{\partial(\partial_{\mu}A_\nu)}=0$
+\[-J_\nu-\partial_\mu(-\partial_{\mu}A_\nu)-\partial_\nu(\partial_{\mu}A_\mu)=0\]
+which gives
+\[\partial_{\mu}F_{\mn}=J_\nu\]
+Lorentz gauge: $\partial_{\mu}A_{\mu}=0$
+\[J_{\nu}=\partial_{\mu}(\partial_{\mu}A_\nu-\partial_{\nu}A_{\mu})=\Box{A_\nu}-\partial_{\nu}(\partial_{\mu}A_{\mu})
+=\Box{A_{\nu}}\]
+so
+\[A_{\nu}(x)=\frac{1}{\Box}J_{\nu}(x)\]
+\textbf{propagator}
+\[\Pi_A=\frac{1}{\Box}\]
+Note that the propagator has nothing to do with the source. In fact it is
+entirely determined by the kinetic terms for a field.
+
+\subsection{Proca (Massive Vector Boson) Field}
+$$ \mathcal{L} = -\frac{1}{4}F_{\mn}F^{\mn} +
+\frac{1}{2}m^{2}A_{\mu}A^{\mu} - j_{\mu}A^{\mu} $$
+EOM:
+$$ \Box A^{\nu} - \partial^{\mu}(\partial_{\mu}A^{\mu}) + m^{2}A^{\nu} =
+j^{\nu}$$
