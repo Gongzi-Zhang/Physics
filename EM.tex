@@ -1,5 +1,145 @@
 \chapter{Electramegnetic Mechanics}
 
+\section{Maxwell Equation}
+\begin{equation}
+    \label{eqn:Maxwell}
+    \left\{
+    \begin{aligned}
+	\nabla\cdot{E} &= \frac{\rho}{\epsilon}	\\
+	\nabla\times{B} &= \frac{1}{c}\left( J + J_D + J_{ind}\right)	\\
+	\nabla\cdot{B} &= 0  \\
+	\nabla\times{E} &= -\frac{1}{c}\partial_{t}B	\\
+    \end{aligned}
+    \right.
+    \longrightarrow
+    \left\{
+    \begin{aligned}
+	\nabla\cdot{D} &= \rho	\\
+	\nabla\times{H} &= \frac{1}{c}J +\frac{1}{c}\partial_{t}D    \\
+	\nabla\cdot{B} &= 0  \\
+	\nabla\times{E} &= -\frac{1}{c}\partial_{t}B	\\
+    \end{aligned}
+    \right.
+\end{equation}
+where 
+\[
+    J_D = \epsilon\partial_{t}E; \quad J_{induced} = c\chi_m^B\nabla\times{B}
+    \]
+Note that the Maxwell equation is relationship about $\mathbf{E}$ and
+$\mathbf{B}$, the $\vec{D}$ and $\vec{H}$ is introduced to help reduce the
+equations to a more concised form. 
+
+To solve it, using iterative method (in power of $1/c$)
+\begin{enumerate}[label=\roman*)]
+\item 0th order:
+\[
+    \begin{aligned}
+	\nabla\cdot{E^{(0)}} &= \rho	\qquad	&\nabla\times{B^{(0)}} = 0 \\
+	\nabla\times{E^{(0)}} &= 0	\qquad	&\nabla\cdot{B^{(0)}}  = 0 \\
+    \end{aligned}
+\]
+\item 1th order:
+\[
+    \begin{aligned}
+	\nabla\cdot{E^{(1)}} &= 0	\qquad	&\nabla\times{B^{(1)}} = \frac{j}{c} + \frac{1}{c}\partial_{t}E^{(0)}	\\
+	\nabla\times{E^{(1)}} &= 0	\qquad	&\nabla\cdot{B^{(1)}}  = 0 \\
+    \end{aligned}
+\]
+\item 2th order:
+\[
+    \begin{aligned}
+	\nabla\cdot{E^{(2)}} &= 0	\qquad	&\nabla\times{B^{(2)}} = 0 \\
+	\nabla\times{E^{(2)}} &= -\frac{1}{c}\partial_{t}B^{(1)}
+	\qquad	&\nabla\cdot{B^{(2)}}  = 0 \\
+    \end{aligned}
+\]
+\item 3th order \dots
+\[
+    \begin{aligned}
+	\nabla\cdot{E^{(3)}} &= 0	\qquad	&\nabla\times{B^{(3)}} = \frac{1}{c}\partial_{t}E^{(3)} \\
+	\nabla\times{E^{(3)}} &= -\frac{1}{c}\partial_{t}B^{(1)}
+	\qquad	&\nabla\cdot{B^{(3)}}  = 0 \\
+    \end{aligned}
+\]
+\end{enumerate}
+So in the quasi-static approximation, we get 
+\[
+    \begin{aligned}
+    E = E^{(0)} + E^{(2)} + \dots   \\
+    B = B^{(1)} + B^{(3)} + \dots   \\
+    \end{aligned}
+    \]
+
+\subsection{Boundary conditions}
+\begin{equation}
+    \left\{
+	\begin{aligned}
+	    \vec{e}_n \cdot (\vec{D}_2 - \vec{D}_1) &= \sigma    \\
+	    \vec{e}_n \times (\vec{H}_2 - \vec{H}_1) &= \frac{\vec{\alpha}}{c}    \\
+	    \vec{e}_n \cdot (\vec{B}_2 - \vec{B}_1) &= 0	\\
+	    \vec{e}_n \times (\vec{E}_2 - \vec{E}_1) &= 0    \\
+	\end{aligned}
+	\right.
+\end{equation}
+Note that here $\sigma$ and $\vec{\alpha}$ are \textbf{free} charge and
+\textbf{free} current. The induced charges and current make trivial
+contribution due to infinitesimal integral volume (or area).
+\subsection{Plain wave}
+If $J = \rho = 0$, then
+\[
+    \begin{aligned}
+    \nabla\times(\nabla\times{E}) &= \nabla(\nabla\cdot{E}) - \nabla^{2}E \\
+	&=-\frac{1}{c}\partial_{t}(\nabla\times{B})
+	=-\frac{1}{c^2}\cdot\epsilon\mu\cdot\partial^2_{t}E \\
+    \end{aligned}
+    \]
+let 
+\[ n^2=\epsilon\mu \]
+So
+\[
+    \nabla^2{E}-\frac{n^2}{c^2}\partial^2_{t}E = 0 
+    \]
+Because $E = E_0e^{-i\omega{t}}$, so we get
+\[
+    \nabla^2{E}+\frac{n^2}{c^2}\omega^2E = 0 
+    \]
+\[
+    E = E_0e^{i(kx-\omega{t})}, \quad k^2 = n^2\omega^2/c^2
+    \]
+let $B = B_0e^{i(kx-\omega{t})}$
+\[
+    \nabla\times{E} = -\frac{1}{c}\partial_{t}B = \frac{i\omega}{c}B
+    \]
+\[
+    \vec{B}=\frac{c}{i\omega}\nabla\times{E}=\frac{c}{\omega}\vec{k}\times{\vec{E}}
+    \]
+
+\subsection{Metal}
+\[
+    \begin{aligned}
+    \nabla\times{H}&=\frac{1}{c}(J+\partial_{t}D)   \\
+    &=\frac{1}{c}(\sigma{E}-i\omega\epsilon{E})	\\
+    &=\frac{\sigma-i\omega\epsilon}{c}E
+    \end{aligned}
+\]
+So 
+\[
+    \nabla\times(\nabla\times{E})=-\nabla^2{E}=-\frac{1}{c}\nabla\times\partial_{t}B
+    =-\frac{1}{c}\partial_{t}(\nabla\times{{\mu}H})
+    =-\mu\frac{\sigma-i\omega\epsilon}{c^2}(-i\omega)E
+    =k^2E
+    \]
+where,
+\[
+    k^2=\frac{\omega^2\mu(\epsilon+i\sigma/\omega)}{c^2}=\frac{\omega^2\mu\hat{\epsilon}}{c^2}
+    \]
+Helmholtz eqn:
+\[
+    (\nabla^2+\frac{\omega^2\mu\hat{\epsilon}}{c^2})E=0
+    \]
+
+
+
 \section{EM in relativity}
 \begin{equation}
     F_{\mn} \equiv 
