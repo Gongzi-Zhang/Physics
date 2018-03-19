@@ -1,7 +1,7 @@
 \chapter{Quantum Mechanics}
 
 \section{Rotation}
-For spin-$1/2$, 
+\subsection{Spin-$1/2$} 
 \[ 
 D(R_{\hat{n}}(\phi)) = e^{-i\frac{\phi}{\hbar}\hat{n}\cdot\vec{S}} = e^{-i\frac{\phi}{2}\hat{n}\cdot\vec{\sigma}} = 
 cos(\frac{\phi}{2}) - i \hat{n} \cdot \vec{\sigma} sin(\frac{\phi}{2}) = 
@@ -10,3 +10,25 @@ cos(\frac{\phi}{2}) - i \hat{n} \cdot \vec{\sigma} sin(\frac{\phi}{2}) =
     (-i n_{x} + n_{y})\sin(\frac{\phi}{2}) &  \cos(\frac{\phi}{2}) + in_{z}\sin(\frac{\phi}{2})  
 \end{pmatrix}
 \]
+
+\subsection{Spin-1}
+\begin{equation}
+    S_x=\frac{\hbar}{\sqrt{2}}
+    \begin{pmatrix}
+	0   & 1	& 0 \\
+	1   & 0	& 1 \\
+	0   & 1	& 0 \\
+    \end{pmatrix}\quad
+    S_y=\frac{\hbar}{\sqrt{2}}
+    \begin{pmatrix}
+	0   & -i    & 0 \\
+	i   & 0	& -i \\
+	0   & i	& 0 \\
+    \end{pmatrix}\quad
+    S_z=\hbar
+    \begin{pmatrix}
+	1   & 0	& 0 \\
+	0   & 0	& 0 \\
+	0   & 0	& -1 \\
+    \end{pmatrix}\quad
+\end{equation}

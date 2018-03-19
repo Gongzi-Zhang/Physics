@@ -1,18 +1,24 @@
 \chapter{Math}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definition}
+%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Levi-Civita}
 $\epsilon_{ijk}$ is an antisymmetric tensor, which is defined as: 
 \[
     \epsilon_{123} = 1, \epsilon_{ijj} = 0, \epsilon_{ijk} = -\epsilon_{jik} 
     \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formulas}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fourier transform}
 \[
     \delta^3(\vec{x})=\int\frac{d^3k}{(2\pi)^3}e^{i\vec{k}\vec{x}}
     \]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Integral}
 \[
     I=\int_{-\infty}^{\infty}dk\frac{e^{ikr}-e^{-ikr}}{k}
@@ -28,9 +34,12 @@ this term gives zero. So
     I=\int_{-\infty}^{\infty}dk\frac{-e^{-ikr}}{k+i\delta}=-(2\pi{i})(-e^{-\delta{r}})=2\pi{i}e^{-i\delta{r}}
     \]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Functions}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Interesting functions}
+%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Weierstrass function}
 \begin{equation}
     f(x) = \sum_{n=0}^{\infty}a^{n}cos(b^{n}\pi x)
@@ -38,8 +47,30 @@ this term gives zero. So
 Continuous but not derivative everywhree.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Frequently used functions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Legendre Polynomials and spherical harmonics}
+
+Notation:
+\[
+    P^m_l(x)=\frac{1}{s^ll!}(1-x^2)^{m/2}\frac{d^{l+m}}{dx^{l+m}}(x^2-1)^l,
+\]
+Under the above definition, it is starightforward to prove that
+\[
+    P^m_l(\cos\theta)=(-1)^m\frac{(l+m)!}{(l+m)!}P^m_l(\csos\theta),
+\]
+\[ P_{lm}(x) = (-1)^{m}P_{l}^{m}(x) \]
+
+Associate Legendre Polynomials:
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bessel Function}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Differentive Equations}
 
+%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{First Order Equation}
 \[ 
 \frac{dV}{dt} + \eta(t)V(t) = f(t)  
@@ -55,6 +86,7 @@ if:
 so:
 \[ \frac{d(I(t)V(t))}{I dt} = f(t)\]
 
+%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Floquet theory}
 \begin{equation}
     \ddot{x} + \omega_{0}^{2}(1+\mu cos(\nu t))x = 0
@@ -73,7 +105,9 @@ $u$ is small, we will get
     \psi''+k^{2}\psi = -k^{2}ucos(\nu x)\psi
     \]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Integrated functions}
+%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{$\Gamma$ function}
 \[\Gamma(z) \equiv \int_{0}^{+\infty}dt e^{-t} t^{z-1} =
 2\int_{0}^{+\infty}dx e^{-x^2}x^{2z-1}\]
