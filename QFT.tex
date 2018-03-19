@@ -16,14 +16,19 @@
 \begin{itemize}
     \item What's a field, classical field is a spatial distribution, quantum
 	field is a analogy to classical one, but make up of creation and
-	destruction operator.
+	destruction operator. The problem is that we \textbf{define} a field which
+	collects creator and destructor operators and it works !!! What's
+	the logic to define such a field ???
     \item How to construct Lagrangian from a field $\leftarrow$ Lorantz
 	invariant.
     \item EOM
-    \item Neother theorem. Conserved current and charge
+    \item Noether theorem. Conserved current and charge
     \item Symmetry. What's each group? corresponding representation. How to
 	embed particles into lorentz group and unitary group?
+    \item Couple of scalar field to $A_\mu$
 \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motivation}
 
 \emph{particle} number is not conserved. The creation and destruction of
@@ -39,7 +44,7 @@ in terms of a many-body wave function. The \RQFT{}
 with creation and annihilation operators was developed in order to include
 processes in which the number of particles is not conserved,
 and to describe the conversion of mass into energy and vice versa.
-A consequence of relativity is that the number of particles isn't fixed, ???
+A consequence of relativity is that the number of particles isn't fixed, ($E=mc^2$)
 though the converse is false: particle production can happen without relativity.
 
 Construct $\mathcal{L}$ from field $\phi$ and its derivative under the rule
@@ -60,6 +65,22 @@ There are two common ways to quantize a field theory:
     \item Feynman path integral
     \item Ohter alternatives: perturbation theory
 \end{itemize}
+
+\textbf{Second quantization}: first quantization refers to the discrete
+modes($d\vec{x}d\vec{p}\sim \hbar$), for example, of a particle in a box.
+Second quantization refers to the integer numbers of excitations of each of
+these modes. However, this is somewhat misleading-the fact that there are
+discrete modes is a classical phenomenon. The two steps really are (1)
+interpret there modes as having energy $E=\hbar\omega$ and (2) quantize each
+modes as a harmonic oscillator. In that sense we are only quantizing once.
+
+There are two new features in second quantization:
+\begin{enumerate}
+    \item We have many quantum mechanical systems – one for each $\vec{p}$  – all at the same time.
+    \item We interpret the nth excitation of the $\vec{p}$  harmonic
+	oscillator as having n \textbf{particles}.
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Convention}
 In relativity, the symmetry refer to invariance after the transformation of
 \emph{coordinate system}. So the rotation is:
@@ -73,6 +94,7 @@ In relativity, the symmetry refer to invariance after the transformation of
 or in other way:
 \[ R^{T}\mathds{1}R = \mathds{1} \]
     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{4D time-space}   
 $dx^{\mu} \equiv (dt, d\vec{x})^{\mu}$ \\
 $ ds^{2} = dt^{2} - d\vec{x}\cdot d\vec{x} =
@@ -87,6 +109,16 @@ $ ds^{2} = dt^{2} - d\vec{x}\cdot d\vec{x} =
     \end{pmatrix}_{\mn}
     \label{Minkowski metric}
 \end{equation}
+Lorentz transformation acting on 4-vectors are matrices $\Lambda$ satisfying
+\[
+    \Lambda^T\eta\Lambda = \eta = 
+    \begin{pmatrix}
+	+1  &	&   &	\\
+	    & -1&   &  	\\
+	    &	& -1&  	\\
+	    &	&   & -1\\
+    \end{pmatrix}
+    \]
     
 Rotation and boost in 4D time-space around x axes is:
 \begin{equation*}
@@ -104,9 +136,26 @@ Rotation and boost in 4D time-space around x axes is:
     \end{pmatrix}
 \end{equation*}
     
+\subsubsection{Lorentz transformation}
+Scalar field
+\[
+    \phi(x^\mu)\rightarrow\phi((\Lambda^{-1})^\mu_\nu x^\nu)
+    \]
+Vector field
+\[
+    V^\mu\rightarrow\Lambda^\mu_\nu V^\nu
+    \]
+Tensor fields
+\[
+    T^{\mn}\rightarrow\Lambda^\mu_\alpha\Lambda^]\nu_\beta T^{\alpha\beta}
+    \]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{quantization}
 \[ [a_k, a_p^{\dag}] = (2\pi)^{3}\delta^{3}(\vec{p}-\vec{k}), 
 a_p^{\dag}\ket{0} = \frac{1}{\sqrt{2\omega_p}}\ket{\vec{p}} \]
+\[
+    \mathds{1}=\int\frac{d^3p}{(2\pi)^3}\frac{1}{2\omega_p}\ket{\vec{p}}\bra{\vec{p}}
+    \]
 
 \begin{description}
     \item [Function derivatives]
@@ -114,8 +163,7 @@ a_p^{\dag}\ket{0} = \frac{1}{\sqrt{2\omega_p}}\ket{\vec{p}} \]
 	\[ 
 	\frac{\partial(\partial_\alpha A_\alpha)^2}{\partial(\partial_{\mu}A_\nu)}
 	=2(\partial_{\alpha}A_\alpha)\frac{\partial(\partial_{\beta}A_\gamma)}{\partial(\partial_{\mu}A_\nu)}g_{\beta\gamma}
-	=2(\partial_{\alpha}A_\alpha)g_{\beta\gamma}g_{\gamma\nu}g_{\beta\gamma}
-	=2\partial_{\nu}(\partial_{\alpha}A_\alpha)
+	=2(\partial_{\alpha}A_\alpha)g_{\beta\mu}g_{\gamma\nu}g_{\beta\gamma}
 	\]
     \item [notation] $\phi$ and $\pi$ for scalar fields, $\psi, \xi,
 	\chi$ for fermions, $A_{\mu}, J_{\mu}, V_{\mu}$ for vectors and
@@ -138,7 +186,7 @@ operators for each momentum: (Why define it this way ???)
 e^{-i\vec{p}\vec{x}})
     \label{eqn:free_field}
 \end{equation}
-\[ \ket{x} = \phi_0(\vec{x}) \ket{0} \]
+\[ \ket{\vec{x}} = \phi_0(\vec{x}) \ket{0} \]
 
 There is no physical content in the above equation. It is just a definition.
 The physical content is in the algebra of $a_p$ and $a_p^{\dag}$ and in the
@@ -152,6 +200,23 @@ Following this defition, we can get:
 $\pi[\phi, \dot{\phi}]$ can also be implicityly defined as:
 \[ \frac{\partial \mathcal{H}[\phi, \pi ]}{\partial \pi } = \dot{\phi}\]
 
+\subsubsection{Schrodinger eqn}
+\[
+    \begin{aligned}
+	i\partial_t\psi{x}&=i\partial_t\bra{x}\ket{\psi}=i\partial_t\bra{0}\phi(\vec{x},t)\ket{\psi}=i\bra{0}\partial_t\phi(\vec{x},t)\ket{\psi}\\
+	&=\bra{0}\int\frac{d^3p}{(2\pi)^3}\frac{\sqrt{\vec{p}^2+m^2}}{2\omega_p}(a_pe^{-ipx}-a^\dag_pe^{ipx})\ket{\psi}\\
+	&=\bra{0}\sqrt{m^2-\vec{\nabla}^2}\phi_0(x)\ket{\psi}\\
+    \end{aligned}
+    \]
+So
+\[
+    i\partial_t\psi(x)=\sqrt{m^2-\vec{\nabla}^2}\psi(x)=\left(m-\frac{\vec{\nabla}^2}{2m}+\mathcal{O}(\frac{1}{m^2})\right)\psi(x)
+    \]
+To get
+\[
+    i\partial_t\psi(x)=-\frac{\vec{\nabla}^2}{2m}\psi(x)
+    \]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hamiltonian \& Lagrangian}
 Why do we restrict to Lagrangians of the form $\mathcal{L}[\phi,
 \partial_\mu \phi]$? First of all, this is the form that all "classical" 
@@ -185,6 +250,7 @@ almost exclusively use Lagrangians.
 Time evolution is generated by a hamiltonian H.
 $i\hbar\partial_{t}\ket{\phi} = H\ket{\phi}$
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Norther's theorem}
 If there is such a symmetry that depends on some parameter $\alpha$ that can
 be taken small (continuous), than we find:
@@ -202,11 +268,11 @@ If the EOM is satisfied, then it reduces to $\partial\mu J_\mu = 0$, where
 \end{equation}
 A vector field $J_\mu$ that satisfies $\partial_\mu J_\mu = 0$ is called
 \emph{conserved current}. The total charge Q, defined as: 
-\[ Q = \int d^3xJ_0 \],
+\[ Q = \int d^3xJ_0 \]
 satisfies 
 \[ \partial_{t}Q = \int d^3x\partial_{t}J_0 = \int
 d^3x\vec{\nabla}\cdot\vec{J} = 0 \]
-\textbf{Neother's theorem}: If a Lagrangian has a continuous symmetry then
+\textbf{Noether's theorem}: If a Lagrangian has a continuous symmetry then
 there exists a current associate with that symmetry that is conserved when
 the equations of motion are satisfied.
 \begin{itemize}
@@ -218,7 +284,10 @@ the equations of motion are satisfied.
 	by functions $\alpha(x)$.
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Energy-Momentum Tensor}
+There is a very important case of Noether's theorem that applies to a global
+symmetry of the action, not the Lagrangian.
 \textit{global} space-time translation $\rightarrow$ energy-momentum tensor.  \\
 \[ \phi(x) \rightarrow \phi(x+\xi) = \phi(x) + \xi^\nu\partial_\nu\phi(x) + \cdots \]
 With infinitesimal change:
@@ -257,10 +326,110 @@ Electron has an inherent two-valuedness called spin, while a photon has
 an inherent two-valuedness called polarization.
 
 
-\section{Symmetry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lagrangian}
+In QFT, we will use Lagrangian rather than Hamiltonian, because it is
+Lorentz invariant. To construct Lorentz invariant Lagrangian from field, one
+just need to add Lorentz invariant terms into it.
 
-\subsection{Lorentz invariance} the symmetry group associated with
-\emph{special relativity}. \\
+A vector field $A_\mu$ is just four scalars until we construct it with
+$\partial_\mu$ in the Lagrangian, as in the $(\partial_{\mu}A_\mu)^2$ part
+of $F_{\mn}^2$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Symmetry}
+Our universe has a number of apparent symmetries that we would like our
+quantum field theory to respect. One symmetry is that no place in space-time
+seems any different from any other place. Thus, our theory should be
+translation invariant: if we take all our fields $\phi(x)$ and replace them
+by $\phi(x+a)$ for any 4-vector $a^\nu$, the observable should look the
+same. Another symmetry is Lorentz invariance: physics should look the same
+whether we point our measurement apparatus to the left or to the right, or
+put it on a train. The group of translations and Lorentz translations is
+called the \textbf{\Poincare{} group}, ISO(1,3) (the isometry group of
+Minkowski space).
+
+It is possible for two different groups to have the same algebra. For
+example, the proper orthochronous Lorentz group($det(\Lambda)=+1,
+\Lambda^0_0>1$) and the full Lorentz group($det(\Lambda)=\pm1,
+\Lambda^0_0>1 \text{or} \Lambda^0_0<-1$)
+have the same algebra, but the full Lorentz group has in addtion time
+reversal and parity. The \textbf{proper} Lorentz group is the special
+orthogonal group SO(1,3), which contains only the elements with determinant
+1, so it excludes T and P.
+
+Notice that different representations of the same group G can have different
+dimensions. \textbf{Lie algebra} relations is the properties of G that are
+inherent in all of its representations.
+ 
+ Assume $D_R(g(\theta))$ as a representation of group G, and 
+ \[
+     D_R(g(\theta\sim0)) = \mathds{1} + i\theta_aT^a_R + \mathcal{O}(\theta^2)
+     \]
+ where $T^a_R \equiv -i\partial_{\theta_a}D_R(g(\theta))|_{\theta=0}$ 
+ is the \textbf{generator} of G in the representation of R. So
+ \[
+     D_R(g(\theta)) = e^{i\theta_aT^a_R}
+     \]
+ Given two such elements $D_R(g(\theta_1)) = e^{i\theta^1_aT^a_R}$, 
+ $D_R(g(\theta_2)) = e^{i\theta^2_aT^a_R}$, their product must give a third:
+ \[
+     D_R(g_1)D_R(g_2) = D_R(g_1g_2) = e^{i\theta^3_aT^a_R}
+     \]
+ Expanding the log of both hand sides to second order in the $\theta$(See
+ Maggiore chapter 2.1), we get:
+ \[
+     \theta^3_a = \theta^1_a + \theta^2_a - \frac{1}{2}f^{bc}{}_a +\mathcal{O}(\theta^3)
+     \]
+ which implies that:
+ \[
+     [T^a, T^b] = if^{ab}{}_cT^c
+     \]
+ This is the \emph{Lie algebra} of G and the \emph{f} is the \emph{structure
+ constants} of G. f does not depend on the representation. Note that the
+ normalization of the $T^a$ is ambiguous, and rescaling T rescales f. A
+ common convention is to choose an orthonormal basis:
+ \[
+     tr(T^aT^b) = \frac{1}{2}\delta^{ab}
+     \]
+
+ The Lie algebra is defined in the neighborhood of the identity element, but
+ by conjugating by finite transformations, the tangent space to any point on
+ the group has the same structure, so it determines the local structure. 
+ It doesn't know about global, discrete issues, like disconnected components, 
+ so different groups can have the same Lie algebra.
+
+ A \emph{casimir} of the algebra is an operator made from the generators
+ which commutes with all of them.
+
+ The notation of "axis of rotation" is (d=3)-centric. More generally, 
+ a rotaion is specified by a (2D) \emph{plane} of rotation. 
+ In d=3, we can specify a plane by its normal
+ direction, the one that's left out, $J^i \equiv \epsilon^{ijk}J^{jk}$, in
+ terms of which the so(3) lie algebra is 
+ \[
+     [J^{ij}, J^{kl}] = i(\delta^{jk}J^{il}+\delta^{il}J^{jk}-\delta^{ik}J^{jl}-\delta^{jl}J^{ik})
+     \]
+ The vector representation is 
+ \[
+     \left(J^{ij}_{(1)}\right)^k{}_l = i(\delta^{ik}\delta^j_l - \delta^{jk}\delta^i_l)
+     \]
+ The spinor representation is 
+ \[
+     J^{ij}_{(\frac{1}{2})} = \epsilon^{ijk}\frac{1}{2}\sigma^k =
+     \frac{i}{4}[\sigma^i, \sigma^j]
+     \]
+ For general \emph{d}, we can make a spinor representation of dimension k
+ (k=2J+1) if we find d $k\times k$ matrices $\gamma^i$ which satisfy the
+ \emph{Clifford algebra} $\{\gamma^i, \gamma^j\} = 2\delta^{ij}$.
+
+ For (faithful) representations of \emph{non-compact} groups, 'unitary' and
+ 'finite-dimensional' are mutually exclusive.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lorentz group} 
+
+the symmetry group associated with \emph{special relativity}. \\
+
 For scalar field, the physical content of Lorentz invariance is 
 that nature has a symmetry under which scalar fields do not transform. 
 Take, for example, the temperature of a fluid, which can vary from 
@@ -280,14 +449,159 @@ Objects such as $v^2 = V_\mu V^\mu, \phi, 1, \partial_\mu V^\mu$ are
 all. While objects like: $V_\mu, F_\mn, \partial_\mu, x_\mu$ are
 \emph{Lorentz covariant}, meaning they do change in different frames, but
 precisely as the Lorentz transformation dictates.
-\subsection{Unitary} the probability should add up to \emph{1}.
 
-\subsection{\Poincare{} Group} 
+The Lorentz group is sometimes called O(1,3). This is orghogonal (preserves
+a metric) group corresponding to a metric with (1,3) signature.
+
+The irreducible representations of the Lorentz group can be constructed from
+irreducible representations of SU(2). 
+\[
+    J^+_i \equiv \frac{1}{2}(J_i + iK_i), 
+    J^-_i \equiv \frac{1}{2}(J_i - iK_i)
+\]
+which satisfy
+\[
+    \begin{aligned}
+	[J^+_i, J^+_j] &= i\epsilon_{ijk}J^+_k    \\
+	[J^-_i, J^-_j] &= i\epsilon_{ijk}J^-_k    \\
+	[J^+_i, J^-_j] &= 0 
+    \end{aligned}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Lorentz algebra}
+Lorentz algebra, so(1,3)
+\[
+    \begin{aligned}
+	[J_i, J_j] &= i\epsilon_{ijk}J_k    \\
+	[J_i, K_j] &= i\epsilon_{ijk}K_k    \\
+	[K_i, K_j] &= -i\epsilon_{ijk}J_k    \\
+    \end{aligned}
+\]
+Note that $ [J_i, J_j] = i\epsilon_{ijk}J_k $ is also the algebra for
+rotations, SO(3), and in fact the $J_i$ generate the 3D rotation subgroup of
+the Lorentz group.
+
+Similar to rotation group, we can generalize to other SO(1,d) by collecting
+the generators into an antisymmetric matrix $J^{\mu}$ with components
+$J^{ij} = \epsilon^{ijk}J^k, J^{0i} = K^I = -J^{i0}$(exactly as $\vec{E},
+\vec{B}$ are collected into $F^{\mu}$). This object satisfies:
+\[
+    J^{\mn}=
+    \begin{aligned}
+	0   & K_1   & K_2   & K_3   \\
+	-K_1	& 0 & J_3   & -J_2  \\
+	-K_2	& -J_3	& 0 & J_1   \\
+	-K_3	& J_2	& -J_1	& 0 \\
+    \end{aligned}
+    \]
+\[
+    [J^{\mn}, J^{\rho\sigma}]=
+    i( \eta^{\nu\rho}J^{\mu\sigma}
+    +\eta^{\mu\sigma}J^{\nu\rho} 
+    -\eta^{\mu\rho}J^{\nu\sigma}
+    -\eta^{\nu\sigma}J^{\mu\rho}
+    )
+    \]
+The fundamental (d+1 Dimentional vector) representation matrices solving
+this equation are 
+\[
+    (J^{\mn})^\rho{}_\sigma = i(\eta^{\nu\rho}\delta^{\mu}_\sigma -
+    \eta^{\mu\rho}\delta^{\nu}_{\sigma})
+    \]
+\[
+    [S^{\mn}, S^{\rho\sigma}]=
+    i( g^{\nu\rho}S^{\mu\sigma}
+    -g^{\mu\rho}S^{\nu\sigma}
+    -g^{\nu\sigma}S^{\mu\rho}
+    +g^{\mu\sigma}S^{\nu\rho} )
+    \]
+The Lie algebra is independent of any concrete representation, though we
+derive them from 4-vector representation. They holds for any representation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{represention}
+The Dirac representation of the Lorentz group is reducible; it is the direct
+sum of a left-handed and a right-hadned spinor representation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unitary group} 
+the probability should add up to \emph{1}.
+\textbf{U(N)} is defined by its N dimensional representation as $N\times N$
+complex unitary matrices $\mathds{1} = M^{\dag}M = MM^{\dag}$. This one
+doesn't arise as a spacetime symmetry, but is crucial in the study of gauge
+theory. 
+
+Unitary representation, which means under the representation, the group
+element $\mathcal{P}$ has $\mathcal{P}^\dag\mathcal{P}=1$. But why the
+unitarity depends on representation? shouldn't it be representation
+independent.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Majorana represention}
+\begin{equation}
+    \gamma^{0} = 
+    \begin{pmatrix}
+	0   &	\sigma^2    \\
+	\sigma^2    & 0     \\
+    \end{pmatrix},
+    \gamma^{1} = 
+    \begin{pmatrix}
+	i\sigma^3    & 0     \\
+	0   &	i\sigma^3    \\
+    \end{pmatrix},
+    \gamma^{2} = 
+    \begin{pmatrix}
+	0   &	-\sigma^2    \\
+	\sigma^2    & 0     \\
+    \end{pmatrix},
+    \gamma^{3} = 
+    \begin{pmatrix}
+	-i\sigma^1    & 0     \\
+	0   &	-i\sigma^1    \\
+    \end{pmatrix}
+\end{equation}
+The Majorana is another $(\frac{1}{2}, 0)\bigoplus (0, \frac{1}{2})$
+representation of the Lorentz group that is phhysically equivalent to the
+Weyl representation.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\Poincare \ Group} 
 The group of translations and Lorentz transformation is called the
 \textbf{\Poincare{} group}, 
 ISO(1,3) (the isometry group of Minkowski space).
 
+\textbf{Particle} can be defined as a set of states that mix only among
+themselves under \Poincare{} transformations.
+
+Particles transform under irreducible unitary representations of the
+\Poincare{} group.
+
+There are \emph{no finite-dimensional unitary representations of the
+\Poincare{} group}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge symmetry}
+Under a gauge transformation, $\phi$ can transform as 
+\[
+    \phi\rightarrow e^{-i\alpha(x)}\phi
+    \]
+But the derivatives $|\partial_\mu \phi|^2$ is not invariant. we can make
+the kinetic term gauge invariant using something called a covariant
+derivative. Let
+\[
+    A_\mu \rightarrow A_\mu + \frac{1}{e}\partial_\mu \alpha
+    \]
+So
+\[
+    (\partial_\mu+ieA_\mu)\phi\rightarrow(\partial_\mu+ieA_\mu+i\partial_\mu\alpha)e^{-i\alpha(x)}\phi=e^{-i\alpha(x)}(\partial_\mu+ieA_\mu)\phi
+    \]
+This leads to the definition of \emph{covariant derivative}
+\[
+    D_\mu\phi\equiv(\partial_\mu+ieA_\mu)\phi\rightarrow{e^{-i\alpha(x)}D_\mu\phi}
+    \]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Field}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Scalar Field}
 $$ \mathcal{L} = \frac{1}{2}\dot{\phi}^{2} -
 \frac{1}{2}\vec{\nabla}\phi \cdot \vec{\nabla}\phi - \frac{1}{2}m^{2}\phi^{2} 
@@ -304,6 +618,7 @@ $$ H =\sum_{n}(p_{n}\dot{q}_n) = \int dx(\pi(x)\dot{q}(x) -
 \mathcal{L})  $$
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KG{} Field}
 For a massive scalar (spin 0) and neutral (charge 0) field:
 $$\mathcal{L} = \frac{1}{2} [(\partial_{\mu}\phi)(\partial^{\mu}\phi) -
@@ -314,6 +629,7 @@ This is the \KG{} equation. It was quantized by Pauli and Weisskopf in 1934.
 The Klein-Gordon equation was historically rejected as a fundamental quantum
 equation because it predicted negative probability density.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Dirac Field}
 Dirac was looking for an equation linear in E or in $\partial_t$. For a
 massive spinor (spin $1/2$) field the Lagrangian density is:
@@ -321,23 +637,49 @@ $$ \mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu} - m)\psi; \quad
 \bar{\psi} = \psi^{*}\gamma^{0} \quad \text{Dirac adjoint} $$
 The $4 \times 4$ Dirac matrices $\gamma^{\mu} (\mu = 0,1,2,3)$ satisfy the
 Clifford algebra:
-$$ \{\gamma^{\mu}, \gamma^{\nu}\} = \gamma^{\mu} \gamma^{\nu} +
-\gamma^{\nu} \gamma^{\mu} = 2g^{\mn}$$
+\[ \{\gamma^{\mu},\gamma^{\nu}\}=\gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu}=2g^{\mn} \]
+\[
+    \sigma^{\mn} \equiv \frac{i}{2}[\gamma^{\mu}, \gamma^{\nu}]
+    \]
+Any set of four matrices satisfying this equation can be combined to form a
+4d representation of so(1,3) in the form
+\[
+    J^{\mn}_{Dirac} \equiv \frac{i}{4}[\gamma^\mu, \gamma^\nu]
+    \]
 The corresponding EOM is the Dirac equation:
 $$ (i\gamma^{\mu}\partial_{\mu} - m) \psi =0;	\quad
 i(\partial_{\mu}\bar{\psi})\gamma^{\mu} + m\bar{\psi} = 0$$
+To be explicit, this is shorthand for
+\[
+    (i\gamma^\mu_{\alpha\beta}\partial_\mu-m\delta_{\alpha\beta})\psi_\beta = 0
+    \]
 The $\gamma$ matrices:
-$$ \gamma^{0} = 
+\[
+    \gamma^{\mu} = 
     \begin{pmatrix}
-	I   & 0	\\
-	0   & I	
+	0   & \sigma^{\mu}  \\
+	\bar{\sigma}^{\mu}  & 0	\\
+    \end{pmatrix}
+\]
+\[
+    \gamma^5\equiv{i}\gamma^0\gamma^1\gamma^2\gamma^3
+    \]
+where
+\[
+    \sigma^\mu\equiv(\mathds{1},\vec{\sigma}),
+    \bar{\sigma}^\mu\equiv(\mathds{1},-\vec{\sigma}),
+\]
+\[ \gamma^{0} = 
+    \begin{pmatrix}
+	0   & I	\\
+	I   & 0	\\	
     \end{pmatrix}, \quad
     \gamma^{i} = 
     \begin{pmatrix}
 	0   & \sigma^{i}    \\
-	-\sigma^{i} & 0	    
+	-\sigma^{i} & 0	    \\
     \end{pmatrix}
-$$
+\]
 Where \textbf{$\sigma$} is the Pauli matrices:
 \begin{equation}
     \sigma^{1} = 
@@ -357,6 +699,11 @@ Where \textbf{$\sigma$} is the Pauli matrices:
 	\end{pmatrix}
     \label{Pauli Matrices}
 \end{equation}
+Commutation relation is
+\[
+    \{\sigma^i, \sigma^j\} = 2\delta^{ij}, 
+    [\sigma^i, \sigma^j] = 2i\epsilon^{ijk}\sigma^k
+    \]
 Quantization of the Dirac field is achieved by replacing the spinors by
 field operators and using the Jordand and Wigner quantization rules.
 Heisenberg's EOM for the field operator $\hat{\psi}(\vec{x}, t)$
@@ -369,16 +716,29 @@ $ E = mc^2 $. Dirac’s way out of the negative energy catastrophe was to
 postulate a Fermi sea of antiparticles. This genial assumption was not 
 taken seriously until the positron was discovered in 1932 by Anderson.
 
+\subsection{Weyl spinor}
+\[
+    \sigma^\mu\partial_\mu\psi=\mathds{1}\partial_t\psi-\partial_i\sigma_i\psi=0
+    \]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Maxwell Field}
 \begin{equation}
     \label{Maxwell Eqn}
 \end{equation}
 
-\[ \mathcal{L} = -\frac{1}{4}F^2_{\mn} - j_{\mu}A^{\mu} 
-=-\frac{1}{4}(\partial_{\mu}A_\nu-\partial_{\nu}A_\mu)^2 - j_{\mu}A^{\mu} \\
-=-\frac{1}{2}(\partial_{\mu}A_\nu) + \frac{1}{2}(\partial_{\mu}A_\mu)^2 - j_{\mu}A^{\mu}
-=(E^2 - B^2)/2 - \phi V + \vec{j}\vec{A} \]
+\[ 
+\begin{aligned}
+    \mathcal{L} &= -\frac{1}{4}F^2_{\mn} - j_{\mu}A^{\mu} 
+    =-\frac{1}{4}(\partial_{\mu}A_\nu-\partial_{\nu}A_\mu)^2-j_{\mu}A^{\mu}\\
+    &=-\frac{1}{2}(\partial_{\mu}A_\nu)^2+\frac{1}{2}(\partial_{\mu}A_\mu)^2-j_{\mu}A^{\mu}\\
+    &=(E^2 - B^2)/2 - \phi V + \vec{j}\vec{A} 
+\end{aligned}
+    \]
+Here we use
+\[
+    (\partial_{\mu}A_\nu)^2=(\partial_{\nu}A_\mu)^2
+    \]
 where $J_\mu$ is the external current:
 \[ J_\mu(x) = \left\{ 
 \begin{aligned}
@@ -408,9 +768,21 @@ so
 Note that the propagator has nothing to do with the source. In fact it is
 entirely determined by the kinetic terms for a field.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Proca (Massive Vector Boson) Field}
 $$ \mathcal{L} = -\frac{1}{4}F_{\mn}F^{\mn} +
 \frac{1}{2}m^{2}A_{\mu}A^{\mu} - j_{\mu}A^{\mu} $$
 EOM:
 $$ \Box A^{\nu} - \partial^{\mu}(\partial_{\mu}A^{\mu}) + m^{2}A^{\nu} =
 j^{\nu}$$
+
+\section{Terminology}
+\begin{description}
+    \item [free spinors]
+    \item [Dirac spinors]
+    \item [Weyl representation]
+    \item [spinor representation]
+    \item [$(\frac{1}{2}, \frac{1}{2})$ representation]
+    \item [projective representation]
+    \item [Lorentz generators]
+\end{description}
