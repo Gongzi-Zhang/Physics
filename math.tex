@@ -52,16 +52,30 @@ Continuous but not derivative everywhree.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Legendre Polynomials and spherical harmonics}
+\begin{equation}
+    Y^m_l(\theta,\phi)=Ne^{im\phi}P^m_l(\cos\theta)
+\end{equation}
+which satisfies
+\[
+    r^2\nabla^2Y^m_l(\theta,\phi)=-l(l+1)Y^m_l(\theta,\phi)
+    \]
 
-Notation:
+Standard convention :
 \[
-    P^m_l(x)=\frac{1}{s^ll!}(1-x^2)^{m/2}\frac{d^{l+m}}{dx^{l+m}}(x^2-1)^l,
+    P^{-m}_l(\cos\theta)=(-1)^m\frac{(l-m)!}{(l+m)!}P^m_l(\cos\theta),
 \]
-Under the above definition, it is starightforward to prove that
+In QM:
 \[
-    P^m_l(\cos\theta)=(-1)^m\frac{(l+m)!}{(l+m)!}P^m_l(\csos\theta),
+    Y^m_l(\theta,\phi)=(-1)^msqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_{lm}(\cos\theta)e^{im\phi}
 \]
-\[ P_{lm}(x) = (-1)^{m}P_{l}^{m}(x) \]
+Where $P_{lm}$ are associated Legendre polynomials without the
+Condon-Shortley phase.
+
+Though of different definition, all of them satisfy
+\[ 
+    Y_l^{m*}(\theta,\phi)=(-1)^{m}Y_{l}^{-m}(\theta,\phi) 
+    \]
+
 
 Associate Legendre Polynomials:
 
