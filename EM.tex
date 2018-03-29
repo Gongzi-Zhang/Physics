@@ -1,12 +1,49 @@
 \chapter{Electramegnetic Mechanics}
 
+\section{Tensor}
+the stress tensor $T^{ij}$ is the force per area. The force per volumn $f^j$
+i: the minus divergence of the stress tensor
+\[ f^j = -\partial_iT^{ij} \]
+Conservation law:
+\[  \partial_tg^j+\partial_iT^{ij} = 0 \]
+where $g^j$ is the momentum per volume. So $f^j=\partial_tg^j$, the force is
+the time derivative of the momentum.
+In electrostatic:
+\[  f^j = \rho E^j \]
+So:
+\[  \rho E^j = \partial_iT_E^{ij} \]
+To get 
+\[  T_E^{ij} \equiv -E^iE^j + \frac{1}{2}E^2\delta^{ij} \]
+The force:
+\begin{equation*}
+\begin{aligned}  
+    F^j &= \int_v d^3\vec{r}\rho(\vec{r})E^j = \int_v d^3\vec{\nabla}\codt\vec{E}E^j	\\
+	&= \int_v d^3(\nabla_iE^i)E^j \\
+	&= \int_v d^3 [\nabla_i(E^iE^j) - E^i\nabla_iE^j ] \\
+	&= \int_v d^3 [\nabla_i(E^iE^j) - E^i\nabla_jE^i ] \\
+	&= \int_v d^3 [\nabla_i(E^iE^j) - \frac{1}{2}\nabla_jE^2 ] \\
+	&= \int_v d^3 [\nabla_i(E^iE^j) - \frac{1}{2}\nabla_iE^2\delta^{ij} ] \\
+	&= \int_v d^3 \nabla_i [(E^iE^j) - \frac{1}{2}E^2\delta^{ij} ] \\
+	&= \int_S dS n_i T_E^{ij} \\
+	&= -\int_S dS n_i T_E^{ij} 
+\end{aligned}  
+\end{equation*}
+
+For magnetism:
+\[  T_B^{ij} = -\frac{1}{\mu}B^iB^j + \frac{1}{\2\mu}B^2\delta^{ij} \]
+
+So
+\[
+    f^j_{em} = -\partial_iT_E^{ij} - \partial_iT_B^{ij} - \frac{1}{c}(\partial_tD\times B)^j
+    &= (\nabla\cdot D)E^j + ((\nabla\times\vec{H})\times\vec{B})^j - al_tD\times B)^j 
+\]
 \section{Maxwell Equation}
 \begin{equation}
     \label{eqn:Maxwell}
     \left\{
     \begin{aligned}
 	\nabla\cdot{E} &= \frac{\rho}{\epsilon}	\\
-	\nabla\times{B} &= \frac{1}{c}\left( J + J_D + J_{ind}\right)	\\
+	\nabla\times{B} &= \frac{1}{c}\left(J + J_D + J_{ind}\right)	\\
 	\nabla\cdot{B} &= 0  \\
 	\nabla\times{E} &= -\frac{1}{c}\partial_{t}B	\\
     \end{aligned}
