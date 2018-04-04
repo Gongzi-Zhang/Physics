@@ -524,6 +524,14 @@ derive them from 4-vector representation. They holds for any representation.
 The Dirac representation of the Lorentz group is reducible; it is the direct
 sum of a left-handed and a right-hadned spinor representation.
 
+\subsubsection{$\gamma^5$}
+\begin{itemize}
+    \item $(\gamma^5)^2 = \mathcal{1}$
+    \item $\left{\gamma^5,\gamma^\mu\right}=0$
+    \item Extended Clifford algebra: $\left{\gamma^M,\gamma^N\right}=2g^{MN}$, with $\gamma^M =
+	\gamma^0,\gamma^1,\gamma^2,\gamma^3,i\gamma^5$, and $g^{MN}=diag(1, -1, -1, -1, -1)$ 
+\end{itemize}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Unitary group} 
 the probability should add up to \emph{1}.
@@ -704,6 +712,17 @@ Commutation relation is
     \{\sigma^i, \sigma^j\} = 2\delta^{ij}, 
     [\sigma^i, \sigma^j] = 2i\epsilon^{ijk}\sigma^k
     \]
+In the Weyl basis, the Dirac equation is:
+\[
+    \begin{pmatrix}
+	-m  & i\sigma^\mu\partial_\mu	\\
+	i\bar{\sigma}^\mu\partial_\mu	& -m	\\
+    \end{pmatrix}
+    \begin{pmatrix}
+	\psi_L	\\
+	\psi_R	\\
+    \end{pmatrix} = 0
+\]
 Quantization of the Dirac field is achieved by replacing the spinors by
 field operators and using the Jordand and Wigner quantization rules.
 Heisenberg's EOM for the field operator $\hat{\psi}(\vec{x}, t)$
@@ -776,6 +795,17 @@ EOM:
 $$ \Box A^{\nu} - \partial^{\mu}(\partial_{\mu}A^{\mu}) + m^{2}A^{\nu} =
 j^{\nu}$$
 
+\subsubsection{spinors}
+\begin{description}
+    \item[Dirac spinors] have both left- and right-handed compnents. Theny
+	can be massive or massless.
+    \item[Weyl spinors] are always massless and can be left- or
+	right-handed. When embedded in Dirac spinors they satisfy the
+	constraint $\gamma_5\psi=\pm\psi$.
+    \item[Majorana spinors] are left- or right handed. When embedded in
+	Dirac spinors they satisfy the constraint
+	$\psi=\psi_C=-i\gamma_2\psi^*$
+\end{description}
 \section{Terminology}
 \begin{description}
     \item [free spinors]
@@ -785,4 +815,16 @@ j^{\nu}$$
     \item [$(\frac{1}{2}, \frac{1}{2})$ representation]
     \item [projective representation]
     \item [Lorentz generators]
+	\[
+	    S^{\mn} = \frac{i}{4}[\gamma^\mu, \gamma^\nu]
+	\]
 \end{description}
+
+
+Lorentz group O(1,3); tensor representations $\phi,A_\mu, h_{\mn}$, spinor
+represontations: Weyl spinors $\phi_L, \phi_R$. A Dirac spinor $\psi$
+transforms in the reducible $(\frac{1}{x},0)\oplus(0, \frac{1}{2})$
+representaion.
+The next step towards quantizing a thory with spinors is to use these
+Lorentz group representaions to generate irreducible unitray representaions
+of the \Poincare{} group.
