@@ -1,5 +1,4 @@
 \chapter{Quantum Mechanics}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Harmonic Oscillator}
 \[
@@ -11,10 +10,32 @@ For $V(r)=\frac{1}{2}m\omega^2r^2=\frac{1}{2}kr^2$
     [(\frac{\alpha}{\sqrt{\pi}})^{1/2}e^{-\frac{1}{2}\alpha^2y^2}]
     [(\frac{\alpha}{\sqrt{\pi}})^{1/2}e^{-\frac{1}{2}\alpha^2z^2}]
     \]
-where $\alpha=(\frac{mk}{\pi^2})^{1/4}$
+where $\alpha=(\frac{mk}{\hbar^2})^{1/4}=(\frac{m\omega}{\hbar})^{1/2}$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Rotation}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Vector}
+In QM, we demand that the expectation value of a vector operator transforms
+under rotation like a classical vector.
+\begin{gather*}
+    \ket{\alpha}\rightarrow\ket{\alpha}^R=D(R)\ket{\alpha}\\
+    ^{R}\bra{\alpha}V_i\ket{\alpha}^R=\bra{\alpha}D^{\dag}V_{i}D\ket{\alpha}=R_{ij}\bra{\alpha}V_j\ket{\alpha}\\
+    D^{\dag}V_{i}D=R_{ij}V_j
+\end{gather*}
+With infinitesimal transform, we will find:
+\begin{equation}
+    [V_i,J_j]=i(\epsilon_{ijk}V_k
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tensor}
+We define spherical tensor of rank k with $(2k+1)$ components labelled by q
+as
+\begin{equation}
+    D^{\dag}(R)T^{(k)}_{q}D(R)=\displaystyle\sum_{q^\prime=-k}^{k}D^{(k)*}_{qq^\prime}T^{(k)}_{q^\prime}
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spin-$1/2$} 
 \[ 
@@ -50,9 +71,46 @@ cos(\frac{\phi}{2}) - i \hat{n} \cdot \vec{\sigma} sin(\frac{\phi}{2}) =
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Wigner-Echart theorem}
+The matrix elements of tensor operators with respect to angular momentum
+eigenstates.
+\begin{equation}
+    \bra{\alpha^\prime,j^{\prime}m^\prime}T^{(k)}_{q}\ket{\alpha,jm}
+    =\frac{\bra{jk;mq}\ket{jk;j^{\prime}m^\prime}}{\sqrt{2j+1}}{\bra{\alpha^\prime,j^\prime}T^{(k)}\ket{\alpha,j}}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Zeeman-effect}
 This is effect only in \textbf{weak magnetism}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Paschen-Back effect}
 This happen with \textbf{strong magnetism}($\frac{\Phi}{\Phi_0}\gg\alpha^2\sim10^{-4}$).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Symmetry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Parity} 
+Parity of Spherical Harmonics:
+\[
+    r\rightarrow{}r,\quad\theta\rightarrow\pi-\theta,\quad\phi\rightarrow\phi+\pi
+    \]
+So
+\[
+    Y_{ll}(\theta,\phi)\xrightarrow{P}Y_{ll}(\pi-\theta,\phi+\pi)=e^{il\pi}e^{il\phi}\sin^l(\pi-\theta)=(-1)^{l}Y_{ll})\theta,\phi
+    \]
+Because $L_\_$ is an \emph{axial vector}, so $P(L_\_)=1$.
+\[
+    L_\_Y_{ll}\xrightarrow{P}(-1)^{l}L_\_Y_{ll}
+    \]
+To get
+\[
+    Y_{lm}(\theta,\phi)\xrightarrow{P}Y_{lm}(\pi-\theta,\phi+\pi)=(-1)^{l}L_\_Y_{l,m+1}(\theta,\phi)
+    \]
+
+\subsection{Time reversal}
+\[
+    \ket{jm}\xrightarrow{T}(-1)^m\ket{j,-m}
+    \]
