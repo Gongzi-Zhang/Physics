@@ -1,29 +1,70 @@
 \chapter{Terminology}
 \begin{description}
+    %%%%%%%%% A %%%%%%%%%%% 
+    \item [adjoint representation]
     \item [analyticity]
+    \item [associativity of addition and multiplication]    
+	$a+(b+c) = (a+b)+c$   , and $a\cdot(b\cdot c)=(a\cdot b)\cdot c$
     \item [bilinear]	In QFT, a bilinear term means it has exactly two
 	fields. Such as:
 	\[ \mathcal{L}_K \supset \frac{1}{2}\phi\Box\phi,
 	\frac{1}{4}F^2_{\mn}, \frac{1}{2}m^2\phi^2,
 	\frac{1}{2}\phi_1\Box\phi_2, \phi_1\partial_\mu A_\mu, \dots \]
+
+    %%%%%%%%% B %%%%%%%%%%% 
     \item [Boltzmann distribution]  $n_{i} = Ne^{-\beta E_{i}}$
+
+    %%%%%%%%% C %%%%%%%%%%% 
     \item [causality]
+    \item [charge conjugation C] taking particles to antiparticles
+	\[
+	    C:\quad\psi\rightarrow-i\gamma_2\psi^*\equiv\psi_C
+	\]
+    \item [chirality] The handedness of a spinor is referred to as its
+	chirality. The \textbf{left-handed} and \textbf{right-handed} 
+	refer to the ($\frac{1}{2},0$) or (0,$\frac{1}{2}$) representations
+	of the Lorentz group. This concept only exists for spinors, or more
+	precisely for (A,B) representations of the Lorentz group with
+	$A\neq B$. Almost always, chirality means that a theory is not
+	symmetric between left-handed Weyl spinors $\psi_L$ and right-handed
+	spinors $\psi_R$
     \item [cluster decomposition principle]
-    \item [covariant vectors]	vectors with lower indices
+    \item [commutativity of addition and multiplication] 
+	$a+b=b+a$ and $a\cdot b = b\cdot a$
     \item [contravariant vectors]   vectors with upper indices
+    \item [covariant vectors]	vectors with lower indices
+
+    %%%%%%%%% D %%%%%%%%%%% 
     \item [Dirac spinors]
+    \item [Dirac equation]
+	\[
+	    (i\slashed{D} -m)\psi =0
+	\]
+    \item [Distributivity of multiplication over addition]
+	$a\cdot(b+c)=(a\cdot b) + (a\cdot c)$
+
+    %%%%%%%%% E %%%%%%%%%%% 
     \item [equipartion theorem] a body in thermal equilibrium should have
 	energy equally distributed among all possible modes, (mode is a
 	seperation of phase space), which means all modes have the same
 	energy.
+
+    %%%%%%%%% F %%%%%%%%%%% 
     \item [faithful representation] A representation in which each group
 	element gets its own matrix is called a \emph{faithful
 	representation}.
     \item [Fermi's golden rule]	$\Gamma \sim |\mathcal{M}|^{2}\delta(E_f - E_i)$
     \item [first principle]
+
+    %%%%%%%%% G %%%%%%%%%%% 
     \item [Gauge transform] $\phi \rightarrow e^{-i\alpha}\phi$
+    \item [good quantum number] which doesn't change along time. $[Q, H] = 0$
+
+    %%%%%%%%% H %%%%%%%%%%% 
     \item [Helicity] spin projected on the direction of motion is called the
-	helicity
+	helicity. $\hat{h}=\frac{\vec{\sigma}\cdot\vec{p}}{|\vec{p}|}$
+
+    %%%%%%%%% L %%%%%%%%%%% 
     \item [Legendre transformation]
     \item [Lie algebra] the generators of the Lie group form an algebra
 	called its Lie algebra. 
@@ -34,23 +75,47 @@
     \item [little group] The representation of the full \Poincare{}
 	group is induced by a representation of the subgorup of the
 	\Poincare{} group that holds $p^\mu$ fixed, called the
-	\emph{little group}
+	\emph{little group}. When $P_\mu$ is massive, the little group is
+	SO(3); when $p_\mu$ is massless, the little group is ISO(2).
     \item [locality]
     \item [Lorentz group] this is the generalization of the rotation group
 	to include both rotations and boosts.
+
+    %%%%%%%%% M %%%%%%%%%%% 
+    \item [Majorana spinor] A spinor whose antiparticle is itself. 
+    \item [Majorana masses]
+	\[
+	    \mathcal{L}=i\psi^\dag_L\sigma_\mu\partial_\mu\psi_L+i\frac{m}{2}(\psi^\dag_L\sigma_2\psi^*_L-\psi^T_L\sigma_2\psi_L)
+	\]
+	The mass terms in this Lagrangian are called \textbf{Majorana masses}.
+    \item [Majorana fermions]
+	in Dirac spinors:
+	\[
+	    \psi=\begin{pmatrix}
+		\psi_L	\\
+		i\sigma_2\psi^*_L   \\
+	    \end{pmatrix}
+	\]
+
+    %%%%%%%%% P %%%%%%%%%%% 
     \item [pseudo scalar] particles with odd \textbf{parity}
+
+    %%%%%%%%% Q %%%%%%%%%%% 
     \item [quantize]	promote x and p as operators and impose the
 	canonical commutation relations:    $[x, p] = i$
     \item [quantum process]  time evolution of an open quantum system ???
+
+    %%%%%%%%% R %%%%%%%%%%% 
+    \item [Rarita-Schwinger field]  spin-$\frac{3}{2}$
     \item [representation] A set of objects that mix under a transformation
 	group is called a representation of the group, though technically
 	the matrix embedding is the representation.
+
+    %%%%%%%%% S %%%%%%%%%%% 
     \item [second quantization]	canonical quantization of relativistic
 	fields, 
-	\[
-	    H_0 = \int \frac{d^{3}p}{(2\pi)^3}\omega_p(a^{\dag}_p a_p +
-	\frac{1}{2})
-	\] 
+	\[  H_0 = \int \frac{d^{3}p}{(2\pi)^3}\omega_p(a^{\dag}_p a_p +
+	\frac{1}{2}) \] 
 	First quantization refer to the discrete mode, for
 	example, of a particle in a box. Second quantization refers to the
 	integer numbers of excitations of each of these modes. There are two
@@ -64,6 +129,36 @@
     \item [S-matrix]
     \item [spacelike]	$V^\mu V_\mu < 0$
     \item [SO(n)] the group of nD rotations ($det(R) = 1$)
+	
+    %%%%%%%%% T %%%%%%%%%%% 
     \item [timelike]	$V^\mu V_\mu > 0$
+
+    %%%%%%%%% U %%%%%%%%%%% 
     \item [unitary] $\Lambda^{\dag}\Lambda = 1$
+
+    %%%%%%%%% W %%%%%%%%%%% 
+    \item [Weyl spinor] Irreducible unitary spin-$\frac{1}{2}$
+	representations of the \Poincare{} group.
+
+    %%%%%%%%% $\gamma$ %%%%%%%%%%% 
+    \item [$\gamma$ matrix]
+	In the Weyl basis:
+	\[  \gamma_\mu = 
+	    \begin{pmatrix}
+		0   & \sigma_\mu    \\
+		\bar{\sigma}_\mu  & 0	\\
+	    \end{pmatrix} 
+	\]
+    \item [$\gamma^5$]
+	\[
+	    \gamma^5 \equiv i\gamma^0\gamma^1\gamma^2\gamma^3
+	\]
+	In the Weyl representation:
+	\[
+	    \gamma^5 = 
+	    \begin{pmatrix}
+		-\mathcal{1}	&   \\
+		    & \mathcal{1}   \\
+	    \end{pmatrix}
+	\]
 \end{description}
