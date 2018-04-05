@@ -652,7 +652,11 @@ $$ \mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu} - m)\psi; \quad
 \bar{\psi} = \psi^{*}\gamma^{0} \quad \text{Dirac adjoint} $$
 The $4 \times 4$ Dirac matrices $\gamma^{\mu} (\mu = 0,1,2,3)$ satisfy the
 Clifford algebra:
-\[ \{\gamma^{\mu},\gamma^{\nu}\}=\gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu}=2g^{\mn} \]
+\[ 
+    \{\gamma^{\mu},\gamma^{\nu}\}=\gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu}=2g^{\mn} 
+\]
+
+Define:
 \[
     \sigma^{\mn} \equiv \frac{i}{2}[\gamma^{\mu}, \gamma^{\nu}]
     \]
@@ -668,7 +672,7 @@ To be explicit, this is shorthand for
 \[
     (i\gamma^\mu_{\alpha\beta}\partial_\mu-m\delta_{\alpha\beta})\psi_\beta = 0
     \]
-The $\gamma$ matrices:
+    The Dirac ($\gamma$) matrices:
 \[
     \gamma^{\mu} = 
     \begin{pmatrix}
@@ -684,7 +688,8 @@ where
     \sigma^\mu\equiv(\mathds{1},\vec{\sigma}),
     \bar{\sigma}^\mu\equiv(\mathds{1},-\vec{\sigma}),
 \]
-\[ \gamma^{0} = 
+\[ 
+    \gamma^{0} = 
     \begin{pmatrix}
 	0   & I	\\
 	I   & 0	\\	
@@ -714,11 +719,12 @@ Where \textbf{$\sigma$} is the Pauli matrices:
 	\end{pmatrix}
     \label{Pauli Matrices}
 \end{equation}
+\[  \vec{\sigma} = (\sigma_1, \sigma_2, \sigma_3)   \]
+\[  \vec{\sigma}^\dag=\vec{\sigma}\]
 Commutation relation is
-\[
+\[  
     \{\sigma^i, \sigma^j\} = 2\delta^{ij}, 
-    [\sigma^i, \sigma^j] = 2i\epsilon^{ijk}\sigma^k
-    \]
+    [\sigma^i, \sigma^j] = 2i\epsilon^{ijk}\sigma^k	\]
 In the Weyl basis, the Dirac equation is:
 \[
     \begin{pmatrix}
@@ -743,9 +749,9 @@ postulate a Fermi sea of antiparticles. This genial assumption was not
 taken seriously until the positron was discovered in 1932 by Anderson.
 
 \subsection{Weyl spinor}
-\[
-    \sigma^\mu\partial_\mu\psi=\mathds{1}\partial_t\psi-\partial_i\sigma_i\psi=0
-    \]
+\[  \sigma^\mu\partial_\mu\psi=\mathds{1}\partial_t\psi-\partial_i\sigma_i\psi=0    \]
+Dirac equation for a Weyl spinor:
+\[  \sigma^\mu\parital_\mu\psi=0    \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Maxwell Field}
