@@ -13,6 +13,7 @@
 
 \chapter{QFT}
 
+Questions:
 \begin{itemize}
     \item What's a field, classical field is a spatial distribution, quantum
 	field is a analogy to classical one, but make up of creation and
@@ -26,6 +27,8 @@
     \item Symmetry. What's each group? corresponding representation. How to
 	embed particles into lorentz group and unitary group?
     \item Couple of scalar field to $A_\mu$
+    \item Anticommuting spinors:
+	\[  -(\gamma_0)_{\alpha\beta}\psi_\alpha\psi^*_\beta=(\gamma_0)_{\alpha\betaii\psi^*_\beta\psi_\alpha}	\]
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -488,12 +491,12 @@ $J^{ij} = \epsilon^{ijk}J^k, J^{0i} = K^I = -J^{i0}$(exactly as $\vec{E},
 \vec{B}$ are collected into $F^{\mu}$). This object satisfies:
 \[
     J^{\mn}=
-    \begin{aligned}
+    \begin{pmatrix}
 	0   & K_1   & K_2   & K_3   \\
 	-K_1	& 0 & J_3   & -J_2  \\
 	-K_2	& -J_3	& 0 & J_1   \\
 	-K_3	& J_2	& -J_1	& 0 \\
-    \end{aligned}
+    \end{pmatrix}
     \]
 \[
     [J^{\mn}, J^{\rho\sigma}]=
@@ -527,8 +530,8 @@ sum of a left-handed and a right-hadned spinor representation.
 \subsubsection{$\gamma^5$}
 \begin{itemize}
     \item $(\gamma^5)^2 = \mathcal{1}$
-    \item $\left{\gamma^5,\gamma^\mu\right}=0$
-    \item Extended Clifford algebra: $\left{\gamma^M,\gamma^N\right}=2g^{MN}$, with $\gamma^M =
+    \item $\left\{\gamma^5,\gamma^\mu\right\}=0$
+    \item Extended Clifford algebra: $\left\{\gamma^M,\gamma^N\right\}=2g^{MN}$, with $\gamma^M =
 	\gamma^0,\gamma^1,\gamma^2,\gamma^3,i\gamma^5$, and $g^{MN}=diag(1, -1, -1, -1, -1)$ 
 \end{itemize}
 
@@ -611,9 +614,10 @@ This leads to the definition of \emph{covariant derivative}
 \section{Field}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Scalar Field}
-$$ \mathcal{L} = \frac{1}{2}\dot{\phi}^{2} -
+\[ \mathcal{L} = \frac{1}{2}\dot{\phi}^{2} -
 \frac{1}{2}\vec{\nabla}\phi \cdot \vec{\nabla}\phi - \frac{1}{2}m^{2}\phi^{2} 
-= \frac{1}{2}(\partial_{\mu}\phi\partial^{\mu}\phi - m^{2}\phi^{2})$$
+= \frac{1}{2}(\partial_{\mu}\phi\partial^{\mu}\phi - m^{2}\phi^{2}) 
+=-\frac{1}{2}(\phi\Box\phi-m^2\phi^2)	\]
 EOM:
 $$ -\partial_{t}^{2}\phi + \nabla^{2}\phi - m^{2}\phi =
 (\partial_{\mu}\partial^{\mu} + m^{2}) \phi = 0 $$
@@ -625,6 +629,9 @@ $$ [\phi(\vec{x}), \pi(\vec{x'})] = i\hbar\delta^{d}(\vec{x} - \vec{x'})$$
 $$ H =\sum_{n}(p_{n}\dot{q}_n) = \int dx(\pi(x)\dot{q}(x) -
 \mathcal{L})  $$
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Complex Scalar Field}
+\[  \mathcal{L}=-\phi^*\Box\phi-m^2\phi^*\phi\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KG{} Field}
@@ -795,6 +802,7 @@ EOM:
 $$ \Box A^{\nu} - \partial^{\mu}(\partial_{\mu}A^{\mu}) + m^{2}A^{\nu} =
 j^{\nu}$$
 
+%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{spinors}
 \begin{description}
     \item[Dirac spinors] have both left- and right-handed compnents. Theny
@@ -806,6 +814,9 @@ j^{\nu}$$
 	Dirac spinors they satisfy the constraint
 	$\psi=\psi_C=-i\gamma_2\psi^*$
 \end{description}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Terminology}
 \begin{description}
     \item [free spinors]

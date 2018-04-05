@@ -17,7 +17,7 @@ To get
 The force:
 \begin{equation*}
 \begin{aligned}  
-    F^j &= \int_v d^3\vec{r}\rho(\vec{r})E^j = \int_v d^3\vec{\nabla}\codt\vec{E}E^j	\\
+    F^j &= \int_v d^3\vec{r}\rho(\vec{r})E^j = \int_v d^3\vec{\nabla}\cdot\vec{E}E^j	\\
 	&= \int_v d^3(\nabla_iE^i)E^j \\
 	&= \int_v d^3 [\nabla_i(E^iE^j) - E^i\nabla_iE^j ] \\
 	&= \int_v d^3 [\nabla_i(E^iE^j) - E^i\nabla_jE^i ] \\
@@ -30,12 +30,14 @@ The force:
 \end{equation*}
 
 For magnetism:
-\[  T_B^{ij} = -\frac{1}{\mu}B^iB^j + \frac{1}{\2\mu}B^2\delta^{ij} \]
+\[  T_B^{ij} = -\frac{1}{\mu}B^iB^j + \frac{1}{2\mu}B^2\delta^{ij} \]
 
 So
 \[
-    f^j_{em} = -\partial_iT_E^{ij} - \partial_iT_B^{ij} - \frac{1}{c}(\partial_tD\times B)^j
+    \begin{aligned}
+	f^j_{em} &= -\partial_iT_E^{ij} - \partial_iT_B^{ij} - \frac{1}{c}(\partial_tD\times B)^j
     &= (\nabla\cdot D)E^j + ((\nabla\times\vec{H})\times\vec{B})^j - al_tD\times B)^j 
+    \end{aligned}
 \]
 \section{Maxwell Equation}
 \begin{equation}
