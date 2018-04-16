@@ -1,0 +1,89 @@
+\newcommand{\SR}{special relativity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Relativity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Special Relativity}
+Two conditions of \SR{}. 
+\begin{itemize}
+    \item general physical rules, which means in different flames, we can 
+	observe the same EOM.
+    \item constant c
+\end{itemize}
+let $X^\mu=(ct, \vec{x})$, so in order to make c constant, we have
+\[
+    -(ct')^2+\vct{x'}62 = (ct)^2 +\vec{x}^2
+\]
+The \textbf{simplest} way to preserve the length is to construct a \textbf{linear map}:
+\[
+    X'^\mu = {(\mathcal{L})^\mu}_{\nu}X^\nu
+\]
+Where ${(\mathcal{L})^\mu}_{\nu} = {(\mathcal{L}^T)_\nu}^{\mu} = {\Lambda^\mu}_\nu$.
+Note that for a matrix, what important is the order of index, not their position, so
+\[
+    {\mathcal{L}^{\mu}}_{\nu}={\mathcal{L}_{\mu}}^{\nu}={(\mathcal{L}^T)_{\nu}}^{\mu}={(\mathcal{L}^T)^{\nu}}_{\mu}
+\]
+Let 
+\[
+    A = \begin{pmatrxi}
+	A^0 \\
+	A^1 \\
+	A^2 \\
+	A^3 \\
+    \end{pmatrxi}\quad
+    B = \begin{pmatrxi}
+	B^0 \\
+	B^1 \\
+	B^2 \\
+	B^3 \\
+    \end{pmatrxi}
+\]
+and 
+\[
+    A_\mu  \equiv g_{\mn}A^\nu
+\]
+where 
+\begin{equation}
+    g_{\mn} = diag(-1, 1, 1, 1)
+\end{equation}
+\[
+    g^{\mn}g_{\nu\sigma}={g^{\mu}}_\sigma={\delta^{\mu}}_\sigma 
+\]
+So, we can define:
+\[
+    A\cdot B \equiv -A^0B^0 + A^1B^1 + A^2B^2 + A^3B^3 = A^\mu B_\mu = A^\mu g_{\mn}B^\nu
+\]
+Inserting $\mathcal{L}\mathcal{L}^T$ into the above equation:
+\[
+    \begin{aligned}
+	A_\mu B^\mu= A^\mu g_{\mn}B^\nu = (\mathcal{L}^{-1}A')^{\mu}g_{\mn}(\mathcal{L}^{-1})^\nu \\
+	= (\mathcal{L}^{-1})^\mu_{\nu}A'^{\nu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}B'^\rho    \\
+	= A'^{\nu}(\mathcal{L}^{-1})^\mu_{\nu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}B'^\rho    \\
+	= A'^{\nu}(\mathcal{L}^{-1}^T)_\nu^{\mu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}B'^\rho    \\
+	= A'^{\nu}g'_{\nu\rho}B'^\rho
+    \end{aligned}
+\]
+In \SR{}, we require that:
+\[
+    g'_{\nu\rho}=(\mathcal{L}^{-1}^T)_\nu^{\mu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}=g_{\nu\rho}
+    
+\]
+So we get
+\[
+    \mathcal{L}^{-1}^Tg\mathcal{L}^{-1}=g \rightarrow \mathcal{L}^{-1}^T=g\mathcal{L}g \rightarrow \mathcal{L}^{-1}=g\mathcal{L}^Tg
+
+\]
+With these conditions, we can easily find out $\mathcal{L}$. For 2D-coordinate $(ct, x)$, we have
+\[
+    \mathcal{L}(v) = 
+	\begin{pmatrix}
+	    \gamma  &	-\beta\gamma	\\
+	    -\beta\gamma    & \gamma	\\
+	\end{pmatrix}
+\]
+Where $\beta=\frac{v}{c}$ and $\gamma=\frac{1}{\sqrt{1-\beta^2}}$. 
+Usually, we would like to use another quantity in \SR{}, which is rapidity:
+\[
+    \tanh{y}\equiv\frac{v}{c} \rightarrow y=\frac{1}{2}ln(\frac{1+\beta}{1-\beta})
+\]
+And correspondingly
+\[
+    \gamma=\cosh{y}, \quad \beta\gamma\sinh{y}
+\]

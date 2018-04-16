@@ -73,6 +73,36 @@ So
     \end{aligned}
     \right.
 \end{equation}
+
+Symmetry of Maxwell Eqn:
+\begin{equation}
+    \label{eqn:symmetric_Maxwell}
+    \left\{
+    \begin{aligned}
+	\nabla\cdot\vec{E} &= \frac{\rho}{\epsilon}	\\
+	\nabla\times{B} - \frac{1}{c}\partial_t\vec{E}J &= \frac{\vec{J}}{c} 	\\
+	\nabla\cdot\vec{B} &= 0  \\
+	\nabla\times\vec{E} -\frac{1}{c}\partial_{t}\vec{B} &= 0       \\
+    \end{aligned}
+    \right.
+\end{equation}
+
+For $\rho = \vec{j} = 0$, then there is a symmetry between $\vec{E} \rightarrow \vec{B}$ 
+and $\vec{B} \rightarrow -\vec{E}$.
+\[
+    \begin{aligned}
+	\nabla\cdot\vec{E} &= 0	\\
+	-\frac{1}{c}\partial_t\vec{E} + \nabla\times\vec{B} &= 0
+    \end{aligned}
+    \Longleftrightarrow
+    \begin{aligned}
+	\nabla\cdot\vec{B} &= 0	\\
+	-\frac{1}{c}\partial_t\vec{B} - \nabla\times\vec{E} &= 0
+    \end{aligned}
+\]
+Though we derive the $\vec{E}$,$\vec{B}$ symmetry from free conditions ($\rho = \vec{j} = 0$),
+it \textbf{looks like ???} we can apply them in any conditions.
+
 where 
 \[J_D = \epsilon\partial_{t}E; \quad J_{induced} = c\chi_m^B(\nabla\times{B})\]
 Note that the Maxwell equation is relationship about $\mathbf{E}$ and
@@ -193,18 +223,99 @@ Helmholtz eqn:
 \section{EM in relativity}
 
 \begin{equation}
+    F^{\mn} \equiv 
+	\begin{pmatrix}
+	    0	& E^x	& E^y	& E^z	\\
+	    -E^x    & 0	& -B^z	& B^y	\\
+	    -E^y    & B^z   & 0	& -B^x	\\
+	    -E^z    & -B^y  & B^x   & 0	\\
+	\end{pmatrix}
+	= \partial^\mu A^\nu - \partial^\nu A^\mu
+\end{equation}
+Dual basis $F_{\mn}$, when lowering or raising the 0 index, change the sign; while
+for other indecies, nothing happen:
+\[
+    \begin{aligned}
+    F^{0i} = -F^{i0} = {F^0}_i = -{F_0}^i = -F_{0i} =  F_{i0} = -{F_i}^0 = {F^i}_0   \\
+    F^{ij} = -F^{ji} = {F^i}_j =  {F_i}^j =  F_{ij} = -F_{ji} = -{F_j}^i = -{F^j}^i \\
+    \end{aligned}
+\]
+So:
+\begin{equation}
     F_{\mn} \equiv 
 	\begin{pmatrix}
-	    0	& E_x	& E_y	& E_z	\\
-	    -E_x    & 0	& -B_z	& B_y	\\
-	    -E_y    & B_z   & 0	& -B_x	\\
-	    -E_z    & -B_y  & B_x   & 0	\\
+	    0	& -E_x	& -E_y	& -E_z	\\
+	    E_x    & 0	& -B_z	& B_y	\\
+	    E_y    & B_z   & 0	& -B_x	\\
+	    E_z    & -B_y  & B_x   & 0	\\
 	\end{pmatrix}
-	= \partial_\mu A_\nu - \partial_\nu A_\mu
 \end{equation}
+\[
+    F_{\mn}F^{\mn} = 2(\vec{B}^2 - \vec{E}^2)
+\]
+
 The Maxwell Eqn:
 \begin{gather}
-    \partial_\mu F_{\mn} = \Box A_\nu - \partial_\nu(\partial_mu A_\mu) =
-    \Box A_\mu = 0, \notag\\
-    \partial_\mu F_{\nu\rho} + \partial_\nu F_{\rho\mu} + \partial_\rho F_{\mn} = 0
+    \partial_\mu F^{\mn} = \Box A^\nu - \partial_\nu(\partial_mu A^\mu) =
+    \Box A^\mu = 0, \notag\\
+    \partial_\mu F^{\nu\rho} + \partial_\nu F^{\rho\mu} + \partial_\rho F^{\mn} = 0
 \end{gather}
+
+Define:
+\begin{equation}
+    \tilde{F}^{\mn} \equiv 
+	\begin{pmatrix}
+	    0	& B^x	& B^y	& B^z	\\
+	    -B^x    & 0	& -E^z	& E^y	\\
+	    -B^y    & E^z   & 0	& -E^x	\\
+	    -B^z    & -E^y  & E^x   & 0	\\
+	\end{pmatrix} 
+	= \frac{1}{2}\epsilon^{\mn\ab}F_{\ab}
+\end{equation}
+where:
+\[
+    \epsilon^{\mn\ab} = 
+    \lefg\{ 
+	\begin{aligned}
+	    +1	\quad	even permutation of 0, 1, 2, 3	\\
+	    -1	\quad	odd permutation of 0, 1, 2, 3	\\
+	    0	\quad	otherwise
+	\end{aligned}
+	\.
+\]
+
+\[
+    F_{\mn}\tilde{F}^{\mn} = 2\vec{B}\cdot\vec{E}
+\]
+
+Define: 
+\begin{equation}
+    \begin{aligned}
+    T_{[\mu, \nu]}  \equiv \frac{1}{2} (T_\mn - T_\nm)	\\
+    T_{[\mu_1, \mu_2, \mu_3]} \equiv \frac{1}{3!} [(T_{\mu_1\mu_2\mu_3} - T_{\mn_1\mu_3\mu_2})
+    - (T_{\mu_2\mu_1\mu_3} - T_{\mu_2\mu_3\mu_1})
+    + (T_{\mu_3\mu_1\mu_2} - T_{\mu_3\mu_2\mu_1})]
+    \end{aligned}
+\end{equation}
+
+Then the complete Maxwell Eqns:
+\begin{equation}
+    \begin{aligned}
+	\partial_\mu F^{\mn} = A^{\nu}    \\
+    \partial_\nu\tilde{F}^{\mn} = \frac{1}{2}\epsilon^{\mn\ab}\partial_{[\nu}F_{\ab]} = 0
+    \end{aligned}
+\end{equation}
+
+\subsubsection{Transformation of $\vec{E}$ and $\vec{B}$}
+in a boost along x:
+\begin{equation}
+    \begin{aligned}
+	E'_{//} = E_{//}    \\
+	E'_{\perp} = \gamma{E_{\perp} + \vec{\beta}\times\vec{B}}
+    \end{aligned}
+    \quad
+    \begin{aligned}
+	B'_{//} = B_{//}    \\
+	B'_{\perp} = \gamma{B_{\perp} - \vec{\beta}\times\vec{E}}
+    \end{aligned}
+\end{equation}
