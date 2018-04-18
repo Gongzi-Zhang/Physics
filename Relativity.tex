@@ -9,7 +9,7 @@ Two conditions of \SR{}.
 \end{itemize}
 let $X^\mu=(ct, \vec{x})$, so in order to make c constant, we have
 \[
-    -(ct')^2+\vct{x'}62 = (ct)^2 +\vec{x}^2
+    -(ct')^2+\vec{x'}62 = (ct)^2 +\vec{x}^2
 \]
 The \textbf{simplest} way to preserve the length is to construct a \textbf{linear map}:
 \[
@@ -22,18 +22,18 @@ Note that for a matrix, what important is the order of index, not their position
 \]
 Let 
 \[
-    A = \begin{pmatrxi}
+    A = \begin{pmatrix}
 	A^0 \\
 	A^1 \\
 	A^2 \\
 	A^3 \\
-    \end{pmatrxi}\quad
-    B = \begin{pmatrxi}
+    \end{pmatrix}\quad
+    B = \begin{pmatrix}
 	B^0 \\
 	B^1 \\
 	B^2 \\
 	B^3 \\
-    \end{pmatrxi}
+    \end{pmatrix}
 \]
 and 
 \[
@@ -56,19 +56,17 @@ Inserting $\mathcal{L}\mathcal{L}^T$ into the above equation:
 	A_\mu B^\mu= A^\mu g_{\mn}B^\nu = (\mathcal{L}^{-1}A')^{\mu}g_{\mn}(\mathcal{L}^{-1})^\nu \\
 	= (\mathcal{L}^{-1})^\mu_{\nu}A'^{\nu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}B'^\rho    \\
 	= A'^{\nu}(\mathcal{L}^{-1})^\mu_{\nu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}B'^\rho    \\
-	= A'^{\nu}(\mathcal{L}^{-1}^T)_\nu^{\mu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}B'^\rho    \\
+	= A'^{\nu}({\mathcal{L}^{-1}}^T)_\nu^{\mu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}B'^\rho    \\
 	= A'^{\nu}g'_{\nu\rho}B'^\rho
     \end{aligned}
 \]
 In \SR{}, we require that:
 \[
-    g'_{\nu\rho}=(\mathcal{L}^{-1}^T)_\nu^{\mu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}=g_{\nu\rho}
-    
+    g'_{\nu\rho}=({\mathcal{L}^{-1}}^T)_\nu^{\mu}g_{\mn}(\mathcal{L}^{-1})^\nu_{\rho}=g_{\nu\rho}
 \]
 So we get
 \[
-    \mathcal{L}^{-1}^Tg\mathcal{L}^{-1}=g \rightarrow \mathcal{L}^{-1}^T=g\mathcal{L}g \rightarrow \mathcal{L}^{-1}=g\mathcal{L}^Tg
-
+    {\mathcal{L}^{-1}}^Tg\mathcal{L}^{-1}=g \rightarrow {\mathcal{L}^{-1}}^T=g\mathcal{L}g \rightarrow \mathcal{L}^{-1}=g\mathcal{L}^Tg
 \]
 With these conditions, we can easily find out $\mathcal{L}$. For 2D-coordinate $(ct, x)$, we have
 \[

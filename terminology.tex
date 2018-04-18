@@ -89,6 +89,45 @@
 	Lorentz group, with an infinite number of elements but a finite
 	number of generators.
     \item [lightlike]	$V^\mu V_\mu = 0$
+    \item [Lippmann-Schwinger eqn] 
+	In P.T.
+	\[
+	    H = H_0 + V (correction)
+	    \]
+	If 
+	\[
+	    H_0\ket{\phi} = E\ket{\phi}, \quad and \quad 
+	    H\ket{\psi} = E\ket{\psi}
+	    \]
+	Then
+	\[
+	    \ket{\psi} = \ket{\phi} + \frac{1}{E-H_0}V\ket{\psi}
+	    \]
+	This is called the \textbf{Lippmann-Schwinger equation}. And the inverted object 
+	is a kind of Green's function known as the \textbf{Lippmann-Schwinger kernel}:
+	\[
+	    \prod_{LS} = \frac{1}{E-H_0}
+	    \]
+	Define operator T, so that
+	\[
+	    V\ket{\psi} = T\ket{\phi}
+	    \]
+	So
+	\[
+	    \ket{\psi} = \ket{\phi} + \frac{1}{E-H_0}T\ket{\phi}
+	    \]
+	and 
+	\[
+	    T = V + V\frac{1}{E-H_0}T
+	    \]
+	Solve it perturbatively in V:
+	\[
+	    \begin{aligned}
+		T &= V + V\frac{1}{E-H_0}V + V\frac{1}{E-H_0}V\frac{1}{E-H_0}V + \cdots
+		  &= V + V\prod_{LS}V + V\prod_{LS}V\prod_{LS}V + \cdots
+	    \end{aligned}
+	    \]
+
     \item [little group] The representation of the full \Poincare{}
 	group is induced by a representation of the subgorup of the
 	\Poincare{} group that holds $p^\mu$ fixed, called the
