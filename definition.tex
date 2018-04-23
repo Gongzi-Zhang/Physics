@@ -1,4 +1,243 @@
-\chapter{Terminology}
+\chapter{Definition}
+Definition and Conclusion.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General}
+
+\subsection{Energy}
+\begin{description}
+    \item [Power]
+	\begin{equation}
+	    \frac{dP}{d\Omega} = \frac{dW}{dt\cdot d\Omega} = r^2\frac{dW}{dt dA}
+	\end{equation}
+\end{description}
+
+\subsection{Potential}
+\begin{description}
+    \item [Yukawa potential]
+	\begin{equation}
+	    \label{eqn:Yukawa}
+	    V = \frac{V_0e^{-\mu r}}{\mu r}
+	\end{equation}
+\end{description}
+
+\subsection{Dirac Delta}
+\begin{description}
+    \item [Dimension] 
+	Note that $\delta^3(x)$ and $\delta(x)$ have different dimensions.
+	\begin{equation}
+	    $[\delta^3(x)] = L^{-3}$, \qquad $[\delta(x)] = L^{-1}$
+	\end{equation}
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{EM}
+
+\subsection{Radiation}
+\begin{description}
+    \item [Retarded Time] 
+	\begin{equation}
+	    \label{eqn:em::retardedTime}
+	    T = t-\frac{|\vec{r} - \vec{r}_0|}{c} \stackrel{r>>r_0}{\approx} t - \frac{r}{c} + \frac{\vec{n}\cdot\vec{r}_0}{c}
+	\end{equation}
+
+
+    \item [Radiation Power]
+	\begin{equation}
+	    \label{eqn:em::radiationPower}
+	    \begin{gathered}
+		\frac{dP}{dA} = \vec{S} = c\vec{E}\cdot\vec{B} = \frac{e^2}{16\pi^2}\frac{a^2}{c^3}\cos^2{\theta}
+	    \end{gathered}
+	\end{equation}
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Relativity}
+\subsubsection{E and B}
+\begin{equation}
+    \label{eqn:em::sr:::E&B}
+    \begin{aligned}
+	E'_{//} &= E_{//}   \qquad&   B'_{//} &= B_{//}	\\
+	E'_{\perp} &= \gamma (E_{\perp} + \beta B_{\perp})   \qquad& B'_{\perp} &= \gamma(B_{\perp} - \beta E_{\perp})
+    \end{aligned}
+\end{equation}
+\begin{description}
+    \item [Retarded Field]
+	\begin{equation}
+	    \label{eqn:em::retardedField}
+	    \left\{
+	    \begin{aligned}
+		\Box\phi &= \rho	\\
+		\Box \vec{A} &= \vec{j}	\\
+	    \end{aligned}
+            \right.
+	    \Rightarrow
+	    \left\{
+	    \begin{aligned}
+		\phi(t,\vec{r}) &= \int d^3r_0 \frac{1}{4\pi r}\frac{\rho(T,\vec{r}_0)}{1-\vec{\beta}(T)\cdot\vec{n}}   \\
+		\vec{A}(t,\vec{r})  &= \int d^3r_0 \frac{1}{4\pi r}\frac{\vec{j}(T,\vec{r}_0)}{1-\vec{n}\cdot\vec{\beta}(T)}   \\ 
+	    \end{aligned}
+            \right.
+	\end{equation}
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{QM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Symmetry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Perturbation Theory}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Scattering}
+\begin{description}
+    \item [Lippmann-Schwinger Equation]
+	\begin{equation}
+	    \label{eqn:qm:LSEqn}
+	    \left\{
+		\begin{aligned}
+		    i\hbar\partial_t\psi^\dag(t,\vec{x}) = H\psi^\dag(t, \vec{x})   \\
+		    \psi^\dag(t=-\inf, x) = \phi(t,x) = \frac{1}{(2\pi)^3/2}e^{-\frac{i}{\hbar}Et + i\vec{k}\cdot\vec{x}} 
+		\end{aligned}
+		\right.
+	\end{equation}
+\end{description}
+
+\section{Relativity}
+Assuming internial frame K' moves with velocity $\vec{v} = v_0\hat{x}$ with respected to
+rest internial frame K.
+\subsection{Definition}
+\begin{description}
+    \item {4-vector}
+	\begin{equation}
+	    \label{eqn:sr::4vectors}
+		x^\mu \equiv (ct, x^1, x^2, x^3) = (ct, \vec{x})
+	\end{equation}
+
+	In calculation, it's usually regarded as a column vector:
+	\begin{equation}
+	    x^\mu = 
+	    \begin{pmatrix}
+		ct	\\
+		x^1	\\
+		x^2	\\
+		x^3	\\
+	    \end{pmatrix}
+	\end{equation}
+
+    \item{4-velocity}
+	\begin{equation}
+	    \label{eqn:sr::4velocity}
+	    U^\mu \equiv \frac{dx^\mu}{d\tau} = (\gamma c, \gamma \vec{v})
+	\end{equation}
+
+    \item[metric tensor] 
+	\begin{equation}
+	    \label{eqn:sr::metricTensor}
+	    g^{\mn} = 
+	    \begin{pmatrix}
+		-1  & 0	& 0 & 0	\\
+		0   & 1	& 0 & 0 \\
+		0   & 0	& 1 & 0 \\
+		0   & 0	& 0 & 1 \\
+	    \end{pmatrix}
+	\end{equation}
+    \item [$\beta$, $\gamma$]
+	\begin{equation}
+	    \label{eqn:sm::betaGamma}
+	    \begin{gathered}
+		\beta \equiv \frac{v_0}{c} \\
+		\gamma	\equiv \frac{1}{\sqrt{1-\beta^2}}	\Rightarrow \gamma \ge 1
+	    \end{gathered}
+	\end{equation}
+
+    \item [Proper time]
+	\begin{equation}
+	    \label{eqn:sr::properTime}
+	    d\tau = \frac{1}{\gamma}dt
+	\end{equation}
+\end{description}
+\subsection{Transformation}
+\begin{description}
+    \item [Spacetime]
+	\begin{equation}
+	    \label{eqn:sr::spacetime}
+	    \begin{pmatrix}
+		ct' \\
+		x'  \\
+		y'  \\
+		z'  \\
+	    \end{pmatrix}
+	    =
+	    \begin{pmatrix}
+		\gamma	& -\bg	&   0	& 0 \\
+		-\bg	& \gamma    & 0	& 0 \\
+		0   & 0	& 1 & 0	\\
+		0   & 0	& 0 & 1	\\
+	    \end{pmatrix}
+	    \begin{pmatrix}
+		ct \\
+		x  \\
+		y  \\
+		z  \\
+	    \end{pmatrix}
+	\end{equation}
+
+    \item [Velocity]
+	\begin{equation}
+	    \label{eqn:sr::velocity}
+	    \begin{gathered}
+		c = c	\\
+		v'^x = \frac{v^x - v_0}{1-v^xv_0/c^2}	\\
+		v'^y = \frac{v^y}{\gamma(1-v^xv_0/c^2)}	\\
+		v'^z = \frac{v^z}{\gamma(1-v^xv_0/c^2)}	\\
+	    \end{gathered}
+	\end{equation}
+\end{description}
+
+\subsection{Examples}
+A object moves in velocity $\vec{v} = v_0\hat{x}$, then in the 
+object rest frame K', we measure its length as $l_0$; and the
+proper time for an evnet as $d\tau$; then in the lab frame, what 
+we meaure are $L$ and $dt$:
+\begin{description}
+    \item [length contract effect]
+	\begin{equation}
+	L = \frac{l_0}{\gamma}
+	\end{equation}
+
+    \item [time dilation]
+	\begin{equation}
+	    dt = \gamma d\tau
+	\end{equation}
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{QFT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nucleus}
+
+\begin{description}
+    \item [Decay rate] 
+	\begin{equation}
+	    \label{eqn:nu::decayRate}
+	    \Gamma = 1/\tau
+	\end{equation}
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{HEP}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Miscellaneous}
 \begin{description}
     %%%%%%%%% A %%%%%%%%%%% 
     \item [adjoint representation]
@@ -190,6 +429,8 @@
     \item [SO(n)] the group of nD rotations ($det(R) = 1$)
 	
     %%%%%%%%% T %%%%%%%%%%% 
+    \item [time dilation] In relativity, time dilation is a difference in 
+	the elapsed time measured by two observers.
     \item [timelike]	$V^\mu V_\mu > 0$
 
     %%%%%%%%% U %%%%%%%%%%% 

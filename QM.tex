@@ -131,3 +131,22 @@ To get
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Young Tableau}
 A way to describe 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scattering}
+In the case of an electron of mass $m_e$ scatters off a proton of mass $m_p$. 
+From non-relativistic QM, the xsection should be given by the Born approximation:
+\begin{equation}
+    \left(\frac{d\sigma}{d\Omega}\right)_{Born} = \frac{m_e^2}{4\pi^2}|\tilde{V}(\vec{k})|^2
+\end{equation}
+Where the Fourier transform of the potential is given by:
+\[
+    \tilde{V}(\vec{k}) = \int d^3xe^{-i\vec{k}\vec{x}}V(\vec{x})
+    \]
+$\vec{k}$ is the difference in the electron momentum before and after scattering, 
+sometimes called the \emph{momentum transfer}. For Coulomb potential, 
+$V(x) = \frac{e^2}{4\pi|\vec{x}|}$, $\tilde{V}(\vec{k}) = \frac{e^2}{\vec{k}^2}$, 
+So
+\[
+    \left(\frac{d\sigma}{d\Omega}\right)_{Born} = \frac{m_e^2}{4\pi^2}\left(\frac{e^2}{\vec{k}^2}\right)^2
+    \]
