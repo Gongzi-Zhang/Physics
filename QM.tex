@@ -14,6 +14,66 @@ where $\alpha=(\frac{mk}{\hbar^2})^{1/4}=(\frac{m\omega}{\hbar})^{1/2}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rotation}
+Rotation of \textbf{Hilbert} space:
+\begin{equation}
+    [J_i, J_j] = i\hbar\epsilon_{ijk}J_k
+\end{equation}
+
+\begin{equation}
+    J_{\pm} = J_x \pm iJ_y
+\end{equation}
+
+\begin{equation}
+    J_{\pm}\ket{j,m} = \sqrt{(j\mp m)(j\pm m+1)}\hbar\ket{j,m\pm 1}
+\end{equation}
+
+\begin{equation}
+    \label{Pauli matrixes}
+    \sigma_x = 
+    \begin{pmatrix}
+	0   &	1   \\
+	1   &	0   \\
+    \end{pmatrix}   \quad
+    \sigma_y = 
+    \begin{pmatrix}
+	0   &	-i   \\
+	i   &	0   \\
+    \end{pmatrix}   \quad
+    \sigma_z = 
+    \begin{pmatrix}
+	1   &	0   \\
+	0   &	-1   \\
+    \end{pmatrix}   
+\end{equation}
+
+
+General rotation for spin:
+\begin{equation}
+    \begin{aligned}
+	D(R_i(\varphi)) &= e^{-\frac{i\varphi}{\hbar}\hat{n}\cdot\frac{\hbar}{2}\vec{\sigma}} = e^{-\frac{i\varphi}{2}\hat{n}\cdot\vec{\sigma}} \\
+	&= \displaystyle \sum_{k=0}^{\infty}\frac{(-i\varphi/2)^k}{k!}(\sigma_n)^k   \qquad  \sigma_n^2=1    \\
+	&= \displaystyle \sum_{[even]}\frac{(-i\varphi/2)^k}{k!}\cdot\mathds{1} + \displaystyle \sum_{[odd]}\frac{(-i\varphi/2)^k}{k!}\cdot\sigma_n \\
+	&= \cos\frac{\varphi}{2} -i\sigma_n\sin\frac{\varphi}{2}
+    \end{aligned}
+\end{equation}
+
+Euler Representation:
+\begin{equation}
+    \begin{aligned}
+    R(\ab\gamma) &= R_{z'}(\gamma)\cdot R_{y'}(\beta)\cdot R_{z}(\alpha)	\\
+	    &= R_{y'}(\beta)R_z(\beta)R_{y'}^{-1}(\beta)\cdot R_{y'}(\beta)\cdot R_z(\alpha)	\\
+	    &= [R_{z}(\alpha)R_y(\beta)R_{z}(\gamma)]\cdot R_{z}(\gamma)\cdot R_z(\alpha)	\\
+	    &= R_z(\alpha)R_y(\beta)R_z(\gamma)	\\
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \ket{\varphi}_R = \ket{R\varphi} = D(R)\ket{\varphi}
+\end{equation}
+
+\begin{equation}
+    D^{j}_{mm'}(R) \equiv \bar{jm}D(R)\ket{jm'}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Vector}
@@ -38,15 +98,32 @@ then
 \]
 Where
 \begin{equation}
-    J_\pm \equiv J_x \pm iJ_y	\quad J_{\pm 1} = \mp \frac{1}{\sqrt{x}}J_\pm, \quad \text{and} \quad J_0 = J_z
+    J_\pm \equiv J_x \pm iJ_y	\quad J_{\pm 1} = \mp \frac{1}{\sqrt{2}}J_\pm, \quad \text{and} \quad J_0 = J_z
 \end{equation}
+\begin{equation}
+    \vec{J}\cdot\vec{V} = J_xV_x + J_yV_y + J_zV_z = J_+V_+ + J_0V_0 + J_-V_- = J_0V_0 - J_{+1}V_{-1} - J_{-1}V_{+1}
+\end{equation}
+
+The Projection Theorem:
+\begin{equation}
+    \bra{\alpha',jm'}V_q\ket{\alpha,jm} = \frac{\bra{\alpha',jm}J\cdot V\ket{\alpha,jm}}{\hbar^2j(j+1)}\bra{jm'}J_q\ket{jm}
+\end{equation}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Tensor}
 We define spherical tensor of rank k with $(2k+1)$ components labelled by q
 as
 \begin{equation}
-    D^{\dag}(R)T^{(k)}_{q}D(R)=\displaystyle\sum_{q^\prime=-k}^{k}D^{(k)*}_{qq^\prime}T^{(k)}_{q^\prime}
+    (T^k_q)^R \equiv D^{\dag}(R)T^{(k)}_{q}D(R)=\displaystyle\sum_{q^\prime=-k}^{k}D^{(k)*}_{qq^\prime}T^{(k)}_{q^\prime}
+\end{equation}
+
+\begin{equation}
+    \begin{gathered}
+	[J_{\pm}, T^k_q] = \hbar\sqrt{k(k+1) -q(q\pm 1)}T^k_{q\pm 1}    \\
+	[J_z, T^k_q] = \hbar qT^k_q
+    \end{gathered}
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spin-$1/2$} 

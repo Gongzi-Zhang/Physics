@@ -4,6 +4,88 @@ Definition and Conclusion.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{General}
 
+index:                                                          
+Entries $(\mathcal{L})_{\mn}$ of a matrix are labelled by rows ($\mu$) and columns ($\nu$).
+You are \textbf{free} to move this row and column index up and down at will --
+what matters is the order of index:
+\[
+    (\mathcal{L})_{\mn} = (\mathcal{L}^T)_{\mn} = {(\mathcal{L})^\mu}_\nu = {(\mathcal{L}^T)_\nu}^\mu = {L^\mu}_\nu
+    \]
+The much \textbf{preferred} placemnet of the indices surrounding the matrix is just a 
+visual reminder of the individual entries ${L^\mu}_\nu$ which together form the matrix ($\mathcal{L}$) 
+and ($\mathcal{L}^T$), and that's all.
+
+The indices labelling ${L^\mu}_\nu$ can not be raised or lowered randomly,
+but are raised and lowered with the metric tensor:
+\[
+    (g\mathcal{L})_{\mn} = g_{\mu\rho}{L^\rho}_{\nu} \equiv L_{\mn} 
+    \]
+and 
+\[
+    {(g\mathcal{L}g)_\mu}^\nu = g_{\mu\rho}{L^\rho}_\sigma g^{\sigma\nu} \equiv {L_\mu}^\nu
+    \]
+quasi-periodic:
+\begin{equation}
+    \label{quasi-periodic}
+    \phi(x+a) = e^{ika}\phi(x)
+\end{equation}
+There is a phase shift, so it is not rigorously periodic.
+
+index:
+\begin{equation}
+    \begin{gathered}
+	x^i = (x, y, z); \quad 
+	x_i = 
+	\begin{pmatrix}
+	    x   \\
+	    y   \\
+	    z   \\
+	\end{pmatrix}   \\
+	x^\mu = (t, x, y, z); \quad 
+	x_\mu = 
+	\begin{pmatrix}
+	    t	\\
+	    x   \\
+	    y   \\
+	    z   \\
+	\end{pmatrix}   \\
+    \end{gathered}
+\end{equation}
+
+Rotation:
+The algebraic characterization $R^TR=\mathcal{1}$ is a much more useful
+definition of the group than the explicit form of the rotation matrices 
+as a function of $\theta$.  \\
+Another way to define the rotation group is as the set of linear 
+transformations on $\mathcal{R}^n$ preserving the inner product 
+$x^ix_i=\delta_{ij}x^ix^j$:
+\begin{equation}
+    \label{eqn:rotation}
+    R_{ki}R_{lj}\delta_{kl} = (R^T)_{ik}\delta_{kl}R_{lj} = [(R^T)\mathcal{1}(R)]_{ij} = (R^TR)_{ij}=\delta_{ij}
+\end{equation}
+
+For an oscillating field $E(t) = E_0 e^{i(\vec{k}\cdot\vec{x}-\omega t}$, the time average is:
+\begin{equation}
+    <E> = \frac{1}{T}\int_0^TE(t)dt = \frac{1}{2}E_0e^{i\vec{k}\cdot\vec{x}}
+\end{equation}
+
+A plain wave $E = E_0 e^Pi(\vec{k}\cdot\vec{x}-\omega t)$ (such as the Fourier mode
+of a $\delta$ function) has \textbf{no} starting or ending point and it fulfills
+all the space. So understanding the scatter of a plain wave is some tricky thing.
+
+Velocity: 
+\begin{equation}
+    \vec{v} = \nabla_{\vec{p}}E(|\vec{p}|)
+\end{equation}
+
+\textbf{Lagrangian (Hamiltonian)} is the Legendre transform of the Hamiltonian (Lagrangian)
+\begin{equation}
+    L(q, \dot{q}) = p(q, \dot{q})\dot{q} - H(q,p(q, \dot{q})), \quad 
+    H(q, p) = p\dot{q}(q,p) - L(q,\dot{q}(q,p))
+\end{equation}
+where $p(q, \dot{q})$ is defined as $\frac{\partial H}{\partial p} = \dot{q}$
+and $\dot{q}(q,p)$ is defined as $\frac{\partial L(q,\dot{q})}{\partial \dot{q}}=p$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Energy}
 \begin{description}
     \item [Power]
@@ -12,83 +94,58 @@ Definition and Conclusion.
 	\end{equation}
 \end{description}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Potential}
 \begin{description}
-    \item [Yukawa potential]
+    \item [Yukawa potential (screened Coulomb potential)]
 	\begin{equation}
 	    \label{eqn:Yukawa}
-	    V = \frac{V_0e^{-\mu r}}{\mu r}
+	    V = V_0\frac{e^{-\mu r}}{r}
 	\end{equation}
 \end{description}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Monte Carlo}
+\begin{description}
+    \item [Monte Carlo Method]
+	A method to search for solutions to mathematical problem using a statistical sampling with random numbers.
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Dirac Delta}
 \begin{description}
     \item [Dimension] 
 	Note that $\delta^3(x)$ and $\delta(x)$ have different dimensions.
 	\begin{equation}
-	    $[\delta^3(x)] = L^{-3}$, \qquad $[\delta(x)] = L^{-1}$
+	    [\delta^3(x)] = L^{-3}, \qquad [\delta(x)] = L^{-1}
 	\end{equation}
 \end{description}
+
+\subsection{Acronyms}
+h.c.	\\
+    Hermit conjugate	\\
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CM}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{EM}
-
-\subsection{Radiation}
-\begin{description}
-    \item [Retarded Time] 
-	\begin{equation}
-	    \label{eqn:em::retardedTime}
-	    T = t-\frac{|\vec{r} - \vec{r}_0|}{c} \stackrel{r>>r_0}{\approx} t - \frac{r}{c} + \frac{\vec{n}\cdot\vec{r}_0}{c}
-	\end{equation}
-
-
-    \item [Radiation Power]
-	\begin{equation}
-	    \label{eqn:em::radiationPower}
-	    \begin{gathered}
-		\frac{dP}{dA} = \vec{S} = c\vec{E}\cdot\vec{B} = \frac{e^2}{16\pi^2}\frac{a^2}{c^3}\cos^2{\theta}
-	    \end{gathered}
-	\end{equation}
-\end{description}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Relativity}
-\subsubsection{E and B}
-\begin{equation}
-    \label{eqn:em::sr:::E&B}
-    \begin{aligned}
-	E'_{//} &= E_{//}   \qquad&   B'_{//} &= B_{//}	\\
-	E'_{\perp} &= \gamma (E_{\perp} + \beta B_{\perp})   \qquad& B'_{\perp} &= \gamma(B_{\perp} - \beta E_{\perp})
-    \end{aligned}
-\end{equation}
-\begin{description}
-    \item [Retarded Field]
-	\begin{equation}
-	    \label{eqn:em::retardedField}
-	    \left\{
-	    \begin{aligned}
-		\Box\phi &= \rho	\\
-		\Box \vec{A} &= \vec{j}	\\
-	    \end{aligned}
-            \right.
-	    \Rightarrow
-	    \left\{
-	    \begin{aligned}
-		\phi(t,\vec{r}) &= \int d^3r_0 \frac{1}{4\pi r}\frac{\rho(T,\vec{r}_0)}{1-\vec{\beta}(T)\cdot\vec{n}}   \\
-		\vec{A}(t,\vec{r})  &= \int d^3r_0 \frac{1}{4\pi r}\frac{\vec{j}(T,\vec{r}_0)}{1-\vec{n}\cdot\vec{\beta}(T)}   \\ 
-	    \end{aligned}
-            \right.
-	\end{equation}
-\end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SM}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{QM}
+Heisenberg EOM:
+\begin{equation}
+    \label{eqn:Heisenberg EOM}
+    i\partial_t\phi(x) = [\phi, H]
+\end{equation}
+
+S-matrix
+\begin{equation}
+    \label{S-matrix}
+    \bra{f}S\ket{i}_{heisernberg} = \bra{f;\infty}\ket{i;-\infty}_{Schrodinger}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Symmetry}
@@ -104,14 +161,20 @@ Definition and Conclusion.
 	    \label{eqn:qm:LSEqn}
 	    \left\{
 		\begin{aligned}
-		    i\hbar\partial_t\psi^\dag(t,\vec{x}) = H\psi^\dag(t, \vec{x})   \\
-		    \psi^\dag(t=-\inf, x) = \phi(t,x) = \frac{1}{(2\pi)^3/2}e^{-\frac{i}{\hbar}Et + i\vec{k}\cdot\vec{x}} 
+		    i\hbar\partial_t\psi^\dag(t,\vec{x}) &= H\psi^\dag(t, \vec{x})   \\
+		    \psi^\dag(t=-\inf, x) &= \phi(t,x) = \frac{1}{(2\pi)^3/2}e^{-\frac{i}{\hbar}Et + i\vec{k}\cdot\vec{x}} 
 		\end{aligned}
 		\right.
 	\end{equation}
 \end{description}
 
 \section{Relativity}
+
+Postulates:
+\begin{itemize}
+    \item All inertial observers have the same equations of motion and the same physical laws.
+    \item The speed of light is constant for all inertial frames.
+\end{itemize}
 Assuming internial frame K' moves with velocity $\vec{v} = v_0\hat{x}$ with respected to
 rest internial frame K.
 \subsection{Definition}
@@ -156,6 +219,14 @@ rest internial frame K.
 	    \begin{gathered}
 		\beta \equiv \frac{v_0}{c} \\
 		\gamma	\equiv \frac{1}{\sqrt{1-\beta^2}}	\Rightarrow \gamma \ge 1
+	    \end{gathered}
+	\end{equation}
+	Play of $\beta$ and $\gamma$
+	\begin{equation}
+	    \begin{gathered}
+		\gamma^2 - \beta^2\gamma^2 = \gamma^2(1-\beta^2) = 1	\\
+		1-\beta^2 = (1+\beta)(1-\beta) \xRightarrow{\beta\sim 1} 2(1-\beta)  \\
+		\beta \sim 0 \Rightarrow \gamma \sim 1  \\
 	    \end{gathered}
 	\end{equation}
 
@@ -225,6 +296,11 @@ we meaure are $L$ and $dt$:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Nucleus}
+\begin{description}
+    \item [Radiation length]
+    \item [Mean free path]
+    \item [$dE/dx$]
+\end{description}
 
 \begin{description}
     \item [Decay rate] 
@@ -236,6 +312,17 @@ we meaure are $L$ and $dt$:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{HEP}
+Fermi's golden rule: the transition rate between two states is proportional
+to the matrix element squared:
+\begin{equation}
+    \label{Fermi's golden rule}
+    \Gamma \approx |\mathcal{M}|^2\delta(E_f-E_i)
+\end{equation}
+The matrix element
+\begin{equation}
+    \label{matrix element}
+    \mathcal{M} = \bra{f}H_{int}\ket{i}
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Miscellaneous}
 \begin{description}

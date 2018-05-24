@@ -317,6 +317,18 @@ an inherent two-valuedness called polarization.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Concepts}
+
+Schwinger-Dyson equation:
+\begin{equation}
+    \label{eqn:Schwinger-Dyson}
+    (\Box_x + m^2)\langle \phi_x\phi_1\cdots\phi_n \rangle = 
+    \langle \mathcal{L}'_{int}[\phi_x]\phi_1\cdots\phi_n \rangle -
+    i\hbar\displaystyle \sum_j \delta^4(x-x_j)\langle \phi_1\cdots\phi_{j-1}\phi_{j+1}\cdots\phi_n \rangle
+\end{equation}
+Where $\phi_x \equiv \phi(x)$ and $\phi_j \equiv \phi(x_j)$, $\angle \phi_x\phi_1\cdots\phi_n \rangle \equiv \bra{\Omega}T\{\phi_x\phi_1\cdots\phi_n\}\ket{\Omega}$, $\mathcal{L}'_{int}[\phi] = \frac{d}{d\phi}\mathcal{L}_{int}[\phi]$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lagrangian}
 In QFT, we will use Lagrangian rather than Hamiltonian, because it is
 Lorentz invariant. To construct Lorentz invariant Lagrangian from field, one

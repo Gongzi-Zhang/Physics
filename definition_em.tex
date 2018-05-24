@@ -1,0 +1,206 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{EM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{General}
+\textbf{degree of polarization}:    \\
+\begin{equation}
+    \text{degree of pol} \equiv \frac{|\sigma_{\perp}-\sigma_{//}|}{\sigma_{\perp}+\sigma_{//}}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Gauge}
+\begin{description}
+    \item [Coulomb Gauge]
+	\begin{equation}
+	    \label{eqn:em::CoulombGauge}
+	    \nabla\cdot\vec{A} = 0
+	\end{equation}
+
+    \item [Lorentz Gauge]
+	\begin{equation}
+	    \label{eqn:em::LorentzGauge}
+	    \nabla\cdot\vec{A} + \partial_t\varphi = 0
+	\end{equation}
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Maxwell Equation}
+\begin{equation}
+    \label{eqn:Maxwell}
+    \left\{
+    \begin{aligned}
+	\nabla\cdot{E} &= \frac{\rho}{\epsilon}	\\
+	\nabla\times{B} &= \frac{1}{c}\left(J + J_D + J_{ind}\right)	\\
+	\nabla\cdot{B} &= 0  \\
+	\nabla\times{E} &= -\frac{1}{c}\partial_{t}B	\\
+    \end{aligned}
+    \right.
+    \longrightarrow
+    \left\{
+    \begin{aligned}
+	\nabla\cdot{D} &= \rho	\\
+	\nabla\times{H} &= \frac{1}{c}J +\frac{1}{c}\partial_{t}D    \\
+	\nabla\cdot{B} &= 0  \\
+	\nabla\times{E} &= -\frac{1}{c}\partial_{t}B	\\
+    \end{aligned}
+    \right.
+\end{equation}
+
+In vacuum environment ($\epsilon_0 = \mu_0  = 1$):
+\begin{equation}
+    \label{eqn:Maxwell_vacuum}
+    \left\{
+    \begin{aligned}
+	\nabla\cdot{\vec{E}} &= \rho	\\
+	\nabla\times{\vec{B}} &= \frac{1}{c}\vec{J} +\frac{1}{c}\partial_{t}\vec{E}    \\
+	\nabla\cdot{\vec{B}} &= 0  \\
+	\nabla\times{\vec{E}} &= -\frac{1}{c}\partial_{t}\vec{B}	\\
+    \end{aligned}
+    \right.
+\end{equation}
+\begin{equation*}
+    \begin{gathered}
+	\nabla\cdot\vec{B} = 0 \Rightarrow \vec{B} = \nabla\times\vec{A}    \\
+	\nabla\times\vec{E} = -\frac{1}{c}\partial_t\vec{B} \Rightarrow \vec{E} = -\frac{1}{c}\partial_t\vec{A} - \nabla\varphi
+    \end{gathered}
+\end{equation*}
+
+The source equation
+\begin{equation*}
+    \begin{gathered}
+	-\frac{1}{c}\partial_t(\nabla\cdot\vec{A}) - \nabla^2\varphi = \rho    \\
+	\nabla(\nabla\cdot\vec{A} + \frac{1}{c}\partial_t\varphi) + \frac{1}{c^2}\partial^2_t\vec{A} - \nabla^2\vec{A} = \frac{\vec{j}}{c}
+    \end{gathered}
+\end{equation*}
+
+\textbf{Coulomb Gauge}:	$\nabla\cdot\vec{A} = 0$
+\begin{equation*}
+    \begin{gathered}
+	-\nabla^2\varphi = \rho	\\
+	\nabla(\frac{1}{c}\partial_t\varphi) + \Box\vec{A} = \frac{\vec{j}}{c}	\\
+    \end{gathered}
+\end{equation*}
+
+\indent If $\vec{j} = 0$: 
+\begin{equation*}
+    \begin{gathered}
+	-\nabla^2\varphi = \rho	\\
+	\partial_t\varphi = 0	\\
+    \end{gathered}
+\end{equation*}
+Green function:
+\begin{equation*}
+    \varphi = \frac{q}{4\pi|\vec{r} - \vec{r_0}|}
+\end{equation*}
+
+\indent If $\rho = 0$:    
+\begin{equation*}
+    \begin{gathered}
+	\varphi = 0 \\
+	\Box\vec{A} = {\vec{j}}/{c}
+    \end{gathered}
+\end{equation*}
+
+\textbf{Lorentz Gauge}:	$\nabla\cdot\vec{A} + \frac{1}{c}\partial_t\varphi = 0$
+\begin{equation*}
+    \begin{gathered}
+	\Box\varphi = \rho	\\
+	\Box\vec{A} = {\vec{j}}/{c}
+    \end{gathered}
+\end{equation*}
+
+Far field ($r >> r_0$, retarded time T):
+\begin{equation*}
+    \begin{gathered}
+	\varphi(t,\vec{x}) = \frac{1}{4\pi r}\int d\vec{r}_0\rho(T, \vec{r}_0)    \\
+	\vec{A}(t, \vec{x}) = \frac{1}{4\pi r}\int d\vec{r}_0\vec{j}(T,\vec{r}_0)/c    \\
+    \end{gathered}
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Radiation}
+\begin{description}
+    \item [Retarded Time] 
+	\begin{equation}
+	    \label{eqn:em::retardedTime}
+	    T = t-\frac{|\vec{r} - \vec{r}_0|}{c} \stackrel{r>>r_0}{\approx} t - \frac{r}{c} + \frac{\vec{n}\cdot\vec{r}_0}{c}
+	\end{equation}
+
+
+    \item [Radiation Power]
+	\begin{equation}
+	    \label{eqn:em::radiationPower}
+	    \begin{gathered}
+		\frac{dP}{dA} = \vec{S} = c\vec{E}\cdot\vec{B} = \frac{e^2}{16\pi^2}\frac{a^2}{c^3}\cos^2{\theta}
+	    \end{gathered}
+	\end{equation}
+\end{description}
+
+\begin{equation}
+    \vec{E}_{rad} = -\frac{1}{c}\partial_t\vec{A}_{rad} - \nabla\phi_{rad} = \hat{n}\times\hat{n}\times\frac{1}{c}\partial_t\vec{A}_{rad}
+    = \frac{e}{4\pi r c^2}\hat{n}\times\hat{n}\times\vec{a}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Relativity}
+
+\textbf{covariant} vector: lower indices;    \\
+\textbf{contravatiant} vector: upper indices.	\\
+\textbf{d'Alembertian} 
+\begin{equation}
+    \label{eqn:d'Alembertian}
+    \Box = \partial^2_\mu = \partial_t^2-\partial_x^2-\partial_y^2-\partial_z^2.
+\end{equation}
+
+\textbf{timelike}:  $V^\mu V_\mu > 0$, for example (t, 0, 0, 0)	\\
+\textbf{lightlike}:  $V^\mu V_\mu = 0$, for example (p, 0, 0, p)	\\
+\textbf{spacelike}:  $V^\mu V_\mu < 0$, for example (0, x, 0, 0)
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{4-Vector}
+\begin{itemize}
+    \item $x^\mu \equiv (ct, \vec{x})$
+    \item $\partial_\mu = \frac{\partial}{\partial x^\mu} = (\partial_t, \partial_x, \partial_y, \partial_z)$
+    \item $U^\mu = (u^0, \vec{u}) \equiv \frac{dx^\mu}{d\tau} = (\gamma c, \gamma\vec{v})$
+    \item $p^\mu = (E/c, p_x, p_y, p_z)$
+    \item $J^\mu \equiv (c\rho, \vec{J})$
+    \item $A^{\mu} \equiv (\varphi, \vec{A})$
+    \item $K^\mu = (\omega/c, \vec{k})$
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{E and B}
+\begin{equation}
+    \label{eqn:em::sr:::E&B}
+    \begin{aligned}
+	E'_{//} &= E_{//}   \qquad&   B'_{//} &= B_{//}	\\
+	E'_{\perp} &= \gamma (E_{\perp} + \beta B_{\perp})   \qquad& B'_{\perp} &= \gamma(B_{\perp} - \beta E_{\perp})
+    \end{aligned}
+\end{equation}
+\begin{description}
+    \item [Retarded Field]
+	\begin{equation}
+	    \label{eqn:em::retardedField}
+	    \left\{
+	    \begin{aligned}
+		\Box\phi &= \rho	\\
+		\Box \vec{A} &= \vec{j}	\\
+	    \end{aligned}
+            \right.
+	    \Rightarrow
+	    \left\{
+	    \begin{aligned}
+		\phi(t,\vec{r}) &= \int d^3r_0 \frac{1}{4\pi r}\frac{\rho(T,\vec{r}_0)}{1-\vec{\beta}(T)\cdot\vec{n}}   \\
+		\vec{A}(t,\vec{r})  &= \int d^3r_0 \frac{1}{4\pi r}\frac{\vec{j}(T,\vec{r}_0)}{1-\vec{n}\cdot\vec{\beta}(T)}   \\ 
+	    \end{aligned}
+            \right.
+	\end{equation}
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Radiation}
+\begin{equation}
+    \vec{E(t)} = \hat{n}\times\hat{n}\times\frac{1}{c}\partial_t\vec{A}_{ret} = \frac{q}{4\pi rc^2}\left[\frac{\hat{n}\times(\hat{n}-\vec{\beta})\times\vec{a}}{(1-\hat{n}\cdot\vec{\beta})^3}\right]_{ret}
+\end{equation}

@@ -2,11 +2,28 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definition}
+
 %%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Levi-Civita}
 $\epsilon_{ijk}$ is an antisymmetric tensor, which is defined as: 
-\[  \epsilon_{123} = 1, \epsilon_{ijj} = 0, \epsilon_{ijk} = -\epsilon_{jik} \]
+\begin{equation}
+    \label{eqn:math::Levi-Civita}
+    \epsilon_{123} = 1, \epsilon_{ijj} = 0, \epsilon_{ijk} = -\epsilon_{jik}
+\end{equation}
 
+\subsubsection{Fourier Transform}
+\begin{equation}
+    \label{eqn:math::FT}
+    \begin{gathered}
+    \tilde{f}(k) = \int_{-\infty}^{\infty}dx e^{ikx}f(x)	\\
+    f(x) = \int_{-\infty}^{\infty}\frac{dk}{2\pi}e^{-ikx}\tilde{f}(k)
+    \end{gathered}
+\end{equation}
+
+\section{Vector Operation}
+\begin{equation}
+    \nabla\times(\nabla\times\vec{A}) = \nabla(\nabla\vec{A}) - \nabla^2\vec{A} 
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formulas}
@@ -16,6 +33,47 @@ $\epsilon_{ijk}$ is an antisymmetric tensor, which is defined as:
 \[
     \delta^3(\vec{x})=\int\frac{d^3k}{(2\pi)^3}e^{i\vec{k}\vec{x}}
     \]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Limit}
+For 
+\[
+    f(\omega) = \frac{\sin(N\omega)T}{\sin(\omega T)}   \quad (\omega > 0)
+    \]
+when $N\rightarrow\infty$, 
+we can find that the dominant value lies in 
+\[
+    \omega = \frac{m\pi}{T} \qquad  m=1,2,3 \cdots
+    \]
+with $\omega=\frac{m\pi}{T}+\Delta\omega$, we can get:
+\begin{equation}
+    \displaystyle \lim_{N\rightarrow\infty}f(\omega)\approx\frac{(-1)^m\sin(N\Delta\omega T)}{(-1)^m\Delta\omega T}
+\end{equation}
+Note: $N\Delta\omega T$ is not infinity small, so we need to keep $\sin()$. \\
+We also find that:
+\begin{equation}
+    \int_{-\epsilon}^{\epsilon}d(\Delta\omega)\frac{\sin(N\Delta\omega T)}{\Delta\omega T}
+    =\frac{1}{T}\int_{-N\epsilon T}^{N\epsilon T} dx\frac{x}{x} = \frac{\pi}{T}
+\end{equation}
+So: 
+\begin{equation}
+    \displaystyle \lim_{N\rightarrow\infty}f(\omega)\approx\frac{(-1)^m\sin(N\Delta\omega T)}{(-1)^m\Delta\omega T}
+    =\displaystyle \sum_{m=1}\frac{\pi}{T}\delta({\omega-\omega_m})
+\end{equation}
+
+Similarly:
+\begin{equation}
+    \displaystyle \lim_{N\rightarrow\infty}f_1(\omega)=\left(\frac{\sin(N\omega T)}{\omega T}\right)^2
+    \approx\left(\frac{(-1)^m\sin(N\Delta\omega T)}{(-1)^m\Delta\omega T}\right)^2
+\end{equation}
+
+\begin{equation}
+    \int_{-\epsilon}^{\epsilon}d(\Delta\omega)\left(\frac{\sin(N\Delta\omega T)}{\Delta\omega T}\right)^2
+    =\frac{N}{T}\int_{-N\epsilon T}^{N\epsilon T} dx\frac{x}{x}
+    =\frac{N\pi}{T}
+\end{equation}
+\begin{equation}
+    f_1(\omega)=\displaystyle \sum_{m=1}\frac{N\pi}{T}\delta({\omega-\omega_m})
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Integral}
@@ -34,15 +92,9 @@ this term gives zero. So
     \]
 
 \subsubsection{Useful Integrals}
-\begin{table}[htp]
-    \begin{center}
-    \begin{tabular}{c}
-	\hline
-	    $ \int_0^\infty e^{-\alpha x}x^ndx = \frac{n!}{\alpha^{n+1}} $  \\
-	\hline
-    \end{tabular}
-    \end{center}
-\end{table}
+\[
+    \int_0^\infty e^{-\alpha x}x^ndx = \frac{n!}{\alpha^{n+1}} 
+    \]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Functions}
 
@@ -143,3 +195,22 @@ $u$ is small, we will get
 \subsection{Representation of Group}
 A \textbf{representation} of a group G on a vector space V over a field K is
 a group homomorphism from G to GL(V), the 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Probability Distribution Functions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Uniform}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exponential}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauss}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{BreitWigner}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Poisson}
+

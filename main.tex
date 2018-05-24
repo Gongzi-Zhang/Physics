@@ -1,6 +1,7 @@
 \documentclass[12pt]{report}
 
 \usepackage{amsmath, amssymb}
+\usepackage{mathtools}	% formatting text above or below rightarrow	
 \usepackage{dsfont}
 \usepackage{enumitem}
 \usepackage{geometry}
@@ -20,6 +21,27 @@
 \date{March 14, 2018}
 
 \makeindex
+
+\newcommand{\ann}[1]{%
+    \begin{tikzpicture}[remember picture, baseline=-0.75ex]%
+	\node[coordinate] (inText) {};%
+    \end{tikzpicture}%
+    \marginpar{%
+	\renewcommand{\baselinestretch}{1.0}%
+	\begin{tikzpicture}[remember picture]%
+	    \definecolor{orange}{rgb}{1,0.5,0}%
+	    \draw node[fill=red!20,rounded corners,text width=\marginparwidth] (inNote){\footnotesize#1};%
+	\end{tikzpicture}%
+    }%
+    \begin{tikzpicture}[remember picture, overlay]%
+    \draw[draw = orange, thick]
+	([yshift=-0.2cm] inText)
+	    -| ([xshift=-0.2cm] inNote.west)
+	    -| (inNote.west);%
+	\end{tikzpicture}%
+    }%
+
+
 \begin{document}
 \maketitle
 
@@ -29,7 +51,13 @@ What makes life hard: nonlinearities, feedback, fluctuation, perturbation,
 evolution.
 \include{newcommand}
 \include{math}
+
+% general definition and conclusion without detailed proof
 \include{definition}
+\include{definition_cm}
+\include{definition_em}
+\include{definition_sm}
+
 \include{principles}
 \include{Introduction}
 \include{CM}
