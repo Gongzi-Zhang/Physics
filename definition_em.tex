@@ -1,15 +1,37 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{EM}
+\chapter{EM}
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[h]
+    \caption{Definition}
+    \label{tab:def}
+    \begin{center}
+	\begin{tabular}{l | c | c}
+	    \hline 
+	    description	& SI	& cgs	\\
+	    \hline
+	    c	& $\displaystyle c = \sqrt{\frac{1}{\mu_0\epsilon_0}}$ & $\displaystyle c = \sqrt{\frac{\mu_0}{\epsilon_0}}$\\
+	    \hline
+	    radiation power & $\displaystyle P = \frac{2}{3} \frac{q^2 a^2}{4\pi\epsilon_0 c^3} = \frac{q^2 a^2}{6\pi\epsilon_0c^3}$  & $\displaystyle P  = \frac{2}{3} \frac{q^2a^2}{c^3}$	\\
+	    \hline
+	    Poynting vector & $\vec{S} = \vec{E} \times \vec{H} = \vec{E} \times \vec{B} / \mu_0$   & $\displaystyle \vec{S} = \frac{c}{4\pi} \vec{E} \times \vec{H}$   \\
+	    \hline
+	    E \& M  & $\displaystyle \vec{B} = \frac{1}{c} \hat{n} \times \vec{E}$ & $\vec{H} = \hat{n} \times \vec{E}$	\\
+	\end{tabular}
+    \end{center}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{General}
+\section{General}
 \textbf{degree of polarization}:    \\
 \begin{equation}
     \text{degree of pol} \equiv \frac{|\sigma_{\perp}-\sigma_{//}|}{\sigma_{\perp}+\sigma_{//}}
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Gauge}
+\subsection{Gauge}
 \begin{description}
     \item [Coulomb Gauge]
 	\begin{equation}
@@ -25,7 +47,22 @@
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Maxwell Equation}
+\subsection{Maxwell Equation}
+
+Maxwell Equations in SI units:
+\begin{equation}
+    \label{eqn:Maxwell_SI}
+    \begin{aligned}
+	\nabla\cdot{E} &= \frac{\rho}{\epsilon_0}	\\
+	\nabla\times{B} &= frac{1}{c^2}\partial_{t}E + \mu_0 J	\\
+	\nabla\cdot{B} &= 0  \\
+	\nabla\times{E} &= -\partial_{t}B	\\
+    \end{aligned}
+\end{equation}
+
+
+
+
 \begin{equation}
     \label{eqn:Maxwell}
     \left\{
@@ -119,7 +156,7 @@ Far field ($r >> r_0$, retarded time T):
 \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Radiation}
+\section{Radiation}
 \begin{description}
     \item [Retarded Time] 
 	\begin{equation}
@@ -128,6 +165,17 @@ Far field ($r >> r_0$, retarded time T):
 	\end{equation}
 
 
+    \item [E\&B field (cgs)]
+	\begin{equation}
+	    \label{eqn:em::electric_field_cgs}
+	    \begin{gathered}
+		\vec{E}(\vec{r}, t) = q\left( \frac{\hat{n} - \vec{\beta}}{\gamma^2(1-\vec{\beta}\cdot\hat{n})^3 R^2}\right)_{ret} + \frac{q}{c}\left( \frac{\hat{n} \times [(\hat{n} - \vec{\beta}) \times \dot{\vec{\beta}}]}{(1-\vec{\beta}\cdot\hat{n})^3 R}\right)_{ret}  \\
+		\vec{B} = \hat{n} \times \vec{E}    \\
+	    \end{gathered}
+	\end{equation}
+	where $\vec{\beta} = \frac{\vec{v}}{c}$, the first term is 
+	proportional to \textbf{$\frac{1}{R^2}$}, while the second term
+	is proportional to \textbf{$\frac{1}{R}$}
     \item [Radiation Power]
 	\begin{equation}
 	    \label{eqn:em::radiationPower}
@@ -143,7 +191,7 @@ Far field ($r >> r_0$, retarded time T):
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Relativity}
+\section{Relativity}
 
 \textbf{covariant} vector: lower indices;    \\
 \textbf{contravatiant} vector: upper indices.	\\
@@ -157,7 +205,7 @@ Far field ($r >> r_0$, retarded time T):
 \textbf{lightlike}:  $V^\mu V_\mu = 0$, for example (p, 0, 0, p)	\\
 \textbf{spacelike}:  $V^\mu V_\mu < 0$, for example (0, x, 0, 0)
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{4-Vector}
+\subsection{4-Vector}
 \begin{itemize}
     \item $x^\mu \equiv (ct, \vec{x})$
     \item $\partial_\mu = \frac{\partial}{\partial x^\mu} = (\partial_t, \partial_x, \partial_y, \partial_z)$
@@ -171,7 +219,7 @@ Far field ($r >> r_0$, retarded time T):
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{E and B}
+\subsection{E and B}
 \begin{equation}
     \label{eqn:em::sr:::E&B}
     \begin{aligned}
@@ -200,7 +248,7 @@ Far field ($r >> r_0$, retarded time T):
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Radiation}
+\subsection{Radiation}
 \begin{equation}
     \vec{E(t)} = \hat{n}\times\hat{n}\times\frac{1}{c}\partial_t\vec{A}_{ret} = \frac{q}{4\pi rc^2}\left[\frac{\hat{n}\times(\hat{n}-\vec{\beta})\times\vec{a}}{(1-\hat{n}\cdot\vec{\beta})^3}\right]_{ret}
 \end{equation}

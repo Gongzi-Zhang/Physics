@@ -4,16 +4,19 @@ Definition and Conclusion.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{General}
 
-index:                                                          
-Entries $(\mathcal{L})_{\mn}$ of a matrix are labelled by rows ($\mu$) and columns ($\nu$).
-You are \textbf{free} to move this row and column index up and down at will --
-what matters is the order of index:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{index}
+Entries $(\mathcal{L})_{\mn}$ of a matrix are labelled by rows ($\mu$) 
+and columns ($\nu$).
+You are \textbf{free} to move this row and column index up and down at 
+will -- what matters is the order of index:
 \[
     (\mathcal{L})_{\mn} = (\mathcal{L}^T)_{\mn} = {(\mathcal{L})^\mu}_\nu = {(\mathcal{L}^T)_\nu}^\mu = {L^\mu}_\nu
     \]
-The much \textbf{preferred} placemnet of the indices surrounding the matrix is just a 
-visual reminder of the individual entries ${L^\mu}_\nu$ which together form the matrix ($\mathcal{L}$) 
-and ($\mathcal{L}^T$), and that's all.
+The much \textbf{preferred} placemnet of the indices surrounding the 
+matrix is just a visual reminder of the individual entries ${L^\mu}_\nu$ 
+which together form the matrix ($\mathcal{L}$) and ($\mathcal{L}^T$), 
+and that's all.
 
 The indices labelling ${L^\mu}_\nu$ can not be raised or lowered randomly,
 but are raised and lowered with the metric tensor:
@@ -24,14 +27,9 @@ and
 \[
     {(g\mathcal{L}g)_\mu}^\nu = g_{\mu\rho}{L^\rho}_\sigma g^{\sigma\nu} \equiv {L_\mu}^\nu
     \]
-quasi-periodic:
-\begin{equation}
-    \label{quasi-periodic}
-    \phi(x+a) = e^{ika}\phi(x)
-\end{equation}
-There is a phase shift, so it is not rigorously periodic.
 
-index:
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Vector Index}
 \begin{equation}
     \begin{gathered}
 	x^i = (x, y, z); \quad 
@@ -52,6 +50,21 @@ index:
     \end{gathered}
 \end{equation}
 
+
+
+\subsection{Cross Section}
+\begin{equation}
+    \label{eqn:xsection}
+    \sigma = \frac{\text{scattered power}}{\text{incident intensity}}
+\end{equation}
+quasi-periodic:
+\begin{equation}
+    \label{quasi-periodic}
+    \phi(x+a) = e^{ika}\phi(x)
+\end{equation}
+There is a phase shift, so it is not rigorously periodic.
+
+
 Rotation:
 The algebraic characterization $R^TR=\mathcal{1}$ is a much more useful
 definition of the group than the explicit form of the rotation matrices 
@@ -64,14 +77,16 @@ $x^ix_i=\delta_{ij}x^ix^j$:
     R_{ki}R_{lj}\delta_{kl} = (R^T)_{ik}\delta_{kl}R_{lj} = [(R^T)\mathcal{1}(R)]_{ij} = (R^TR)_{ij}=\delta_{ij}
 \end{equation}
 
+
 For an oscillating field $E(t) = E_0 e^{i(\vec{k}\cdot\vec{x}-\omega t}$, the time average is:
 \begin{equation}
     <E> = \frac{1}{T}\int_0^TE(t)dt = \frac{1}{2}E_0e^{i\vec{k}\cdot\vec{x}}
 \end{equation}
 
-A plain wave $E = E_0 e^Pi(\vec{k}\cdot\vec{x}-\omega t)$ (such as the Fourier mode
-of a $\delta$ function) has \textbf{no} starting or ending point and it fulfills
-all the space. So understanding the scatter of a plain wave is some tricky thing.
+A plain wave $E = E_0 e^Pi(\vec{k}\cdot\vec{x}-\omega t)$ (such as the 
+Fourier mode of a $\delta$ function) has \textbf{no} starting or ending 
+point and it fulfills all the space. So understanding the scatter of a 
+plain wave is some tricky thing.
 
 Velocity: 
 \begin{equation}
@@ -85,6 +100,7 @@ Velocity:
 \end{equation}
 where $p(q, \dot{q})$ is defined as $\frac{\partial H}{\partial p} = \dot{q}$
 and $\dot{q}(q,p)$ is defined as $\frac{\partial L(q,\dot{q})}{\partial \dot{q}}=p$
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Energy}
 \begin{description}
@@ -131,9 +147,6 @@ h.c.	\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{SM}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{QM}
 Heisenberg EOM:
 \begin{equation}
@@ -147,6 +160,19 @@ S-matrix
     \bra{f}S\ket{i}_{heisernberg} = \bra{f;\infty}\ket{i;-\infty}_{Schrodinger}
 \end{equation}
 
+\subsubsection{Harmonic basis}
+$\hat{\epsilon}_{-1} = \frac{\hat{x} - i\hat{y}}{\sqrt{2}}$
+$\hat{\epsilon}_{0} = \hat{z}$
+$\hat{\epsilon}_{1} = -\frac{\hat{x} + i\hat{y}}{\sqrt{2}}$
+
+$\hat{\epsilon}_0$ refers to light linearly polarized in the z-direction
+($\pi-$light). The polarizations $\hat{\epsilon_{\pm 1}}$ refer to 
+circularly polarized light with $-1$ for left-handed ($\sigma^-$-light) 
+and $+1$ for right-handed ($\sigma^+$-light)
+
+\[
+    \hat{\epsilon}_q \cdot \vec{r} = \sqrt{\frac{4\pi}{3}}rY_{1q}(\theta, \phi)
+\]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Symmetry}
 

@@ -1,30 +1,231 @@
-\begin{table}
+\chapter{Constants}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Constants}
+\renewcommand{\arraystretch}{2}
+\begin{table}[h]
     \caption{Symbols}
     \label{tab:symbols}
-    \begin{tabular}{c}
-    \hline
-    $\nabla^2 = \frac{1}{r^2}\partial_r r^2 \partial_r +
-    \frac{1}{r^2}\frac{1}{\sin\theta} \partial_{\theta}\sin\theta\partial_{\theta} +
-    \frac{1}{r^2\sin\theta^2}\partial^2_{\phi}$	\\
-    \hline
-    $\nabla^2 = \frac{1}{r}\partial_r (r\partial_r) +
-    \frac{1}{r^2}\partial^2_{\theta} + \partial^2_Z$ \\
-    \hline
-    \end{tabular}
-\end{table}
-\begin{table}
-    \caption{Frequently used constants}
-    \label{tab:constants}
     \begin{center}
-	\begin{tabular}{l|cc}
-	    \hline
-	    Constant    & S.I.  & Gauss \\
-	    \hline
-	    h	& $6.626\times10^{-34}$Js	&   \\
-	    \hline
-	    Bohr magneton   & \multicolumn{2}{c}{$\mu_B=\frac{e}{2m_e}$} \\
-	    Fine structure  & \multicolumn{2}{c}{$\alpha=\frac{e^2}{4\pi}=\frac{1}{137}$}	\\
+	\begin{tabular}{c}
+	    \hline  
+	    $\displaystyle \nabla^2 = \frac{1}{r^2}\partial_r(r^2 \partial_r) +
+	    \frac{1}{r^2}\frac{1}{\sin\theta} \partial_{\theta}(\sin\theta\partial_{\theta}) +
+	    \frac{1}{r^2\sin\theta^2}\partial^2_{\phi}$	\\ 
+
+	    $\displaystyle \nabla^2 = \frac{1}{r}\partial_r (r\partial_r) +
+	    \frac{1}{r^2}\partial^2_{\theta} + \partial^2_z$ \\
 	    \hline
 	\end{tabular}
     \end{center}
 \end{table}
+
+\begin{table}[h]
+    \caption{Constants}
+    \label{tab:constants}
+    \begin{tabular}{c | l l}
+	    \hline
+	    Constant    & S.I.  & Gauss \\
+	    \hline
+	    h	& $6.626\times10^{-34}$ $J \cdot s$	& $4.1357 \times 10^{-15}$ $eV \cdot s$   \\
+	    \hline
+	    $\displaystyle \hbar=\frac{h}{2\pi}$	&   & $6.5821 \times 10^{-16} $ $eV \cdot s$	\\
+	    \hline
+	    $\hbar c$	&   & 200 $MeV \cdot fm$	\\
+	    \hline
+	    $\epsilon_0$    & 
+		$\begin{array}{l}
+		    8.854 \times 10^{-12} $ $F \cdot m^{-1} \\
+		    8.854 \times 10^{-12} $ $C^{2} \cdot N^{-1} \cdot m^{-2}
+		\end{array}$
+		&   \\
+	    \hline
+	    $\displaystyle \frac{1}{4\pi\epsilon_0}$	&
+		$\begin{array}{l}
+		    8.9876 \times 10^{9}$ $V \cdot m \cdot C^{-1}
+		\end{array}$
+		&   \\
+	    $\displaystyle \frac{e}{4\pi\epsilon_0}$	&
+		$\begin{array}{l}
+		    1.438 \times 10^{-9}$ $V \cdot m
+		\end{array}$
+		&   \\
+	    $\displaystyle \frac{e^2}{4\pi\epsilon_0}$	&
+		$\begin{array}{l}
+		    2.301 \times 10^{-28}$ $C \cdot V \cdot m
+		\end{array}$
+		& $1.438 \times 10^{-9}$ $eV \cdot m$   \\
+	    \hline
+	    $\mu_0$ &
+		$\begin{array}{l}
+		    4\pi \times 10^{-7}$ $H \cdot m^{-1}    \\
+		    1.257 \times 10^{-6}$ $N \cdot A^{-2}    \\
+		    1.257 \times 10^{-6}$ $T \cdot m \cdot A^{-1}    \\
+		    1.257 \times 10^{-6}$ $Wb \cdot A^{-1} \cdot m^{-1}	\\
+		    1.257 \times 10^{-6}$ $V \cdot s \cdot A^{-1} \cdot m^{-1}\\
+		\end{array}$
+		&   \\
+	    \hline
+	    Boltzmann's const k	& $1.308 \times 10^{-8} $ $J \cdot K^{-1}$	&   $8.617 \times 10^{-5}$ $eV \cdot K^{-1}$	\\
+	    \hline
+	    Stefan-Boltzmann $\sigma$	& $5.67 \times 10^{-8}$ $W \cdot m^{-2} \cdot K^{-4}$& \\
+	    \hline
+	    Larmor radiation ($v << c$) & $\displaystyle P = \frac{2}{3}\frac{q^2a^2}{4\pi\epsilon_0c^3}$   & $\displaystyle P = \frac{2}{3}\frac{q^2a^2}{c^3}$	\\
+	    \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+    \caption{Frequently used constants}
+    \label{tab:constants}
+    \begin{center}
+	\begin{tabular}{l|c}
+	    \hline
+	    Bohr radius	    & $R_n = n^2 a_0$;  $a_0 = 4\pi\epsilon_0 \hbar^2/me^2 = 0.529\times 10^{-8} cm$	\\
+	    Bohr Energe	    & $\displaystyle E_n = -\frac{1}{2}\frac{e^2}{4\pi\epsilon_0 a_0} \frac{1}{n^2} = -\frac{1}{2}\frac{\hbar^2}{ma_0^2}\frac{1}{n^2}$ \\
+	    Bohr magneton   & $\displaystyle \mu_B=\frac{e}{2m_e}$ \\
+	    Fine structure  & $\displaystyle \alpha=\frac{e^2}{4\pi}=\frac{1}{137}$	\\
+	    Compton wavelength	&   $\displaystyle \lambda = \frac{\hbar}{mc}$  \\
+	    k(photon)	    & $\displaystyle \frac{10^4}{\lambda[\mu m]}[cm^{-1}]$	\\
+	    E(photon)	    & $\displaystyle \frac{1.242}{\lambda[\mu m]}[eV]$	\\
+	    \hline
+	\end{tabular}
+    \end{center}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scale}
+\begin{table}[h]
+    \centering
+    \caption{atom and lattice}
+    \label{tab:atom}
+    \begin{tabular}{l | c}
+	\hline
+	description & value \\
+	\hline
+	Electron frequency in H.O. model    & $\omega_0 = \sqrt{\frac{k}{m}} \sim 10^{16}$ rad/s \\
+	\hline
+	Atomic excited state lifetime  & 2 ns\\
+	\hline
+	lattice constant & a $\sim\si{\angstrom}$, $\frac{e^2}{a} \sim eV, v \sim \sqrt{\frac{e^2}{am}} \sim 10^{8}$ $cm/s$  \\ 
+	\hline
+	Debye temp. & $\sim 300 K$  \\
+	\hline
+	plasmon	& $\hbar \omega_p = \hbar \left(\frac{4\pi ne^2}{m}\right)^{\frac{1}{2}} \sim 10 eV$	\\
+	\hline
+	minimum band gap    & C:$5.5 eV$, Si:$1.1eV$, Ge:$0.76eV$
+    \end{tabular}
+\end{table}
+
+\subsection{optics}
+\begin{table}[h]
+    \centering
+    \caption{optics}
+    \label{tab:optics}
+    \begin{tabular}{l | c}
+	\hline
+	description & value \\
+	\hline
+	f of visible light  & $\omega \sim 10^{15}$ Hz   \\
+	\hline
+    \end{tabular}
+\end{table}
+
+\subsection{Resistivity}
+\begin{table}[h]
+    \centering
+    \caption{Classification of solids using resistivity}
+    \label{tab:resistivity}
+    \begin{tabular}{l  l  l}
+	\hline
+	class	& typical R ($\Omega \cdot cm$)	& example   \\
+	\hline
+	metal	    & $10^{-6}$ & copper	\\
+	semimetal   & $10^{-3}$	& bismuth	\\
+	semiconductor	& $10^{-2}-10^{9}$ &	silicon	\\
+	insulator   & $10^{14}-10^{22}$	    & diamond	\\
+	\hline
+    \end{tabular}
+\end{table}
+
+
+\subsection{Superconductivity}
+\begin{table}[h]
+    \centering
+    \caption{Superconductivity}
+    \label{tab:superconductivity}
+    \begin{tabular}{l | l}
+	\hline
+	description &	value	\\
+	\hline
+	transition energy   & $10^{-5}-10^{-2} eV$  \\
+	\hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Collections}
+
+\newpage
+\begin{table}
+    \caption{Wavelengths of Common Lasers}
+    \label{tab:common_lasers}
+    \begin{center}
+	\begin{tabular}{l|c}
+	    \hline
+	    Source	& nm	\\
+	    \hline
+	    ArF	& 93	\\
+	    \hline
+	    KrF	& 48	\\
+	    \hline
+	    Nd:YAG(4)	& 66	\\
+	    \hline
+	    XeCl	& 08	\\
+	    \hline
+	    HeCd	& 25, 441.6	\\
+	    \hline
+	    N2	& 37.1, 427	\\
+	    \hline
+	    XeF	& 51	\\
+	    \hline
+	    Nd:YAG(3)	& 54.7	\\
+	    \hline
+	    Ar	& 88, 514.5, 351.1, 363.8	\\
+	    \hline
+	    Cu	& 10.6, 578.2	\\
+	    \hline
+	    Nd:YAG(2)	& 32	\\
+	    \hline
+	    HeNe	& 32.8, 543.5, 594.1, 611.9, 1153, 1523	\\
+	    \hline
+	    Kr	& 47.1, 676.4	\\
+	    \hline
+	    Ruby	& 94.3	\\
+	    \hline
+	    Nd:Glass	& 060	\\
+	    \hline
+	    Nd:YAG	& 064, 1319	\\
+	    \hline
+	    Ho:YAG	& 100	\\
+	    \hline
+	    Er:YAG	& 940	\\
+	    \hline
+	\end{tabular}
+    \end{center}
+\end{table}
+
+\renewcommand{\arraystretch}{1}
+
+% \subsection{}
+% \begin{table}[h]
+%     \centering
+%     \caption{}
+%     \label{tab:}
+%     \begin{tabular}{}
+% 	\hline
+% 	\hline
+%     \end{tabular}
+% \end{table}

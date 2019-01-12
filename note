@@ -1,5 +1,25 @@
+量子计算 （如何进入量子态）
+（分数）量子霍尔效应，拓扑绝缘体，磁拓扑子（斯格明子）， Marjorana Fermion, 拓扑量子计算
+
+
+Classical, Semiclassical, Quantum, Second Quantized, Relativistic Picture.
+Statistical point of view
+
+What's the intuitive physical explanation of Halmitonian Equations?
+
 \b{LS-coupling notation\}
     ^(2S+1)L_J
     with L=0 is an S state; L=1 is an P state; L=2 D state; L=3 F state, the
     names come from 19th century verbal descriptions of "spectral lines" on
     photongraphic plates: sharp, principal, diffuse, fundamental, etc.
+
+
+completeness, orthogonal, localization.
+
+
+\b{dielectric\}
+    the proportionality between external field and induced total field.
+
+
+# technology
+modulator (velocity, frequency)

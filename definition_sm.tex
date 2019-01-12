@@ -1,0 +1,24 @@
+\chapter{SM}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General}
+Equipartition theorem: a body in thermal equilibrium should have energy 
+equally distributed among all possible modes. (Similar to the equal 
+probability principle)
+
+In equilibrium, the number density is determined by Boltzmann dist.
+\begin{equation}
+    \label{Boltzmann distribution}
+    n_i = Ne^{-\beta E_i}
+\end{equation}
+\subsection{Blackbody Radiation}
+Quantum explanation: In mode $\omega_n$, it can be excited an integer 
+number j times, giving energy $jE_n = j(\hbar\omega_n)$ in that mode.
+The probability of find that much energy in that mode is the same 
+as the probability of finding energy in anything, proportional to 
+the Boltzmann weight exp(-energy/$k_BT$). Thus, the expectation value of
+energy in each mode is
+\begin{equation}
+    <E_n> = \frac{\sum_{j=o}^\infty(jE_n)e^{-jE_n\beta}}{\sum_{j=o}^\infty e^{-jE_n\beta}} = \frac{-\frac{d}{d\beta}\frac{1}{1-e^{-\hbar\omega_n\beta}}}{\frac{1}{1-e^{-\hbar\omega_n\beta}}} = \frac{\hbar\omega_n}{e^{\hbar\omega_n\beta}-1}
+\end{equation}
+where $\beta=1/k_BT$
+

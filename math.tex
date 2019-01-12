@@ -1,6 +1,7 @@
 \chapter{Math}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Number of independent solution to a derivative equation ???
 \section{Definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -15,14 +16,28 @@ $\epsilon_{ijk}$ is an antisymmetric tensor, which is defined as:
 \begin{equation}
     \label{eqn:math::FT}
     \begin{gathered}
-    \tilde{f}(k) = \int_{-\infty}^{\infty}dx e^{ikx}f(x)	\\
-    f(x) = \int_{-\infty}^{\infty}\frac{dk}{2\pi}e^{-ikx}\tilde{f}(k)
+    \displaystyle \tilde{f}(k) = \int_{-\infty}^{\infty}dx e^{ikx}f(x)	\\
+    \displaystyle f(x) = \int_{-\infty}^{\infty}\frac{dk}{2\pi}e^{-ikx}\tilde{f}(k)
     \end{gathered}
+\end{equation}
+
+If $f(x) = f(x+R)$, then 
+\begin{equation}
+    \tilde{f}(k) = \int dx e^{ikx}f(x) = e^{-ikR} \int d(x+R) e^{ik(x+R)}f(x+R) = e^{-ikR} \tilde{f}(k)
+\end{equation}
+So, $\tilde{f}(k)$ is non-zero only at point with $kR = 2n\pi$, or $k = \frac{2\pi}{R}n$.
+\begin{equation}
+    \displaystyle f(x) = \sum_{k} e^{-ikx}\tilde{f}(k)
 \end{equation}
 
 \section{Vector Operation}
 \begin{equation}
     \nabla\times(\nabla\times\vec{A}) = \nabla(\nabla\vec{A}) - \nabla^2\vec{A} 
+\end{equation}
+
+Two point Fourier transformation:
+\begin{equation}
+    \displaystyle f(\bm{r,r'}) = \frac{1}{\Omega}\sum_{\bm{qq'}}e^{i\bm{q\cdot r}}f(\bm{q,q'})e^{-i\bm{q'\cdot r'}}
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -34,7 +49,7 @@ $\epsilon_{ijk}$ is an antisymmetric tensor, which is defined as:
     \delta^3(\vec{x})=\int\frac{d^3k}{(2\pi)^3}e^{i\vec{k}\vec{x}}
     \]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Limit}
+\subsection{Limitation}
 For 
 \[
     f(\omega) = \frac{\sin(N\omega)T}{\sin(\omega T)}   \quad (\omega > 0)
@@ -75,6 +90,10 @@ Similarly:
     f_1(\omega)=\displaystyle \sum_{m=1}\frac{N\pi}{T}\delta({\omega-\omega_m})
 \end{equation}
 
+
+\begin{equation}
+    \displaystyle lim_{\alpha\rightarrow 0^{+}}\frac{1}{x \pm i\alpha} = P\left(\frac{1}{x}\right) \mp i\pi\delta(x)
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Integral}
 \[
@@ -143,7 +162,7 @@ Associate Legendre Polynomials:
 %%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Bessel Function}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Differentive Equations}
+\subsection{Differential Equations}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{First Order Equation}
@@ -161,6 +180,31 @@ if:
 so:
 \[ \frac{d(I(t)V(t))}{I dt} = f(t)\]
 
+\subsubsection{inhomogeneous 2nd order differential equation}
+\begin{equation}
+    \frac{d^{2}x}{dt^2} + a(t)\frac{dx}{dt} + b(t)x = f(t)
+\end{equation}
+Its solution is given by
+\begin{equation}
+    \displaystyle x(t) = c_{1}\phi_{1}(t) + c_{2}\phi_{2}(t) + \int_{t_0}^{t}\frac{\phi_{1}(\xi)\phi_{2}(t) - \phi_{2}(\xi)\phi_{1}(t)}{W(\xi)} f(\xi)d\xi
+\end{equation}
+Where $\phi_{1}$ and $\phi_{2}$ are the 2 orthogonal solutions to the homogeneous 2nd differential equation, and $W(t)$ is the Wronskian.
+\begin{equation}
+    W(t) = 
+	\begin{vmatrix}
+	    \phi_1(t)	    & \phi_2(t) \\
+	    \phi_1^{'}(t)   & \phi_2^{'}(t)	\\
+	\end{vmatrix}
+\end{equation}
+
+
+\subsubsection{Pendulum Equation}
+\begin{equation}
+    \begin{gathered}
+	\frac{d^2}{dz^2}\psi + ucos\psi = 0 \\
+	\psi(z) = \psi(0) + \psi'(0)z - u\int_0^z dz_1 \int_0^{z_1}cos\psi(z_2)dz_2
+    \end{gathered}
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Floquet theory}
 \begin{equation}
@@ -214,3 +258,21 @@ a group homomorphism from G to GL(V), the
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Poisson}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Direvative Functions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{RC Oscillation}
+\begin{equation}
+    \dot{Q} + \frac{Q}{RC} = I(t) = I_0e^{-t/\tau}
+\end{equation}
+to get:
+\begin{equation}
+    Q(t) = A (e^{-t/\tau} - e^{-t/\tau_0})
+\end{equation}
+where: $$ \tau_0 = RC $$ 
+
+If $$ \tau = \tau_0 $$, then the solution is different:
+\begin{equation}
+    Q(t) = I_0 te^{-t/\tau_0} + Ae^{-t/\tau_0}
+\end{equation}

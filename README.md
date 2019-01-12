@@ -1,3 +1,10 @@
+* key topics --> historical development --> logical development
+* scale
+* key concepts
+* models
+* application
+
+
 # Name convention
 Namespace:Subject::word1Word2Word3
 

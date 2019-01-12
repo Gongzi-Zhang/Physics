@@ -1,7 +1,10 @@
 \documentclass[12pt]{report}
 
 \usepackage{amsmath, amssymb}
-\usepackage{mathtools}	% formatting text above or below rightarrow	
+\usepackage{bm}	% mathematical bold font
+\usepackage{mathtools}	% formatting text above or below rightarrow
+\usepackage{siunitx}	% comprehensive SI units; like angstrom
+
 \usepackage{dsfont}
 \usepackage{enumitem}
 \usepackage{geometry}
@@ -15,6 +18,9 @@
 \usepackage{slashed}	% slashed symbols in Dirac equation
 \usepackage{imakeidx}	
 \usepackage{xcolor}
+\usepackage{tikz}
+    \usetikzlibrary{arrows, shapes, chains, positioning}
+    \usetikzlibrary{decorations.markings}
 
 \title{Physcis}
 \author{Weibin Zhang}
@@ -46,28 +52,46 @@
 \maketitle
 
 \tableofcontents
-What makes life easier: linearity, static, equilibrium, main term.
-What makes life hard: nonlinearities, feedback, fluctuation, perturbation,
-evolution.
-\include{newcommand}
-\include{math}
 
-% general definition and conclusion without detailed proof
+
+\include{newcommand}
+
+
+% part 0
+\include{principles}
+% part 1
+\part{Introduction}
+\include{Introduction}
+    \include{doubts}
+\include{constants}% constants and scale
+\include{math}% tools
+\include{model}
+
+% part 2: general definition and conclusion without detailed proof
+\part{Definition and Conclusion}
 \include{definition}
 \include{definition_cm}
 \include{definition_em}
 \include{definition_sm}
+\include{definition_qm}
 
-\include{principles}
-\include{Introduction}
+% part 3: detailed proofs
+\part{Proofs}
 \include{CM}
 \include{EM}
+\include{SM}
 \include{QM}
 \include{Relativity}
 \include{QFT}
 \include{examples}
-\include{doubts}
-\include{constants}
 
-Naming technology.
+% part 4: application
+\part{Application}
+\include{application}
+
+% part 5: timeline
+\part{Timeline of Important Physics}
+\include{timeline}
+
+
 \end{document}

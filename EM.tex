@@ -64,6 +64,8 @@ So
     &= (\nabla\cdot D)E^j + ((\nabla\times\vec{H})\times\vec{B})^j - \partial_tD\times B)^j 
     \end{aligned}
 \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Maxwell Equation}
 \begin{equation}
     \label{eqn:Maxwell}
@@ -230,8 +232,33 @@ Helmholtz eqn:
     (\nabla^2+\frac{\omega^2\mu\hat{\epsilon}}{c^2})E=0
     \]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Radiation} 
+Here is an explanation which can help understanding radiation.
+
+This approach is based on the finite speed of light. A charge moving with 
+constant velocity has a radial electric field $E_{r}$ (at distance R from 
+the charge), always emerging from the future position of the charge, and 
+there is no tangential component of the electric field ($E_{t}=0$). This 
+future position is completely deterministic as long as the velocity is 
+constant. When the velocity of the charge changes, (say it bounces back 
+during a short time) the future position "jumps", so from this moment 
+and on, the radial electric field $E_{r}$ emerges from a new position. 
+Given the fact that the electric field must be continuous, a non-zero 
+tangential component of the electric field $E_{t}$ appears, which 
+decreases like 1/R (unlike the radial component which decreases like 
+$\displaystyle 1/R^{2}$).
+
+Hence, at large distances from the charge, the radial component is negligible relative to the tangential component, and in addition to that, fields which behave like $\displaystyle 1/R^{2}$ cannot radiate, because the Poynting vector associated with them will behave like $\displaystyle 1/R^{4}$.
+
+The tangential component comes out (SI units):
+\[
+    E_t = \frac{ea\sin(\theta)}{4\pi\epsilon_0 c^2 R}
+\]
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{EM in relativity}
 
 \begin{equation}
@@ -267,11 +294,12 @@ So:
 \]
 
 The Maxwell Eqn:
-\begin{gather}
-    \partial_\mu F^{\mn} = \Box A^\nu - \partial_\nu(\partial_\mu A^\mu) =
-    \Box A^\mu = 0, \notag\\
-    \partial_\mu F^{\nu\rho} + \partial_\nu F^{\rho\mu} + \partial_\rho F^{\mn} = 0
-\end{gather}
+\begin{equation}
+    \begin{gathered}
+	\partial_\mu F^{\mn} = \Box A^\nu - \partial_\nu(\partial_\mu A^\mu) = \Box A^\mu = 0, \notag\\
+	\partial_\mu F^{\nu\rho} + \partial_\nu F^{\rho\mu} + \partial_\rho F^{\mn} = 0
+    \end{gathered}
+\end{equation}
 
 Define:
 \begin{equation}

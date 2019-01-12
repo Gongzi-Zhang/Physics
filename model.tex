@@ -1,0 +1,103 @@
+\chapter{Model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model}
+
+Boltzmann distribution
+
+\subsection{Oscillation}
+
+\subsection{Binary system}
+
+\subsection{Scattering}
+
+\subsection{Drude model}
+\begin{equation}
+    m\ddot{\bm{x}} = -e\bm{E} - \frac{m\dot{\bm{x}}}{\tau}
+\end{equation}
+Where $\tau$ is the relaxation time, Solve this equation, we will get
+\[
+    0 = -e\bm{E} - \frac{m\dot{\bm{x}}}{\tau} \Longrightarrow
+    \dot{\bm{x}} = \frac{-e\bm{E}\tau}{m}
+\]
+This means that if electron reach velocity $\dot{x} = -eE\tau/m$, it will move at this constant velocity.
+
+Note the difference between the Drude model and the "accelerating model", which will accelerates electron periodically, with period being the relaxation time $\tau_1$, so the average velocity will be:
+\[
+    \bar{v} = \frac{1}{2}\frac{-eE\tau_1}{m}
+\]
+So 
+\[
+    \dot{x} = \bar{v}  \Longrightarrow \tau = \frac{1}{2}\tau_1
+\]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Approximation}
+The ultimate weapon of simplifying a question (constructing a model)
+is approximation. Here are some frequently used approximation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{RWA: Rotating Wave Approximation}
+\[
+    \cos(\omega t)e^{-i\omega_0 t} = \frac{1}{2}(e^{i\omega t} + e^{-i\omega t})e^{-i\omega t} = \frac{1}{2}(e^{i(\omega - \omega_0)t} + e^{-i(\omega + \omega_0)t}) \approx \frac{1}{2}e^{i(\omega - \omega_0)t}
+\]
+When $\omega \sim \omega_0$, we simply discard the second term because
+$\omega + \omega_0 >> \delta = \omega - \omega_0$. We can think about it
+as that the second term oscillates so fast that nothing can response to it
+(response is small), thus the first term is more effective than the second
+term.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Electric Dipole Approximation}
+For the interaction of light with atom, the wavefunction vanish 
+exponentially on the distance scale of the Bohr radius $a_0$.
+\[
+    |\vec{k} \cdot \vec{r}| \approx 2\pi a_0/\lambda << 1 
+\]
+\[
+    e^{i\vec{k} \cdot \vec{r}} = 1 + i\vec{k}\cdot\vec{r} + \mathcal{O}(\vec{k}\cdot\vec{r})^2
+\]
+
+Which can be easily seen from the point that an atom is much smaller than 
+the wavelength of light (visible light), so we can think that the 
+electric field applied on the atom is constant at specific time.
+
+\begin{tikzpicture}
+    \draw plot[domain=0:2*pi, smooth] (\x, {sin(\x r)});
+    \draw (1, {sin(1 r)}) circle (2.5pt);
+    \node (atom) at (1, {sin(1 r) - 0.4}){atom};
+\end{tikzpicture}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Slowly Varying Envelope Approximation}
+The fractional change of the beam's transverse profile over a wavelength
+distance to be small compared with unity, and similarly for its 
+derivative, which si:
+\[
+    \lambda|\frac{\partial E_0}{\partial z}| << |E_0| 
+    \text{and} 
+    \lambda|\frac{\partial^2 E_0}{\partial z^2}| << |\frac{\partial E_0}{\partial z}| 
+\]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Harmonic Approximation}
+\[
+    U = U_0 + \sum_{n, \alpha} \frac{\partial U}{\partial X_n^\alpha} X_n^\alpha + \frac{1}{2}\sum_{n \alpha; n' \alpha'}\frac{\partial^2U}{\partial X_n^\alpha \partial X_{n'}^{\alpha'}}X_n^\alpha X_{n'}^{\alpha'} + cdots
+\]
+
+Truncate the series after second order.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Distribution}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Boltzmann Distribution}

@@ -1,5 +1,35 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Relativity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Special Relativity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Relativity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Relativistic generalization from Classical results}
+The power of radiation is (cgs units):
+\[
+    P = \frac{2}{3}\frac{q^2a^2}{c^3}
+\]
+Genelize it to \textbf{covariant} form:
+\[
+    P = \frac{2}{3}\frac{q^2}{m^2c^3}|\dot{\vec{P}}|^2
+\]
+The power P should be \emph{Lorentz invariant}, so $|\dot{\vec{P}}|^2$ 
+should include the Lorentz scalar by taking the inner product of the 
+four-acceleration $a^\mu = dp^\mu/d\tau$ with itself, so:
+\[
+    P = -\frac{2}{3}\frac{q^2}{m^2c^3}\frac{dp_\mu}{d\tau}\frac{dp^\mu}{d\tau}
+\]
+where:
+\[
+    \frac{dp_\mu}{d\tau}\frac{dp^\mu}{d\tau} = \beta^2 \left( \frac{dp_0}{d\tau} \right)^2 - \left( \frac{d\vec{p}}{d\tau} \right)^2
+\]
+
+The above inner product can also be written in terms of $\vec{\beta}$ and
+its time derivative:
+\[
+    P = \frac{2q^2\gamma^6}{3c}\left[ (\dot{\vec{\beta}})^2 - (\vec{\beta} \times \dot{\vec{\beta}})^2 \right]
+\]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Relativity}
 Two conditions of \SR{}. 
 \begin{itemize}
     \item general physical rules, which means in different flames, we can 
