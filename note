@@ -1,12 +1,23 @@
 # todo
 * derivation of Lorentz transformation
+* How an open-open end tube (like flute) to form standing waves?
 
 
 # key concepts
 EOS: Equation of State
 EOM: Equation of Motion
 
-傅立叶变换 <==> 共轭
+
+Newton mechanics & Lagrangian
+Nearest atom interaction and phonon
+ab initio & Effective DFT
+
+I have seen DFT in quite a few fields: solid physics, nuclear physics
+Density Functional Theory: minimization of DF to produce a ground state
+The problem is how to decide the density functional: which usually depends on some particle density and associate current ($\particl \rho$)
+
+
+傅立叶变换 <==> 共轭变量
 
 
 随机: 确定的对象里包含着随机
