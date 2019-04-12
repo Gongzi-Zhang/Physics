@@ -18,6 +18,7 @@ The problem is how to decide the density functional: which usually depends on so
 
 
 傅立叶变换 <==> 共轭变量
+复数表示与三角函数表示是等价的，而复数表示的优势在于，它是算符 d/dt 的本征解，而三角函数不是。
 
 
 随机: 确定的对象里包含着随机
