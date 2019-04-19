@@ -1,0 +1,63 @@
+\documentclass{report}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{physics}
+\usepackage{slashed}
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+
+\include{shortcut}
+
+\title{Fun with $\gamma$ Matrix}
+\author{Weibin Zhang}
+\date{2019-04-16}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Dirac Equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conplex Conjugate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{$\gamma^5$}
+$$ \{\gammaMu, \gammaNu \} = \gammaMu\gammaNu + \gammaNu\gammaMu = 2\eta^{\mn} $$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Slashed}
+\begin{itemize}
+    \item $$ \slashed{p}\gammaNu = p_\mu\gammaMu\gammaNu = p_\mu(2\eta^{\mn} - \gammaNu\gammaMu) = 2p^\nu - \gammaNu\slashed{p} $$
+	    $$ \Godown $$
+	  $$ \slashed{p}\gammaNu + \gammaNu\slashed{p} = 2p^\nu \cdot \CI$$
+
+    \item $$ \slashed{p}\slashed{q} = p_\mu q_\nu \gammaMu\gammaNu = 2pq - \slashed{q}\slashed{p} $$
+	    $$ \Godown $$
+	  $$ \slashed{p}\slashed{q} + \slashed{q}\slashed{p} = 2pq\cdot \CI $$
+
+    \item $$ \gammaMu\slashed{p}\gammamu = \gammaMu\gammaNu p_\nu\gammamu = (2\eta^{\mn} - \gammaNu\gammaMu)p_\nu \gammamu = 2\slashed{p} - \slashed{p}\gammaMu\gammamu = -2\slashed{p} $$
+
+    \item $$ \gammaMu\slashed{p}\gammaNu\gammamu = (2p^\mu - \slashed{p}\gammaMu)\gammaNu\gammamu = 2\gammaNu\slashed{p} + 2\slashed{p}\gammaNu = 2p^\nu \cdot \CI $$
+
+    \item $$ \gammaMu\slashed{p}\slashed{q}\gammamu = (2p^\mu - \slashed{p}\gammaMu)(2q_\mu - \gammamu\slashed{q}) = 4pq - 2\slashed{p}\slashed{q} - 2\slashed{p}\slashed{q} + 4\slashed{p}\slashed{q} = 4pq\cdot \CI $$
+
+    \item 
+	\begin{equation*}
+	    \begin{aligned}
+		\gammaMu\slashed{p}\gammanu\slashed{q}\gammamu &= (2p^\mu - \slashed{p}\gammaMu)\gammanu(2q_\mu - \gammamu\slashed{q}) = 4pq\gammanu - 2\gammanu\slashed{p}\slashed{q} - 2\slashed{p}\slashed{q}\gammanu + \slashed{p}\gammaMu\gammanu\gammamu\slashed{q}   \\%1
+		&= 4pq\gammanu - 2\gammanu\slashed{p}\slashed{q} - 2\slashed{p}\slashed{q}\gammanu - 2\slashed{p}\gammanu\slashed{q}	\\%2
+		&= 2\gammanu(2pq - \slashed{p}\slashed{q}) - 2\slashed{p}(\slashed{q}\gammanu + \gammanu\slashed{q})	\\%3
+		&= \gammanu 2\slashed{q}\slashed{p} - 4\slashed{p} q_\nu	\\%4
+		&= 2(\gammanu\slashed{q} - 2q_\nu)\slashed{p}	\\%5
+		&= -2\slashed{q}\gammanu\slashed{p}    \\%6
+	    \end{aligned}
+	\end{equation*}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trace}
+
+
+
+\end{document}
+

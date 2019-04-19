@@ -1,0 +1,135 @@
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\quarter}{\frac{1}{4}}
+\newcommand{\Dag}{^{\dag}}
+
+% matrix
+\newcommand{\pmx}[1]{%
+    \begin{pmatrix}%
+	#1%  
+    \end{pmatrix}%
+    }
+
+% derivative
+\newcommand{\prt}{\partial}
+\newcommand{\prtmu}{\partial_\mu}
+\newcommand{\prtMu}{\partial^\mu}
+\newcommand{\prtnu}{\partial_\nu}
+\newcommand{\prtNu}{\partial^\nu}
+\newcommand{\prtt}[1]{\frac{\partial}{\partial_t}#1}	% partial t, without partialed var
+\newcommand{\prtphi}{\frac{\partial \CL}{\partial_\phi}}
+
+% superscript and subscript
+\newcommand{\mn}{\mu\nu}
+\newcommand{\nm}{\nu\mu}
+\newcommand{\Amu}{A_\mu}
+\newcommand{\AMu}{A^\mu}
+\newcommand{\Anu}{A_\nu}
+\newcommand{\ANu}{A^\nu}
+\newcommand{\jmu}{j_\mu}
+\newcommand{\jNu}{j^\nu}
+\newcommand{\jnu}{j_\nu}
+\newcommand{\jMu}{j^\mu}
+\newcommand{\Jmu}{J_\mu}
+\newcommand{\JNu}{J^\nu}
+\newcommand{\Jnu}{J_\nu}
+\newcommand{\JMu}{J^\mu}
+\newcommand{\pmu}{p_\mu}
+\newcommand{\pNu}{p^\nu}
+\newcommand{\pnu}{p_\nu}
+\newcommand{\pMu}{p^\mu}
+\newcommand{\alphai}{\alpha_i}
+\newcommand{\alphaI}{\alpha^i}
+\newcommand{\alphaj}{\alpha_j}
+\newcommand{\alphaJ}{\alpha^j}
+\newcommand{\alphak}{\alpha_k}
+\newcommand{\alphaK}{\alpha^k}
+\newcommand{\betai}{\beta_i}
+\newcommand{\betaI}{\beta^i}
+\newcommand{\betaj}{\beta_j}
+\newcommand{\betaJ}{\beta^j}
+\newcommand{\gammai}{\gamma_i}
+\newcommand{\gammaI}{\gamma^i}
+\newcommand{\gammaj}{\gamma_j}
+\newcommand{\gammaJ}{\gamma^j}
+\newcommand{\sigmai}{\sigma_i}
+\newcommand{\sigmaI}{\sigma^i}
+\newcommand{\sigmaj}{\sigma_j}
+\newcommand{\sigmaJ}{\sigma^j}
+\newcommand{\sigmak}{\sigma_k}
+\newcommand{\sigmaK}{\sigma^k}
+\newcommand{\Sigmai}{\Sigma_i}
+\newcommand{\SigmaI}{\Sigma^i}
+\newcommand{\Sigmaj}{\Sigma_j}
+\newcommand{\SigmaJ}{\Sigma^j}
+\newcommand{\sigmamu}{\sigma_mu}
+\newcommand{\sigmaMu}{\sigma^mu}
+\newcommand{\sigmanu}{\sigma_nu}
+\newcommand{\sigmaNu}{\sigma^nu}
+\newcommand{\gammamu}{\gamma_\mu}
+\newcommand{\gammaMu}{\gamma^\mu}
+\newcommand{\gammanu}{\gamma_\nu}
+\newcommand{\gammaNu}{\gamma^\nu}
+\newcommand{\epsilonmu}{\epsilon_\mu}
+\newcommand{\epsilonMu}{\epsilon^\mu}
+\newcommand{\epsilonnu}{\epsilon_\nu}
+\newcommand{\epsilonNu}{\epsilon^\nu}
+
+%% overhead / underline
+\newcommand{\ol}{\overline}
+
+
+% arrows
+\newcommand{\goto}{\rightarrow}
+\newcommand{\xgoto}[1]{\xrightarrow{#1}}
+\newcommand{\ngoto}{\nrightarrow}
+\newcommand{\Goto}{\Rightarrow}
+\newcommand{\nGoto}{\nRightarrow}
+\newcommand{\GoTo}{\longrightarrow}
+\newcommand{\nGoTo}{\nlongrightarrow}
+\newcommand{\goback}{\leftarrow}
+\newcommand{\ngoback}{\nleftarrow}
+\newcommand{\Goback}{\Leftarrow}
+\newcommand{\nGoback}{\nLeftarrow}
+\newcommand{\godown}{\downarrow}
+\newcommand{\ngodown}{\ndownarrow}
+\newcommand{\Godown}{\Downarrow}
+\newcommand{\nGodown}{\nDownarrow}
+\newcommand{\dualto}{\leftrightarrow}
+\newcommand{\Dualto}{\Leftrightarrow}
+
+\makeatletter
+\newcommand{\xGoto}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
+\makeatother
+
+% Calligraph
+\newcommand{\CH}{\mathcal{H}}
+\newcommand{\CL}{\mathcal{L}}
+\newcommand{\CM}{\mathcal{M}}
+\newcommand{\CI}{\mathcal{I}}
+
+
+% particles
+\newcommand{\eM}{e^-}	    % electron
+\newcommand{\eP}{e^+}
+\newcommand{\muM}{\mu^-}    % muon
+\newcommand{\muP}{\mu^+}
+\newcommand{\piM}{\pi^-}    % pion
+\newcommand{\piP}{\pi^+}
+\newcommand{\piN}{\pi^0}
+\newcommand{\KM}{K^-}	    % Kaon
+\newcommand{\KP}{K^+}
+\newcommand{\Ks}{K_s}
+\newcommand{\DM}{D^-}      % 
+\newcommand{\DP}{D^+}
+\newcommand{\SigmaM}{\Sigma^-}
+\newcommand{\SigmaP}{\Sigma^+}
+\newcommand{\DeltaM}{\Delta^-}
+\newcommand{\DeltaP}{\Delta^+}
+\newcommand{\OmegaM}{\Omega^-}
+\newcommand{\OmegaP}{\Omega^+}
+\newcommand{\LambdaM}{\Lambda^-}
+\newcommand{\LambdaP}{\Lambda^+}
+\newcommand{\XiM}{\Xi^-}
+\newcommand{\XiP}{\Xi^+}
+\newcommand{\pM}{\p^-}      % proton
+\newcommand{\pP}{\p^+}
