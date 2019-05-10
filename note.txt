@@ -1,0 +1,79 @@
+# todo
+* (index) list of facts (experimental result)
+* (index) list of definition 
+* (index) list of laws
+* (index) list of thoery
+
+* derivation of Lorentz transformation
+* How an open-open end tube (like flute) to form standing waves?
+
+
+# key concepts
+scaling violations
+
+renormalizable theory
+
+fractional charge/statistics
+
+EOS: Equation of State
+EOM: Equation of Motion
+
+
+Newton mechanics & Lagrangian
+Nearest atom interaction and phonon
+ab initio & Effective DFT
+
+I have seen DFT in quite a few fields: solid physics, nuclear physics
+Density Functional Theory: minimization of DF to produce a ground state
+The problem is how to decide the density functional: which usually depends on some particle density and associate current ($\particl \rho$)
+
+
+傅立叶变换 <==> 共轭变量
+复数表示与三角函数表示是等价的，而复数表示的优势在于，它是算符 d/dt 的本征解，而三角函数不是。
+
+
+随机: 确定的对象里包含着随机
+
+
+
+分类:
+    生物学中的界门纲目科属种
+    元素周期表
+    标准模型
+    Topology
+
+抽象:
+    分析力学的作用量，Lagrangian, Hamiltonian
+
+总结:
+    牛顿三定律，Maxwell Function, Kepler三大定律，热力学方程，
+
+
+量子计算 （如何进入量子态）
+（分数）量子霍尔效应，拓扑绝缘体，磁拓扑子（斯格明子）， Marjorana Fermion, 拓扑量子计算
+
+
+
+\b{Physical Interesting\}
+
+Classical, Semiclassical, Quantum, Second Quantized, Relativistic Picture.
+Statistical point of view
+
+What's the intuitive physical explanation of Halmitonian Equations?
+
+\b{LS-coupling notation\}
+    ^(2S+1)L_J
+    with L=0 is an S state; L=1 is an P state; L=2 D state; L=3 F state, the
+    names come from 19th century verbal descriptions of "spectral lines" on
+    photongraphic plates: sharp, principal, diffuse, fundamental, etc.
+
+
+completeness, orthogonal, localization.
+
+
+\b{dielectric\}
+    the proportionality between external field and induced total field.
+
+
+# technology
+modulator (velocity, frequency)
