@@ -1,3 +1,9 @@
+* definition
+* theory (laws)
+* formula
+
+
+
 * key topics --> historical development --> logical development
 * scale
 * key concepts
