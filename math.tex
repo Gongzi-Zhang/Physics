@@ -1,6 +1,71 @@
 \chapter{Math}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Useful Equations}
+\begin{itemize}
+    \item Associated Laguerre polynomials:
+	$$ L_n{}^m(x) = (-1)^m\frac{d^m}{dx^m}L_{n+m}(x) \qquad \text{for } x \ge 0$$
+    \item Assocated Legendre polynomials:
+	$$ P_l{}^m(x) = (1-x^2)^{m/2}\frac{d^m}{dx^m}P_{l}(x) \qquad \text{for } x \ge 0$$
+    \item Beta function
+	$$ B(x,y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)} $$
+    \item Complete elliptic integral of the first kind:
+	$$ K(k) = F(k,\frac{\pi}{2}) = \int_0^{\frac{\pi}{2}}\frac{d\theta}{\sqrt{1-k^2\sin^2\theta}}$$
+    \item Complete elliptic integral of the second kind:
+	$$ K(k,\frac{\pi}{2}) = \int_0^{\frac{\pi}{2}}\sqrt{1-k^2\sin^2\theta}\ d\theta$$
+    \item Complete elliptic integral of the third kind:
+	$$ \Pi(\nu,k,\frac{\pi}{2}) = \int_0^{\frac{\pi}{2}}\frac{d\theta}{(1-\nu\sin^2\theta)\sqrt{1-k^2\sin^2\theta}}$$
+    \item Confluent hypergeometric function:
+	$$ F(a,c,x)= \frac{\Gamma(c)}{\Gamma(a)}\sum_{n=0}^\infty\frac{\Gamma(a+n)x^n}{\Gamma(c+n)n!}$$
+    \item Regular modified cylindrical Bessel function:
+	$$ I_\nu(x) = i^{-\nu} J_\nu(ix) = \sum_{k=0}^{\infty}\frac{(x/2)^{\nu+2k}}{k!\Gamma(\nu+k+1)} \qquad \text{for } x \ge 0$$
+    \item Cylindrical Bessel function of the first kind:
+	$$ J_\nu(x) = \sum_{k=0}^{\infty}\frac{(-1)^k(x/2)^{\nu+2k}}{k!\Gamma(\nu+k+1)} \qquad \text{for } x \ge 0$$
+    \item Irregular modified cylindrical Bessel function: 
+	$$ K_\nu(x) = \frac{\pi}{2}i^{\nu+1}(J_\nu(ix) + iN_\nu(ix)) = 
+	    \begin{cases}
+		\frac{I_{-\nu}(x) - I_\nu(x)}{\sin\nu\pi}   \qquad \text{for } x\ge0 \text{ and } \nu \notin Z \\
+		\displaystyle \frac{\pi}{2}\lim_{\mu\rightarrow\nu}\frac{I_{-\nu}(x) - I_\nu(x)}{\sin\mu\pi}	\qquad \text{for } x<0 \text{ and } \nu \in Z \\
+	    \end{cases}
+	    $$
+    \item Cylindrical Neumann function of the first kind
+	$$ N_\nu(x) =
+	    \begin{cases}
+		\frac{J_{\nu}(x)\cos\nu x - J_\mu(x)}{\sin\nu\pi} \qquad \text{for } x\ge0 \text{ and } \nu \notin Z \\
+		\displaystyle \lim_{\mu\rightarrow\nu}\frac{J_{\mu}(x)\cos\mu\pi - J_{-\nu}(x)}{\sin\mu\pi} \qquad \text{for } x<0 \text{ and } \nu \in Z \\
+	    \end{cases}
+	    $$
+	\item Incomplete elliptic integral of the first kind:
+	    $$ F(k,\phi) = \int_0^{\phi}\frac{d\theta}{\sqrt{1-k^2\sin^2\theta}}	\qquad \text{for } |k| \le 1$$
+	\item Incomplete elliptic integral of the second kind:
+	    $$ E(k,\phi) = \int_0^{\phi}\sqrt{1-k^2\sin^2\theta}\ d\theta	\qquad \text{for } |k| \le 1$$
+	\item Incomplete elliptic integral of the thrid kind:
+	    $$ \Pi(k,\nu,\phi) = \int_0^{\phi}\frac{d\theta}{(1-\nu\sin^2\theta)\sqrt{1-k^2\sin^2\theta}}	\qquad \text{for } |k| \le 1$$
+	\item Exponential integral:
+	    $$ Ei(x) = -\int_{-x}^\infty \frac{e^{-t}}{t}dt $$
+	\item Hermite polynomials:
+	    $$ H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n}e^{-x^2} $$
+	\item Hygergeometric series:
+	    $$ F(a,b,c,x) = \frac{\Gamma(c)}{\Gamma(a)\Gamma(b)}\sum_{n=0}^{\infty}\frac{\Gamma(a+n)\Gamma{b+n}}{\Gamma(c+n)}\frac{x^n}{n!}$$
+	\item Laguerre polynomials:
+	    $$ L_n(x) = \frac{e^x}{n!} \frac{d^n}{dx^n}\left(x^n e^{-x} \right)	\qquad \text{for } x\ge 0$$
+	\item Legendre polynomials:
+	    $$ P_l(x) = \frac{1}{2^l l!} \frac{d^l}{dx^l}(x^2 - 1)^l	\qquad \text{for } |x| \le 1$$
+	\item Riemann zeta function:
+	    $$ Z(x) = 
+	    \begin{cases}
+		\sum_{k=1}^{\infty} k^{-x}  \qquad \text{for } x > 1\\
+		2^x \pi^{x-1}\sin\left( \frac{x\pi}{2} \right)\Gamma(1-x)\zeta(1-x) \qquad \text{for } x < 1
+	    \end{cases}
+	    $$
+	\item Spherical Bessel functions of the first kind:
+	    $$ j_n(x) = \sqrt{\frac{\pi}{2x}} J_{n+1/2}(x)  \qquad \text{for } x \ge 0$$
+	\item Spherical assocated Legendre function:
+	    $$ Y_l^m(\theta, \phi) = (-1)^m \left[ \frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!}\right]^{\frac{1}{2}} P_l^m(\cos\theta)e^{im\phi} \qquad \text{for } |m| \le l$$
+	\item Spherical Neumann functions, Spherical Bessel functions of the second kind:
+	    $$ n_n(x) = \left(\frac{\pi}{2x} \right)^{\frac{1}{2}} N_{n+\frac{1}{2}}(x)	\qquad \text{for } x \ge 0 $$
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Number of independent solution to a derivative equation ???
 \section{Definition}
 
