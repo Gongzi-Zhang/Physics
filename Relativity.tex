@@ -1,5 +1,69 @@
 \chapter{Special Relativity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Relativity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Basic assumption:
+\begin{itemize}
+    \item Laws of physics should be invariant under special relativity 
+	transformations: rotations and velocity boosts	\eqnum\label{SM:assumption1}
+    \item Speed of light is constant	\eqnum\label{SM:assumption2}
+\end{itemize}
+
+According to \ref{SM:assumption1} 
+(the distance travelled by light within time
+interval $dt$ is $dl = \sqrt{dx_idx_i}$, therefore $c^2dt^2 - dx_idx_i = c^2dt'^2 - dx'_idx'_i = 0$), 
+generalize it, we will get the length $ds^2$ and it should be invariant under
+transformations:
+\begin{equation}
+    ds^2 = c^2dt^2 - dx_idx_i = c^2dt'^2 - dx'_i dx'_i
+\end{equation}
+define Lorentz 4-vector $dx^\mu = (dt, dx^1, dx^2, dx^3)$ and the metrix tensor:
+$$ g_{\mu\nu} = diag(1,-1, -1, -1) $$
+then $ds^2 = g_{\mu\nu} dx^\mu dx^\nu$
+so:
+\begin{equation}
+    x^\mu x_\mu = x^\mu g_{\mu\nu}x^\nu = x'^\mu x'_\mu
+\end{equation}
+let the transformation be: $x'^\mu = \Lambda^\mu_\nu x^\nu$ or $x' = \Lambda x$
+then:
+\begin{equation}
+    x^T g x = x'^T g x' = (\Lambda x)^T g (\Lambda x) = x^T (\Lambda^T g \Lambda) x
+\end{equation}
+we get:
+\begin{equation}
+    \label{SR:LG}
+ g = \Lambda^T g \Lambda
+\end{equation}
+if $g = E$ where $E = diag(1, 1, 1,1 )$ is the identity matrix, then we get:
+$$ E = \Lambda^T \Lambda \Rightarrow \Lambda^T = \Lambda^{-1}$$
+This defines the special orthogonal matrices (SO(4)), which must have $det\Lambda = \pm 1$
+
+\subsubsection{Lorentz Group, SO(3, 1)}
+However, our metric tensor g is not the identity matrix, but rather a mixed 
+metrix with 3 -1 entries and 1 +1 entry. We call all elements that satisfy
+\ref{SR:LG} as Lorentz Group SO(3, 1).
+
+Here are a few examples of elements in SO(3, 1):
+\begin{equation*}
+    \Lambda_R = 
+    \begin{pmatrix}
+	1   & 0	\\
+	0   & R
+    \end{pmatrix}
+    \quad \text{where R are the 3x3 rotation matrix SO(3)}
+\end{equation*}
+
+\begin{equation*}
+    \Lambda_{B_x} = 
+    \begin{pmatrix}
+	\cosh\eta   & -\sinh\eta    & 0	& 0 \\
+	-\sinh\eta   & \cosh\eta    & 0	& 0 \\
+	0   & 0 & 1 & 0 \\
+	0   & 0 & 0 & 1 \\
+    \end{pmatrix}
+    \text{velocity boost in the x direction}
+\end{equation*}
+where $\cosh\eta = \gamma$ and $\sinh\eta = \beta\gamma$, with $\gamma = \frac{1}{\sqrt{1-v^2/c^2}}$
+and $\beta = v/c$
+
 \section{Relativistic generalization from Classical results}
 The power of radiation is (cgs units):
 \[
@@ -38,7 +102,7 @@ Two conditions of \SR{}.
 \end{itemize}
 let $X^\mu=(ct, \vec{x})$, so in order to make c constant, we have
 \[
-    -(ct')^2+\vec{x'}62 = (ct)^2 +\vec{x}^2
+    -(ct')^2+\vec{x'}^2 = (ct)^2 +\vec{x}^2
 \]
 The \textbf{simplest} way to preserve the length is to construct a \textbf{linear map}:
 \[

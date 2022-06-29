@@ -1,0 +1,374 @@
+\chapter{Experiments}
+High energy physical experiments:
+\begin{itemize}
+    \item Energy frontier: search for new particles directly
+    \item Precision (luminosity) frontier: looking for tiny deviations from SM
+	predictions or at phenomena that are highly-suppressed or forbidden 
+	by SM symmetries. Like: Electric Dipole Moments (EDM), neutrino-less
+	double beta decay ($0\nu\beta\beta$), Baryon number of lepton flavor
+	violation (proton decay, $\mu 2e$), Parity-Violating electron scattering.
+    \item Most precise EW experiments:
+	\begin{itemize}
+	    \item electron g-2: fine structure constant
+	    \item muon lifetime: Fermi constant
+	    \item Z line shape: mass of Z boson
+	\end{itemize}
+\end{itemize}
+
+Measurement
+\begin{itemize}
+    \item gain: $10^5 - 10^7$
+    \item rate: $10 kHz - 10 MHz/cm^2$ dependending on detectors
+    \item time: $~10\ ps - ~1ns$ 
+    \item spatial resolution: $~\mu m$
+    \item power: $~1 - ~1000\ mW/channel$
+\end{itemize}
+Questions:
+\begin{itemize}
+    \item Do we really observe any event with final state particles (jets) total
+	energy larger than half of the colliding energy in pp or ep collisions?
+	If not, how do we determine the x distribution above 0.5?
+    \item Why LEP2 didn't find the Higgs, now that the $\sqrt{s} = 210 \ GeV > m_H$ 
+    \item Can we do something with the dumped beam? looks like waste of energy
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General}
+In the lab frame:
+$$ \vec{p}_1 = \vec{p}_{beam}, \vec{p}_2 = 0, \vec{p}_3 = \vec{p}_{scatter}, \vec{p}_4 = \vec{p}_recoil $$
+$$ s = (p_1 + p_2)^2 = (E_1 + m_2)^2 - |\vec{p}_1|^2 = m_1^2 + m_2^2 + 2E_{beam}m_2 $$
+Lorentz transformation from lab to CM frame:
+$$ \beta = \frac{\vec{p}_{beam}}{E_{beam} + m_2} \qquad \gamma = \frac{E_{beam} + m_2}{\sqrt{s}} $$
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Beam}
+Typical beam parameters: see pdg review about collider parameters
+
+The CEBAF accelerator is special, it is for nuclear physics, rather than
+the high energy physics. Though of low energy, it is capable of providing 
+stable and precise energy electron beam, it can also deliver beams to 3 (now 4)
+halls simultaneously, each doesn't require high beam current for nuclear 
+experiments. Here are some key parameters about electron beam in CEBAF:
+\begin{itemize}
+    \item circumference: 1.4 km
+    \item bunch repetition rate: 249.5 MHz (the srf frequency is 1497 MHz, 
+	CEBAF operates at either the third or the sixth subharmonic RF frequency
+	in order to create interleaved beams)
+    \item charge per bunch 4 - 480 fCoul = $2.5 - 300 \times 10^5$  electrons,
+	which is much smaller than that in any high energy collider ($\sim 10^{11}$).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Beam Production}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Electron Production}
+Shine laser on photocathode material, which will produce electron beam. One 
+problem is how to balance the left positive nuclei? What's the lifetime of 
+a photocathode material?
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Proton Production}
+Using microwave oven to create plasma from hydrogen gas, then with an electric
+field, the electron and proton will go in opposite ways, the protons will be
+focused and spliced into packets to form bunches.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Positron Production}
+Most external positron beams come from secondary interaction:
+$$ e^- + X \rightarrow e^- + \gamma + X \rightarrow e^- + (e^+ + e^-) + X $$
+here, X can be anything, usually a high density plane, which will produce 
+$gamma$ ray by Bremsstrahlung radiation. If X is another electron beam, then
+we create positron by electron collision:
+$$ e^- + e^- \rightarrow e^- + (e^+ + e^-) + e^- $$
+The higher the incoming electron beam's energy, the larger the positron 
+production rate
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Muon Production}
+Conventional way: Proton hitting targets, which will produce $\pi$, K particles,
+whose decay product is usually muon: muons arising from this way are 100\% polarized.
+
+Noval approach: $e^+e^- \rightarrow \mu^+\mu^-$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Transport}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Synchrotron Radiation (SR)}
+The synchrotron radiation matters much more for electron than heavier particles
+bacause the radiation power $P \propto \gamma^4 = \lfet(\frac{E}{m}\right)^4$, 
+so at the same energy, electron will emit $\left(\frac{m_p}{m_e}\right)^4 \sim 10^{13}$
+more radiation than proton. Synchrotron radiation will degrade electron beam
+quickly if no energy supply from RF, while its effect on proton beam is negligible.
+
+Though of being an excellent light source, the SR is bad for accelerator itself,
+there are a few damages it will caused to the accelerator:
+\begin{itemize}
+    \item Heat load on the beam pipe
+    \item Gas load, when SR hit the beam pipe, it will disorb the gas molecules 
+	on it, which will imcrease pressure, therefore reduce beam life time
+	and increase background noise
+    \item Emission of photoelectrons from the beam pipe through , enhance the
+	formation of the electron cloud (when accelerated by the electric field 
+	of a positively charged beam, the photoelectron will hit the beam pipe
+	surface and produce secondary electrons, which will increase exponentially
+	to form a elctron cloud around the beam bunches), leads to the beam 
+	instability (electron cloud instability).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Magnets}
+\begin{itemize}
+    \item State of art (2019) dipole: $14 \  T$
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Cooling}
+For hadrons and muon beams
+\begin{itemize}
+    \item stochastic cooling
+    \item electron cooling
+    \item ionization cooling (for muon beam)
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Spin maintainance}
+Larmor precession: the spin precesses around $\vec{B}$ with a frequency 
+proportional to $B$:
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Beam Monitoring}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Luminosity}
+The beam luminosity depends on beam size, beam intensity (number of particles
+per bunch) and beam frequency (number of beam bunches per second). Nowadays,
+the large accelerators (LHC, RHIC, HERA, CEBAF) have a beam intensity around:
+$10^{10} - 10^{11}$ particles (proton, electron) per bunch with an emittance of:
+$\sim \pi\mu m \cdot rad$ (and $\beta^* ~ 1 m$), which corresponding to 
+$\sim 10^{13} - 10^{15} cm^{-2}$, much less than fixed target density, 
+e.x.: $10^{22} cm^{-2}$ for $H_2O$
+
+Beam Lumonosity inside a storage ring will decay along time:
+\begin{figure}
+    \includegraphics[width=0.6\linewidth]{RHIC_beam_luminosity}
+\end{figure}
+
+There are many reasons that will damage beam luminosity:
+\begin{itemize}
+    \item IntraBeam Scattering (IBS) (Coulumb Scattering): which will increase
+	beam emittance and energy spread (especially for heavy-ion beam)
+    \item Beam-Beam interaction: this may be important depending on bunch intensity
+    \item Radiation damping (small effect)
+    \item Beam-gas collision (small effect): collision with some residual gas 
+	in the beam pipe
+    \item Bound-free pair production (for heavy ion beams)
+    \item Coulomb excitation (for EIC): the photons emitted from the electron
+	beam will excite the Ion beam, which will lead to neutron emission or
+	nucleus breakup.
+\end{itemize}
+
+Luminosity Measurement:
+Absolute luminosity measurement by measuring the synchronic radiation and 
+relative luminosity between opposite polarization.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Beam Size (Phase and Beta Function Measurement)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Beam Position and Angle at the IP (BPM)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Beam Energy}
+How do we know the beam energy at IP? 
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Spin Measurement}
+For electron beam, we can use Compton polarimeter or Moller polarimeter because
+the QED process is well known and we can calculate the analyzing power $A_n$, so
+that by measuring the asymmetry $A_m$, we will know the beam polarization:
+$$ P_b =  \frac{A_m}{A_n} $$
+
+But for hadron beam, we can't do the same thing, because we can't calculate
+the analyzing power from first principle due to complication of hadrons. 
+Currently, the best method to measure hadron polarization is the process of 
+elastic scattering in the Coulomb-Nuclear Interference (CNI) region, for which
+there are only effective models available. We measure the polarization relatively:
+$$ P_{beam} = -\frac{\epsilon_{beam}}{\epsilon_{target}g}P_{target}$$
+Where $\epsilon = A_N\cdot P = \frac{N_L - N_R}{N_L + N_R}$
+I don't understand why electron scattering can't work this way?
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Crossing}
+Cross angle at interaction point is related to particle specices. Different
+particles have different trajectory inside the storage (accelerating) pipe, 
+
+Crossing (luminors) region: For ATLAs, typical transverse (x, y) size: $\sim 10 \mu m$;
+typical longitudinal (z) size: $\sim 10 mm$
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Roman Pot}
+They are placed as close to the beampipe as possible, they will record any protons
+that are not travelling precisely along the beamline, and thus record the elastic
+scattering of the proton. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Detectors}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{charge_amplification}
+    \caption{Incident particle: electron}
+\end{figure}
+\begin{itemize}
+    \item Scintillator: $\sim 120 \gamma/MeV$, $95\% < 25\ ns$
+    \item Calorimeter resolution:
+	$$ \frac{\sigma(E)}{E} = \frac{a}{\sqrt{E}} + b + \frac{c}{E} $$
+	For ECAL, the a term is usually a few percent, while for HCAL, the a 
+	term can be a few tenth percent
+    \item Multiwire-Proportional Chambers (MVPC): spatial resolution $\sim s/\sqrt{12}$;
+	typical wire distance: 2mm $\Rightarrow \sigma_s = 0.6\ mm$
+    \item Drift Chamber: $\sigma_s \sim 100\ \mu m$
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Vertex Reconstruction}
+\begin{enumerate}
+    \item Track Pre-selection
+    \item Seed-Finding: if no seed, finish
+	\begin{itemize}
+	    \item Create a weighted histogram of z0 for tracks passing selection, 
+		  weight by log pT and d0
+	    \item Find the interval [$z_{min}$,  $z_{max}$], containing at 
+		  least a fraction f (default = 50\%) of the tracks, which has 
+		  the largest weight density ( $\frac{\sum_w}{z_{max - z_{min}}}$)
+		  is selected.  Use only entries in the interval just found
+	    \item Seed z position is weighted average of last 2 or 3 entries
+	    \item Seed (x, y) assumed to be center of luminous region
+	\end{itemize}
+    \item Track Assignment: if no tracks, finish;
+	\begin{itemize}
+	    \item Any track passing within $12\sigma$ of seed is added to list 
+		of tracks to fit
+		\begin{itemize}
+		    \item $\sigma$ includes track measurement errors only
+		    \item Vertex fit is robust against outliers
+		    \item May need tightening for poorly-measured large-|$\eta$| 
+			tracks as pileup increases
+		\end{itemize}
+	    \item If not at least two tracks passing 12 𝜎 cut, vertex-finding is finished
+		\begin{itemize}
+		    \item Typically occurs when only a few scattered tracks 
+			remain in seed-finding
+		    \item Resulting seed is far from all of them
+		\end{itemize}
+	\end{itemize}
+    \item Vertex Reconstruction: Vertex Fit
+	\begin{itemize}
+	    \item An ``adaptive'' vertex fit, based on the Kalman filter, is used.
+		Luminous region centroid (x, y) used as a constraint
+	    \item The Kalman filter itself is equivalent to a weighted least-squares fit
+	    \item Each track's weight is determined by its consistency with the 
+		previous iteration of fitting
+	\end{itemize}
+    \item Iterate step 2-5
+    \item Finish
+\end{enumerate}
+
+\begin{itemize}
+    \item The ``hard-scatter'' vertex is identified as the one with largest $\sum p_T^2$
+    \item Number of vertex is not exactly the same as number of pp collision ($\mu$).
+	Some vertices are lost due to various reasons:
+	\begin{itemize}
+	    \item no associated charge particles within the ID acceptance
+	    \item track reconstruction inefficiencies or errors
+	    \item merge of vertices, especially when $\mu > 20$
+	\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Multiple Coulomb Scattering (MCS)}
+\begin{itemize}
+    \item a statistical description arising from many small interactions with
+	atomic electrons
+    \item MCS alters the direction of the particle
+    \item 
+	 $$ \langle\theta\rangle = 0 $$
+	 $$ \sigma_\theta = \frac{13.6 \v MeV}{\beta cp}z\sqrt{x/X_0}\left[ 1 + 0.038ln (x/X_0) \right]$$
+	 where z is the particle charge, and $X_0$ is the material's Radiation
+	 Length.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spin}
+\begin{itemize}
+    \item A single spin-1/2 particle is always 100\% polarized along some direction: $\hat{P}$
+    \item As ensemble of spin-1/2 particles (target, beam) can be fully described 
+	by the average of all $\hat{P} \Rightarrow \vec{P}$ 
+    \item Any observable (must be scalar) can be represented as 
+	$\vec{A} \cdot \vec{P}$, where $\vec{A}$ is the analyzing power
+    \item If ensemble has a quantization axis (e.g. a B-field), $\vec{P}$ will 
+	be along that axis: $P_z = (N^\uparrow - N^\downarrow)/(N^\uparrow + N^\downarrow)$
+    \item Spin-1 ensembles (e.g. polarized deuteron targets) have both a vector
+	polarization ($P_z$) and a tensor polarization ($P_{zz}$ ???) along
+	quantization axis.
+\end{itemize}
+\section{Physics}
+\begin{figure}
+    \includegraphics[width=\linewidth]{multiplicity_in_diffractive_events}
+    \caption{Multiplicity in diffractive events}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{hadrons_spacetime_evolution}
+    \caption{Spacetime evolution}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Detectors}
+\begin{itemize}
+    \item What's the difference between Gas Electron Multiplier (GEM) and
+	Micro Mesh Gas (Micromegas)
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Future Colliders}
+\begin{figure}
+    \includegraphics[width=\linewidth]{future_colliders_2019}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Future Circular Collider (FCC: CERN)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Compact LInear Collider (CLIC: CERN)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{International Linear Collider (ILC: Japan)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Circular Electron Positron Collider (CEPC: China)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Muon Collider}
+Motivation:
+\begin{itemize}
+    \item Like electron, clean physics
+    \item Heavy, negligible synchrotron radiation, no beamstrahlung $\Rightarrow$
+	smaller collider or larger $\sqrt{s}$; excellent energy resolution
+    \item Large direct coupling to the Higgs boson (heavy)
+    \item Naturally longitudinally polarized (100\%) when arised from $\pi^\pm$ 
+	decay to $\mu^\pm\nu_\mu$
+    \item Natural neutrino factories due to muon decay
+\end{itemize}
+
+Machine:
+\begin{itemize}
+    \item Driver: proton-driven ($p + C \rightarrow \pi^\pm, K^\pm$) or 
+	ep driven ($e^+ + e^- \rightarrow \mu^+ + \mu^-$).
+	If proton-driven, require robust target
+    \item Muon collector: strong magnetic field of $20\ T$
+    \item Cooling
+    \item Fast acceleration and injection into circular rings
+    \item High luminosity will be a challenge
+\end{itemize}

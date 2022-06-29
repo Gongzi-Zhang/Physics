@@ -27,3 +27,23 @@
 %%% Display
 % add text above approx symbol
 \newcommand\defeq{\stackrel{\smash{\scriptscriptstyle\mathrm{def}}}{=}}
+% Calligraph
+\newcommand{\CA}{\mathcal{A}}
+\newcommand{\CB}{\mathcal{B}}
+\newcommand{\CH}{\mathcal{H}}
+\newcommand{\CI}{\mathcal{I}}
+\newcommand{\CL}{\mathcal{L}}
+\newcommand{\CM}{\mathcal{M}}
+\newcommand{\CP}{\mathcal{P}}
+
+
+% style
+\newtcolorbox{Qbox}{
+enhanced,
+%sidebyside,
+%righthand width=60pt,
+colback=white,
+}
+\newcommand\question[1]{
+    \begin{Qbox}Q: #1 \textbf{???}\end{Qbox}
+}

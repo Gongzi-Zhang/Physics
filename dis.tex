@@ -1,0 +1,67 @@
+\section{Deep Inelastic Scattering (DIS)}
+\begin{itemize}
+    \item Rutherford scattering: 
+	$$ \frac{d\sigma}{d\Omega} = \frac{\alpha^2}{16 E^2_K \sin^4\frac{\theta}{2}}$$
+	where $E_K$ is the kinetic energy of incoming electron; valid for low momentum 
+	$E_K < 50\ KeV$, no recoil of proton neither spin of electron nor proton 
+	taken into account. Proton regarded as pointlike particle
+    \item Mott scattering:
+	$$ \left( \frac{d\sigma}{d\Omega} \right)_{Mott} = \left( \frac{d\sigma}{d\omega}\right)_{Ruth} \cos^2\frac{\theta}{2} $$
+	back scattering suppressed due to non-conservation of "electron helicity"
+	proton is still described as a static Coulomb potential
+    \item High energy: considering the charge distribution of proton
+	$$ \left( \frac{d\sigma}{d\Omega} \right) = \left( \frac{d\sigma}{d\omega}\right)_{Mott} F(\vec{q}^2) $$
+    \item Complete formula:
+	\begin{equation*}
+	    \left( \frac{d\sigma}{d\Omega} \right)_{Dirac} = 
+	    \textcolor{black}{\frac{\alpha^2}{4E_1^2\sin^4\theta/2}}
+	    \textcolor{red}{\frac{E_3}{E_1}}
+	    \left( \textcolor{green}{\cos^2\theta/2} -
+	    \textcolor{cyan}{\frac{q^2}{2M^2}\sin^2\theta/2}
+            \right)
+	\end{equation*}
+	\begin{itemize}
+	    \item \textcolor{black}{Rutherford}
+	    \item \textcolor{red}{recoil of proton}
+	    \item \textcolor{green}{electron helicity (Mott)}
+	    \item \textcolor{cyan}{magnetic contribution due to spin-spin IA}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Fixed Target}
+Used to explore the hadron structure
+\begin{itemize}
+    \item for spin-less electron (Rutherford scatt.)
+	$$ \frac{d\sigma}{d\Omega} = \frac{\alpha^2}{4E^2\sin^4\frac{\theta}{2}}$$
+    \item for spin-1/2 electron (Mott scatt.)
+	$$ \frac{d\sigma}{d\Omega} = \frac{\alpha^2\cos^2\frac{\theta}{2}}{4E^2\sin^4\frac{\theta}{2}}$$
+    \item Structure  Functions: $W_1$, $W_2$ for two polarization states of the virtual photons (long. \& transverse)
+	$$ \frac{d\sigma}{d\Omega dE'} = \frac{\alpha^2\cos^2\frac{\theta}{2}}{4E^2\sin^4\frac{\theta}{2}}[ W_2(\nu, q^2) + W_1(\nu, q^2)\tan^2\frac{\theta}{2}] $$
+    \item 
+	$$ \frac{d^2\sigma}{dxdy} = \frac{4\alpha^2 ME}{Q^4}\left[ \frac{y^2}{2}2xF_1(x, Q^2) + (1-y)F_2(x, Q^2) \right]$$
+	with $F_1 = MW_1$ and $F_2 = \nu W_2$
+	\begin{itemize}
+	    \item $2xF_1$: probed by a transversely polarized virtual photon
+	    \item $F_2$: probed by both trans. + long. polarized virtual photons
+	\end{itemize}
+
+\end{itemize}
+
+Inclusive cross section for $eN \rightarrow eX$
+\begin{equation*}
+    \frac{d^2\sigma}{d\Omega dE} = \frac{4\alpha^2E'^2\cos\frac{\theta}{2}}{Q^4}
+    \left( 2\tan^2\frac{\theta}{2}\frac{F_1}{M} + \frac{F_2}{\nu} \right)
+\end{equation*}
+$$ F_2(x, Q^2) = x\sum_q e_q^2 q(x, Q^2)$$
+where $q(x, Q^2)$ is probability to find quark q with momentum fraction x:
+$$ x = \frac{p_q^+}{p_N^+} = \frac{p_q^0 + p_q^z}{p_N^0 + p_N^z} $$
+
+At large $Q^2$, we have \textbf{Callan-Gross relation}: 
+$$ F_2 = 2xF_1 $$
+
+Inclusive Polarized Cross Section:
+\begin{equation*}
+    \frac{d^2\sigma}{d\Omega dE} = \sigma_{Mott}
+    \left( \alpha F_1(x, Q^2) + \beta F_2(x, Q^2) + \gamma g_1(x, Q^2) + \delta g_2(x, Q^2) \right)
+\end{equation*}
+Two additional structure functions ($g_1$ and $g_2$) needed

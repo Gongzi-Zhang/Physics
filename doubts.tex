@@ -5,8 +5,14 @@ Some doubt about physics
 
 \subsection{Questions}
 \begin{itemize}
-    \item gravitational redshift: will light interact with gravity? When shine beam a light into the sky, the light doesn't slow down, but gravity does take away some of its energy? (how? light has no mass) -- but this i observed in S2 (a bright, giant star that orbits the black hole SgrA* every 16 years) in 2018
+    \item gravitational redshift: will light interact with gravity? When shine 
+	a beam of light into the sky, the light doesn't slow down, but gravity 
+	does take away some of its energy? (how? light has no mass) -- but this 
+	i observed in S2 (a bright, giant star that orbits the black hole 
+	SgrA* every 16 years) in 2018
+    \item Does mass continuous? Does it has a minimum unit?
 \end{itemize}
+
 \subsection{Classical Physics}
 \begin{description}[style=nextline]
     \item [Newton's Second Law]	Why it is relationship between acceleration
@@ -18,6 +24,8 @@ Some doubt about physics
 
 \subsection{Statistical Physics}
 \begin{description}[style=nextline]
+    \item Now that we have smallest energy principle, does the assumption that
+	each state is equivalent in SM violate the smallest energy principle?
     \item [Enthalpy, Free energy, Gibbs Free energy] What do H,F,G stand for? 
 	Physical meaning?
     \item [Entropy] How do we know the entropy defined in $\Delta \Gamma =
@@ -31,36 +39,37 @@ Some doubt about physics
 
 The reason a conductor puts boundary conditions on the EM field is that the
 electrons move around to compensate for an applied field. But there is a
-limit on hwo fast the electrons can move. The resulting cutoff frequency is
+limit on how fast the electrons can move. The resulting cutoff frequency is
 called the \textit{plasma frequency}
 \begin{description}[style=nextline]
     \item [Maxwell Eqn] 
 	\begin{equation}
 	    \left.
 	    \begin{aligned}
-		\overrightarrow{\nabla} \times (\overrightarrow{\nabla} \varphi) &= 0 \\
-		\overrightarrow{\nabla} \cdot (\overrightarrow{\nabla} \times \overrightarrow{A}) &= 0
+		\vec{\nabla} \times (\vec{\nabla} \varphi) &= 0 \\
+		\vec{\nabla} \cdot (\vec{\nabla} \times \vec{A}) &= 0
 	    \end{aligned}
 	    \right\} 
 	    \Rightarrow 
 	    \left.
 	    \begin{aligned}
-		\overrightarrow{\nabla} \cdot \overrightarrow{E} &= \rho \\
-		\overrightarrow{\nabla} \times \overrightarrow{B} &=
-		\frac{1}{c} \overrightarrow{j} + \frac{1}{c}\partial_{t}\overrightarrow{E}   \\
-		\overrightarrow{\nabla} \cdot \overrightarrow{B} &= 0	\\
-		-\overrightarrow{\nabla} \times \overrightarrow{E} &=
-		\frac{1}{c} \partial_{t}\overrightarrow{B}   \\
+		\vec{\nabla} \cdot \vec{E} &= \rho \\
+		\vec{\nabla} \times \vec{B} &=
+		\frac{1}{c} \vec{j} + \frac{1}{c}\partial_{t}\vec{E}   \\
+		\vec{\nabla} \cdot \vec{B} &= 0	\\
+		-\vec{\nabla} \times \vec{E} &=
+		\frac{1}{c} \partial_{t}\vec{B}   \\
 	    \end{aligned}
 	    \right\}	
 	\end{equation}
-	With $\overrightarrow{E}$ and $\overrightarrow{B}$ still connected
+	With $\vec{E}$ and $\vec{B}$ still connected
 	with each other, there is one \textbf{DOF}.
 \end{description}
 
-Now that EM wave can only transport translated wave ($\vec{k}\cdot\vec{E} =0$), then
-how does the sstatic electrotic potential $\varphi$ could produce $\vec{E}$ in
-the direction of $vec{r}$?
+Now that EM wave can only transport transversed wave ($\vec{k}\cdot\vec{E} =0$), then
+how does the static electric potential $\varphi$ could produce $\vec{E}$ in
+the direction of $\vec{r}$? So the formation of a static electric field is 
+different from the propagation of EM wave.
 
 
 \subsection{Statistical Physics}
@@ -74,12 +83,14 @@ the direction of $vec{r}$?
 \begin{description}[style=nextline]
     \item [Baker-Campbell-Hausdorff]	
 	if $[A,B] = \mathbb{C}$, then:	\\
-	$$e^{A}e^{B} = e^{B}e^{A}e^{[A,B]}, e^{A}e^{B} =
-	e^{A+B+\frac{1}{2}[A,B]}, e^{A+B} = e^{B+A}$$
+	$$ e^{A}e^{B} = e^{B}e^{A}e^{[A,B]}, \qquad 
+	e^{A}e^{B} = e^{A+B+\frac{1}{2}[A,B]}, \qquad
+	e^{A+B} = e^{B+A} $$
     \item [Angular Momentum] Rep. of J in the Hilbert Space are discrete
 	(finite) $\Leftarrow$ subspace.
 	$$Y^m_l(\theta,\phi) = \bra{\theta,\phi}\ket{l,m} =
 	\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P^m_l(cos\theta)e^{im\phi} $$
+	Where $P_l^m$ is the associate Legendre polynomial:
     \item [Harmonic Oscillator]	What's the physical meaning of the energy
 	eigenstate $\ket{\phi}$, what's its relationship to $\ket{x}$ state?
 \end{description}

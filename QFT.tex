@@ -18,6 +18,14 @@ Questions:
 	\[  -(\gamma_0)_{\alpha\beta}\psi_\alpha\psi^*_\beta=(\gamma_0)_{\alpha\beta\psi^*_\beta\psi_\alpha}	\]
 \end{itemize}
 
+\begin{itemize}
+    \item spinor: a complex, multi-component vector-like quantity that has
+	special transformation properties.
+    \item Dirac spinor: a 4-components vector-like scalar that satisfies 
+	the Dirac equation, also called bi-spinor
+    \item Weyl spinor: a 2-components vector-like scalar
+\end{itemize}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motivation}
 
@@ -328,6 +336,49 @@ Schwinger-Dyson equation:
 \end{equation}
 Where $\phi_x \equiv \phi(x)$ and $\phi_j \equiv \phi(x_j)$, $\angle \phi_x\phi_1\cdots\phi_n \rangle \equiv \bra{\Omega}T\{\phi_x\phi_1\cdots\phi_n\}\ket{\Omega}$, $\mathcal{L}'_{int}[\phi] = \frac{d}{d\phi}\mathcal{L}_{int}[\phi]$
 
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Dirac (Bose) statistics}
+Given the commutation relations:
+
+\begin{minipage}{0.5\linewidth}
+    \centering
+    Dirac
+    \begin{equation*}
+	\begin{aligned}
+	    [a(x), a(x')] &= 0	\\
+	    [a^\dag(x), a^\dag(x')] &= 0	\\
+	    [a(x), a^\dag(x')] &= \delta(x-x')	\\
+	\end{aligned}
+    \end{equation*}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+    \centering
+    Bose
+    \begin{equation*}
+	\begin{aligned}
+	    \{a(x), a(x')\} &= 0 \\
+	    \{a^\dag(x), a^\dag(x')\} &= 0  \\
+	    \{a(x), a^\dag(x')\} &= \delta(x-x')    \\
+	\end{aligned}
+    \end{equation*}
+\end{minipage}
+the time-dependent state:
+$$ \ket{\psi, t} = \int d^3x_1\dots d^3x_n \psi(x_1, \dots, x_n; t) 
+    a^\dag(x_1) \dots a^\dag(x_n) \ket{0} $$
+We can easily see only symmtric term in $\psi(x_1, \dots, x_n; t)$ survive:
+\begin{equation*}
+    \begin{aligned}
+	\ket{\psi, t} &= \int d^3x_1\dots d^3x_n \psi(x_1 \dots x_j \dots x_i \dots x_n; t) 
+	a^\dag(x_1) \dots a^\dag(x_i) \dots a^\dag(a_j) \dots a^\dag(x_n) \ket{0} \\
+	&= \int d^3x_1\dots d^3x_n \psi(x_1 \dots x_j \dots x_i \dots x_n; t) 
+	a^\dag(x_1) \dots a^\dag(x_j) \dots a^\dag(a_i) \dots a^\dag(x_n) \ket{0}   \\
+	&= \int d^3x_1\dots d^3x_n \psi(x_1 \dots x_i \dots x_j \dots x_n; t) 
+	a^\dag(x_1) \dots a^\dag(x_i) \dots a^\dag(a_j) \dots a^\dag(x_n) \ket{0}   \\
+    \end{aligned}
+\end{equation*}
+$$ \Downarrow $$
+$$\psi(x_1 \dots x_j \dots x_i \dots x_n; t) = \psi(x_1 \dots x_i \dots x_j \dots x_n; t) $$
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lagrangian}
 In QFT, we will use Lagrangian rather than Hamiltonian, because it is
@@ -338,6 +389,23 @@ A vector field $A_\mu$ is just four scalars until we construct it with
 $\partial_\mu$ in the Lagrangian, as in the $(\partial_{\mu}A_\mu)^2$ part
 of $F_{\mn}^2$.
 
+$$ S = \int d^4x\CL $$
+because $d^4 x$ in Lorentz invariant; to keep S is Lorentz invariant, we require
+$\CL$ to be Lorentz invariant.
+\question{Why $d^4x$ is Lorentz invariant}
+\begin{equation*}
+    \begin{aligned}
+	d^4x' &= dx'^0 \wedge dx'^1 \wedge dx'^2 \wedge dx'^3	\\
+	    &= \left(\frac{\partial x'^0}{\partial x^\mu}dx^\mu\right)
+	    \wedge \left(\frac{\partial x'^1}{\partial x^\mu}dx^\mu\right)
+	    \wedge \left(\frac{\partial x'^2}{\partial x^\mu}dx^\mu\right)
+	    \wedge \left(\frac{\partial x'^3}{\partial x^\mu}dx^\mu\right) \\
+	    &\stackrel{???}{=} det\left|\frac{\partial(x'^0, x'^1, x'^2, x'^3)}{\partial(x^0, x^1, x^2, x^3)} \right|
+		dx^0 \wedge dx^1 \wedge dx^2 \wedge dx^3    \\
+	    &= |J|d^4x	\\
+	    &= d^4x
+    \end{aligned}
+\end{equation*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symmetry}
 Our universe has a number of apparent symmetries that we would like our
@@ -643,10 +711,62 @@ This is the \KG{} equation. It was quantized by Pauli and Weisskopf in 1934.
 The Klein-Gordon equation was historically rejected as a fundamental quantum
 equation because it predicted negative probability density.
 
+\question{Why the probability $\int d^3x \phi^*\phi$ is not conserved}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Dirac Field}
-Dirac was looking for an equation linear in E or in $\partial_t$. For a
-massive spinor (spin $1/2$) field the Lagrangian density is:
+Dirac was looking for an equation linear in E or in $\partial_t$. So he tried
+to take square root of the KG-equation:
+\begin{equation}
+    i\hbar\partial_t\psi(x, t) = (-i\hbar c\vec{\alpha}\vec{\nabla} + \beta mc^2)\psi(x, t)
+    \label{eq:Dirac.0}
+\end{equation}
+
+So square of \ref{eq:Dirac.0} should return to KG-equation (take $\hbar = c = 1$)
+\begin{equation}
+    \begin{aligned}
+	(i\partial_t)^2\psi &= (-i\vec{\alpha}\vec{\nabla} + \beta m)^2 \psi  \\
+	-\partial_t^2 \psi &= (-(\sum_i \alpha_i \partial_i)^2 - i\sum_i \alpha_i \partial_i \beta m - i\beta m \sum_i \alpha_i \partial_i + \beta^2m^2 ) \psi	\\
+	    &= (-\sum_i \alpha_i^2\partial_i^2 - i\sum_{i \ne j}\alpha_i\alpha_j \partial_i\partial_j
+	      + m (\sum_i (\alpha_i\beta + \beta\alpha_i) \partial_i) + \beta^2 m^2) \psi
+    \end{aligned}
+\end{equation}
+
+Compare to KG-equation, we get:
+\begin{equation}
+    \begin{aligned}
+	\alpha_i^2 = \beta^2 &= 1   \\
+	\{\alpha_i, \alpha_j\} = \alpha_i\alpha_j + \alpha_j \alpha_i &= 0 \ (i \ne j)\\
+	\{\alpha_i, \beta\} = \alpha_i\beta + \beta \alpha_i &= 0	\\
+    \end{aligned}
+    \label{eq:Dirac-requirement}
+\end{equation}
+
+From the first equation of \ref{eq:Dirac-requirement}, we know that the eigenvalues
+of $\alpha$, $\beta$ can only be 1 or -1. Using trace analysis $ Tr(AB) = Tr(BA)$, 
+we know that:
+$$ Tr(\alpha_i) = Tr(\beta) = 0 $$
+So $\alpha$ and $\beta$ must be even-dimensional. If the dimension is 2, then
+the d.o.f. will be $4 \times 2^2 \times 2 = 32$, but \ref{eq:Dirac-requirement} 
+gives out $4\times 2^2 + 3\times 2^2 + 3\times 2^2 = 40$ constraints, so 2-d matrices
+are not the solution. The minimum dimension will be 4.
+
+So $\alpha_i$ and $\beta$ has to be at least 4-dimensional matrix.
+A common representation is the Dirac matrices.
+\begin{equation}
+    \gamma^0 = \beta = \begin{pmatrix} I_2 & 0 \\ 0 & -I_2 \end{pmatrix}, \quad
+    \gamma^i = \alpha^i = \begin{pmatrix} 0 & \sigma^i \\ -\sigma^i & 0 \end{pmatrix}
+\end{equation}
+Where $\sigma$ are the Pauli matrices.
+
+Another common representation (chiral representation):
+\begin{equation}
+    \gamma^0 = \beta = \begin{pmatrix} 0 & I_2 \\ I_2 & 0 \end{pmatrix}, \quad
+    \gamma^i = \alpha^i = \begin{pmatrix} 0 & \sigma^i \\ -\sigma^i & 0 \\ \end{pmatrix}
+\end{equation}
+
+
+For a massive spinor (spin $1/2$) field the Lagrangian density is:
 $$ \mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu} - m)\psi; \quad
 \bar{\psi} = \psi^{*}\gamma^{0} \quad \text{Dirac adjoint} $$
 The $4 \times 4$ Dirac matrices $\gamma^{\mu} (\mu = 0,1,2,3)$ satisfy the
@@ -748,9 +868,29 @@ postulate a Fermi sea of antiparticles. This genial assumption was not
 taken seriously until the positron was discovered in 1932 by Anderson.
 
 \subsection{Weyl spinor}
-\[  \sigma^\mu\partial_\mu\psi=\mathds{1}\partial_t\psi-\partial_i\sigma_i\psi=0    \]
-Dirac equation for a Weyl spinor:
-\[  \sigma^\mu\partial_\mu\psi=0    \]
+The Weyl equation is the special case of Dirac equation that has $m = 0$
+\begin{equation}
+    i\hbar\partial_t\psi = -i\hbar c\vec{\alpha}\cdot \vec{\nabla}\psi
+    \label{eq:Weyl.0}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+	\alpha_i^2 &= 1   \\
+	\{\alpha_i, \alpha_j\} = \alpha_i\alpha_j + \alpha_j \alpha_i &= 0 \ (i \ne j)\\
+    \end{aligned}
+\end{equation}
+Using the same analysis as we did for Dirac spinor, we find that to satisfy 
+the relationship, 2-D matrices are enough. The solution is any combination of
+$\pm \sigma_i$.
+
+\begin{equation}
+    \begin{aligned}
+	\sigma^\mu\partial_\mu\psi_R=\mathds{1}\partial_t\psi_R + \sum \sigma_i\partial_i \psi_R &= 0	\\
+	\bar{\sigma}^\mu\partial_\mu\psi_L=\mathds{1}\partial_t\psi_L - \sum \sigma_i\partial_i \psi_L &= 0
+    \end{aligned}
+    \label{eq:Weyl}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Maxwell Field}
@@ -799,6 +939,33 @@ so
 Note that the propagator has nothing to do with the source. In fact it is
 entirely determined by the kinetic terms for a field.
 
+\subsubsection{Photon Field (massless vector boson)}
+\begin{equation}
+    \Box^2 A_\mu(x) = 0
+\end{equation}
+the solution:
+\begin{equation*}
+    A^\mu(x) = \int \frac{1}{\sqrt{p^0}} A^\mu(\vec{p}) e^{-ipx} d^3\vec{p} + c.c
+\end{equation*}
+Assume photon moves in the z direction:
+$$ p^\mu = (p^0, 0, 0, p^3)$$
+Lorentz gauge: $\partial_\mu A^\mu = 0$, in the momentum space:
+$$ p_\mu A^\mu = p^0A^0 - p^3 A^3 = 0 $$
+So we see that:
+$$ A^0(\vec{p}) = A^3(\vec{p}) $$
+Express $A^\mu$ in terms of polarization vectors:
+$$ A^\mu(\vec{p}) = \sum_i a_\lambda(\vec{p}) \epsilon_\lambda^\mu $$
+With the 3 possible polarization:
+\begin{gather*}
+    \epsilon_1 = (0, 1, 0, 0)   \\
+    \epsilon_2 = (0, 0, 1, 0)   \\
+    \epsilon_3 = (1, 0, 0, 1)   \\
+\end{gather*}
+
+If we take only the third polarization:
+$$  A^\mu(x) = \int \frac{1}{\sqrt{p^0}} a^\mu_3(\vec{p})\epsilon_3^\mu e^{-ipx} d^3\vec{p} + c.c $$
+and compute the $\vec{E}$ and $\vec{B}$ fields, we will find that the special form
+of $\epsilon_3$ ensures that we get 0. So there is no "spin"-0 photon.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Proca (Massive Vector Boson) Field}
 $$ \mathcal{L} = -\frac{1}{4}F_{\mn}F^{\mn} +

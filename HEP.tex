@@ -1,0 +1,65 @@
+\section{Group}
+\subsection{SU(2)}
+let the SU(2) element being 
+\begin{equation*}
+    A = 
+    \begin{pmatrix}
+	a   & b	\\
+	c   & d	\\
+    \end{pmatrix}
+\end{equation*}
+where a, b, c, d are complex
+\begin{equation*}
+    A^\dag A = 
+    \begin{pmatrix}
+	a^* & c^* \\
+	b^* & d^*   \\
+    \end{pmatrix}
+    \begin{pmatrix}
+	a   & b	\\
+	c   & d	\\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+	aa^* + cc^* & a^*b + c^*d   \\
+	ab^* + cd^* & bb^* + dd^*   \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+	1   & 0	\\
+	0   & 1	\\
+    \end{pmatrix}
+\end{equation*}
+$$ \Downarrow $$
+\begin{equation*}
+    \left.
+    \begin{aligned}
+	aa^* + cc^* &= 1 \\
+	a^*b + c^*d &= 0 \\
+	bb^* + dd^* &= 1 \\
+	det(A) = ad - bc &= 1	\\
+    \end{aligned}
+    \right\}
+    \Rightarrow
+    \left\{
+    \begin{aligned}
+	&c = -\frac{ab^*}{d^*}	\\
+	&ad - bc = ad + a \frac{bb^*}{d^*} = a \frac{dd^*+ bb^*}{d^*} = 1	\\
+    \end{aligned}
+	\right.
+\end{equation*}
+$$ \Downarrow $$
+\begin{equation*}
+    d = a^* \qquad c = -b^*
+\end{equation*}
+$$ \Downarrow $$
+\begin{equation*}
+ SU(2) = \left\{ 
+    \begin{pmatrix}
+	\alpha	& \beta	\\
+	-\beta^*    & \alpha^*	\\
+    \end{pmatrix}
+    : \quad
+    \alpha, \beta \in C, |\alpha|^2 + |\beta|^2 = 1
+\right\}
+\end{equation*}

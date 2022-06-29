@@ -10,7 +10,6 @@
 \usepackage{slashed}	% slashed symbols in Dirac equation
 
 % style
-\usepackage{indentfirst}
 \usepackage{dsfont}
 \usepackage{enumitem}
 \usepackage{geometry}
@@ -65,58 +64,7 @@
 \makeatother
 
 \begin{document}
-\maketitle
-
-\tableofcontents
-
-
 \include{newcommand}
 
-
-% part 0
-\include{principles}
-% part 1
-\part{Introduction}
-\include{Introduction}
-% I want to organized this book in such a way that I can find any concepts quickly and as detailed as I wanted:
-% 1. index of concepts in alphabetical order within each different subfields
-% 2. explanation of each concept (logically ordered)
-% 3. More context: motivation, proof, explanation [dimension analysis], physical implication, reltaed concepts, application
-\include{doubts}
-\include{math}% tools
-\include{model}
-
-% part 2: general definition and conclusion without detailed proof
-\part{Definition and Conclusion}
-\include{definition}
-\include{definition_cm}
-\include{definition_em}
-\include{definition_sm}
-\include{definition_qm}
-\include{definition_hep}
-
-% part 3: detailed proofs
-\part{Proofs}
-\include{CM}
-\include{EM}
-\include{SM}
-\include{QM}
-\include{Relativity}
-\include{QFT}
-\include{HEP}
-\include{examples}
-
-% part 4: application
-\part{Application}
-\include{application}
-
-% part 5: timeline
-\part{Timeline of Important Physics}
-\include{timeline}
-\include{resource}
-\include{constants}% constants and scale
-
-\bibliographystyle{unsrt}
-\bibliography{main}
-
+\include{dis}
 \end{document}

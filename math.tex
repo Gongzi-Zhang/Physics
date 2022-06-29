@@ -7,6 +7,11 @@
 	$$ L_n{}^m(x) = (-1)^m\frac{d^m}{dx^m}L_{n+m}(x) \qquad \text{for } x \ge 0$$
     \item Assocated Legendre polynomials:
 	$$ P_l{}^m(x) = (1-x^2)^{m/2}\frac{d^m}{dx^m}P_{l}(x) \qquad \text{for } x \ge 0$$
+	$$ (1-x^2)\frac{d^2}{dx^2}P_l^m(x) - 2x\frac{d}{dx}P_l^m(x) + 
+	\left[ l(l+1) - \frac{m^2}{1-x^2} \right] P_l^m(x) = 0 $$
+	or
+	$$ \frac{d}{dx}\left[(1-x^2)\frac{d}{dx}P_l^m(x) \right] + 
+	\left[ l(l+1) - \frac{m^2}{1-x^2} \right] P_l^m(x) = 0 $$
     \item Beta function
 	$$ B(x,y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)} $$
     \item Complete elliptic integral of the first kind:
@@ -96,6 +101,14 @@ So, $\tilde{f}(k)$ is non-zero only at point with $kR = 2n\pi$, or $k = \frac{2\
 \end{equation}
 
 \section{Vector Operation}
+\begin{gather*}
+    \nabla^2 = \frac{1}{r^2}\partial_r(r^2 \partial_r) 
+      + \frac{1}{r^2}\frac{1}{\sin\theta} \partial_{\theta}(\sin\theta\partial_{\theta}) 
+      + \frac{1}{r^2\sin\theta^2}\partial^2_{\phi}	\\ 
+    \nabla^2 = \frac{1}{r}\partial_r (r\partial_r) 
+      + \frac{1}{r^2}\partial^2_{\theta} + \partial^2_z \\
+\end{gather*}
+
 \begin{equation}
     \nabla\times(\nabla\times\vec{A}) = \nabla(\nabla\vec{A}) - \nabla^2\vec{A} 
 \end{equation}
@@ -195,37 +208,6 @@ Continuous but not derivative everywhree.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Frequently used functions}
 
-%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Legendre Polynomials and spherical harmonics}
-\begin{equation}
-    Y^m_l(\theta,\phi)=Ne^{im\phi}P^m_l(\cos\theta)
-\end{equation}
-which satisfies
-\[
-    r^2\nabla^2Y^m_l(\theta,\phi)=-l(l+1)Y^m_l(\theta,\phi)
-    \]
-
-Standard convention :
-\[
-    P^{-m}_l(\cos\theta)=(-1)^m\frac{(l-m)!}{(l+m)!}P^m_l(\cos\theta),
-\]
-In QM:
-\[
-    Y^m_l(\theta,\phi)=(-1)^msqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_{lm}(\cos\theta)e^{im\phi}
-\]
-Where $P_{lm}$ are associated Legendre polynomials without the
-Condon-Shortley phase.
-
-Though of different definition, all of them satisfy
-\[ 
-    Y_l^{m*}(\theta,\phi)=(-1)^{m}Y_{l}^{-m}(\theta,\phi) 
-    \]
-
-
-Associate Legendre Polynomials:
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Bessel Function}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Differential Equations}
 
@@ -303,7 +285,7 @@ $u$ is small, we will get
 
 \subsection{Representation of Group}
 A \textbf{representation} of a group G on a vector space V over a field K is
-a group homomorphism from G to GL(V), the 
+a group homomorphism from G to GL(V).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Probability Distribution Functions}
